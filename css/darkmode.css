@@ -1,7 +1,7 @@
  :root {
     --primary-color: #302AE6;
     --secondary-color: #536390;
-    --font-color: #fff;
+    --font-color: #2F3136;
     --bg-color: #fff;
     --heading-color: #292922;
 }
@@ -28,6 +28,10 @@ h3 {
 }
 
 a {
+  color: var(--font-color);
+}
+
+span {
   color: var(--font-color);
 }
 
