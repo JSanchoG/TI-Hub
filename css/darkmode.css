@@ -31,10 +31,6 @@ a {
   color: var(--font-color);
 }
 
-span {
-  color: var(--font-color);
-}
-
 /*slider switch css */
 .theme-switch-wrapper {
   display: flex;
