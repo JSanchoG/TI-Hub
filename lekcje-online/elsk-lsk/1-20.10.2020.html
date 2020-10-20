@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Lekcja Online - 20.10.2020</title>
+
+    <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://2tihub.xyz/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <link href="https://2tihub.xyz/css/2tihub.min.css" rel="stylesheet">
+    <link href="https://2tihub.xyz/css/darkmode.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <h2 class="section-heading" id="historiadrukarek3d">Temat: Przepływ danych między warstwami.</h2>
+            <p>Aplikacje użytkownika działają w warstwie aplikacji generując strumień danych, który przesyłany jest do niższych warstw. Strumień przesyłany jest do warstwy transportowej, w warstwie tej zostaje on podzielony na segmenty, a każdy z segmentów ma nagłówek warstwy czwartej. W nagłówku umieszczany jest numer sekwencyjny, pozwala on na ustalenie kolejności przesyłania danych.</p>
+            <p> Kolejna warstwa to warstwa sieciowa, która jest odpowiedzialna za podzielenie danych na pakiety i oznaczenie każdego pakietu nagłówkiem. W nagłówku umieszczony jest adres IP zarówno nadawcy, jak i odbiorcy. Adres IP odbiorcy jest wykorzystywany przez router do wyznaczenia optymalnej trasy, po której pakiet będzie wysłany.</p>
+            <p>Następnie pakiet przesyłany jest do kolejnej warstwy - warstwy łącza danych, tu pakiety dzielone są na ramki. Każda z ramek ma nagłówek zawierający adres MAC nadawcy i odbiorcy oraz w stopce informacje z polem kontroli parzystości CRC.</p>
+            <p>Następnie warstwa fizyczna zmienia dane w ciąg bitów i przesyła je za pomocą medium transmisyjnego. Proces podziału strumienia danych na jednostki danych i opatrywania ich nagłówkiem nazywamy enkapsulacją. Proces odwrotny nazywamy dekapsulacją.</p>
+            <p>- Router jest urządzeniem warstwy trzeciej (sieciowej)<br>- Przełącznik, most i karta sieciowa są urządzeniami warstwy drugiej (łącza danych)<br>- Koncentrator, wzmacniak i regenerator pracują w warstwie pierwszej (fizycznej)</p>
+
+            <div class="p-3 mb-3">Zalety modelu OSI:</div>
+            <ul class="shadow list-group">
+              <li class="list-group-item">Pozwala podzielić zadania sieciowe na łatwiejsze do analizy części</li>
+              <li class="list-group-item">Umożliwia łatwiejsze zastępowanie jednego rozwiązania innym bez konieczności wprowadzania zmian w innych warstwach</li>
+              <li class="list-group-item">Wprowadza niezależność poszczególnych rodzajów nośników danych wykorzystywanych w sieciach - jedne zastępują (lub uzupełniają) drugie</li>
+            </ul>
+            <p>Model OSI jest najlepszym narzędziem służącym do nauki wysyłania i odbierania danych w sieci. Jest on traktowany jako wzorzec dla większości rodzin protokołów komunikacyjnych. Model ten jest otwarty, co oznacza, że może z niego korzystać każdy bez wnoszenia opłat licencyjnych.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
+    <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://2tihub.xyz/js/2tihub.min.js"></script>
+    <script src="https://2tihub.xyz/js/darkmode.js"></script>
+
+  </body>
+</html>
