@@ -41,6 +41,33 @@
 		padding: 15px;
 		text-align: center;
 	}
+.banner {
+    border: 1px solid #000;
+    height: 100px;
+    width: 600px;
+}
+.banner img {
+    background: #ccc;
+    float: left;
+    height: 100px;
+    width: 150px;
+    -webkit-transition: .25s;
+       -moz-transition: .25s;
+        -ms-transition: .25s;
+         -o-transition: .25s;
+            transition: .25s;
+}
+.banner:hover {
+    height: 200px;
+}
+.banner:hover img {
+    height: 67px;
+    width: 100px;
+}
+.banner img:hover {
+    height: 200px;
+    width: 300px;
+}
 </style>
 </head>
 
@@ -88,7 +115,10 @@
             <div class="dropdown-content">
               <img src="files/funkcje/1.png" alt="Cinque Terre" width="1024" height="768">
             </div>
-          </div>
+	  </div>
+	  <div class="banner">
+            <img src="files/funkcje/1.png" alt=""/>
+	  </div>
           
           
           <h2 class="section-heading" id="dhcp">DHCP (Dynamic Host Configuration Protocol)</h2>
