@@ -44,6 +44,13 @@
 		padding: 15px;
 		text-align: center;
 	}
+.zdjecie {
+  display: inline-block;
+  margin: 0 0.5rem;
+
+  animation: backInLeft; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+}
 html {
   scroll-behavior: smooth;
 }
@@ -123,7 +130,7 @@ html {
             </div>
           </div> -->
           <div class="banner">
-            <img src="files/funkcje/1.png" class="animate__backInLeft" width="256" height="192" alt=""/>
+            <img src="files/funkcje/1.png" class="zdjecie animate__animated animate__backInLeft" width="256" height="192" alt=""/>
           </div>
           <p>Następne 3 etapy można pominąć, klikając <strong>Dalej</strong></p>
           <div class="banner">
