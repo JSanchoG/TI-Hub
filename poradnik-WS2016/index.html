@@ -126,7 +126,7 @@ html {
 
           <p>Pierwsza wersja testowa (Technical preview) pojawiła się już 1 października 2014 roku. W przeciwieństwie do poprzednich wersji systemu, które były wydawane wraz z wersjami klienckimi, Windows Server 2016 został wydany 26 września 2016 roku na konferencji "Microsoft Ignite", czyli ponad rok po premierze Windows 10.</p>
 
-          
+
           <h2 class="section-heading" id="dodawanierolifunkcji" style="padding-top:70px">Dodawanie ról i funkcji</h2>
           <p>Aby dodać rolę lub funkcję należy w prawym górnym rogu Menedżera Serwera klinąć <strong>Zarządzaj</strong> i wybrać <strong>Dodaj role i funkcje</strong></p>
           <!-- <div class="dropdown">
@@ -205,6 +205,12 @@ html {
           </div>
           <div class="banner">
             <img src="files/funkcje/16.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/system%20settings.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/ekran_logowania.png" width="256" height="192" alt=""/>
           </div>
 
 
@@ -328,6 +334,99 @@ html {
           <div class="banner">
             <img src="files/funkcje/36.png" width="256" height="192" alt=""/>
           </div>
+
+          <h2 class="section-heading" id="iis" style="padding-top:70px">Serwer Sieci Web (IIS, Internet Information Services)</h2>
+          <a class="font-weight-bold" href="#instalacjaiis"><i class="fas fa-chevron-right"></i> Instalacja</a>
+          <br>
+          <a class="font-weight-bold" href="#funkcjeiis"><i class="fas fa-chevron-right"></i> Funkcje</a>
+          <h4 id="instalacjaiis">Instalacja protokołu DHCP</h4>
+          <p>Aby dodać rolę lub funkcję należy w prawym górnym rogu Menedżera Serwera klinąć <strong>Zarządzaj</strong> i wybrać <strong>Dodaj role i funkcje</strong></p>
+          <div class="banner">
+            <img src="files/funkcje/1.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Następne 3 etapy można pominąć, klikając <strong>Dalej</strong></p>
+          <div class="banner">
+            <img src="files/funkcje/2.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/3.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/4.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Następnie należy wybrać z listy <strong>Serwer Sieci Web (IIS)</strong> i kliknąć <strong>Dalej</strong></p>
+          <div class="banner">
+            <img src="files/funkcje/37.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Następny etap można pominąć, klikając <strong>Dalej</strong></p>
+          <div class="banner">
+            <img src="files/funkcje/38.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Po przejściu dalej, zaznacz <strong>Serwer FTP</strong> i kliknij <strong>Dalej</strong></p>
+          <div class="banner">
+            <img src="files/funkcje/39.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>W tym momencie można opcjonalnie odznaczyć automatyczny restart po wgraniu (jeśli wymagane) i kliknąć <strong>Zainstaluj</strong></p>
+          <div class="banner">
+            <img src="files/funkcje/40.png" width="256" height="192" alt=""/>
+          </div>
+          <h4 id="funkcjeiis" style="margin-top:30px">Funkcje IIS</h4>
+          <p id="funkcjeiis-uslugawww" style="margin-top:30px" class="font-weight-bold">Usługa WWW</p>
+          <p>Usługa WWW występuje w systemie domyślnie po zainstalowaniu IIS.</p>
+          <p>Na partycji systemowej przy instalacji został utworzony katalog IIS, na którym znajdują się wszystkie pliki dla usług takich jak WWW, FTP</p>
+          <p>W katalogu usługi WWW pojawiły się podstawowe 2 pliki: Dokument HTML i Obraz PNG</p>
+          <p>Łącząc się przez adres <strong>127.0.0.1</strong> lub wpisując <strong>localhost</strong> na pasku w przeglądarce można ujrzeć plik HTML z tego katalogu, można go również edytować</p>
+          <div class="banner">
+            <img src="files/funkcje/43.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/42.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/44.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/45.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>W usłudze tej można również tworzyć własne strony błędów</p>
+          <div class="banner">
+            <img src="files/funkcje/42_404.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/46_404.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/46_404_2.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/47.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Za pomocą wcześniej zainstalowanej usługi FTP można udostępniać pliki w sieci lokalnej oraz zarządzać uprawnieniami dostępu</p>
+          <p>W usłudze IIS można wskazać folder, w którym znajdować będą się wszystkie pliki do udostępnienia i odbierania ich na stacji roboczej za pomocą protokołu FTP</p>
+          <div class="banner">
+            <img src="files/funkcje/41.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Aby łączyć się z serwerem FTP, należy wpisać na pasku przeglądarki adres IP serwera z przedrostkiem <strong>"ftp://"</strong><br>Przykład: <strong>ftp://192.168.69.11</strong></p>
+          <div class="banner">
+            <img src="files/funkcje/ip.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/cmd.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/41.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/funkcje/41.png" width="256" height="192" alt=""/>
+          </div>
+
+
 
 
 
