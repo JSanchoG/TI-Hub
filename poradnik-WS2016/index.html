@@ -25,6 +25,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 
   <style>
+	html {
+		scroll-behavior: smooth;
+	}
 	.dropdown {
 		position: relative;
 		display: inline-block;
@@ -44,48 +47,44 @@
 		padding: 15px;
 		text-align: center;
 	}
-.zdjecie {
-  display: inline-block;
-  margin: 0 0.5rem;
-
-/*  animation: backInLeft; */
-  animation-duration: 1.3s; /* don't forget to set a duration! */
-}
-.animacja {
-  display: inline-block;
-  margin: 0 0.5rem;
-  animation-duration: 1.3s; /* don't forget to set a duration! */
-  --animate-delay: 2s;
-}
-html {
-  scroll-behavior: smooth;
-}
-.banner {
-    height: 192px;
-    width: 256px;
-    text-align: center;
-}
-.banner img {
-    text-align: center;
-    height: 192px;
-    width: 256px;
-    -webkit-transition: .30s;
-       -moz-transition: .30s;
-        -ms-transition: .30s;
-         -o-transition: .30s;
-            transition: .30s;
-}
-.banner:hover {
-    height: 768px;
-}
-.banner:hover img {
-    height: 192px;
-    width: 256px;
-}
-.banner img:hover {
-    height: 768px;
-    width: 1024px;
-}
+	.zdjecie {
+		display: inline-block;
+		margin: 0 0.5rem;
+		/*  animation: backInLeft; */
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+	}
+	.animacja {
+		display: inline-block;
+		margin: 0 0.5rem;
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+		--animate-delay: 2s;
+	}
+	.banner {
+		height: 192px;
+		width: 256px;
+		text-align: center;
+	}
+	.banner img {
+		text-align: center;
+		height: 192px;
+		width: 256px;
+		-webkit-transition: .30s;
+		   -moz-transition: .30s;
+		    -ms-transition: .30s;
+		     -o-transition: .30s;
+		        transition: .30s;
+	}
+	.banner:hover {
+		height: 768px;
+	}
+	.banner:hover img {
+		height: 192px;
+		width: 256px;
+	}
+	.banner img:hover {
+		height: 768px;
+		width: 1024px;
+	}
 </style>
 </head>
 
