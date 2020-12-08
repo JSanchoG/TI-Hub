@@ -130,12 +130,10 @@
           <div class="banner">
             <img src="files/3.png" width="256" height="192" alt=""/>
           </div>
-          <hr>
           <p>Następnie należy wykonać polecenie <strong>ifconfig</strong>, wyświetlą się interfejsy sieciowe<br>potem trzeba przejść do <strong>/etc/netplan</strong> używając polecenia <strong>cd</strong></p>
           <div class="banner">
             <img src="files/4.png" width="256" height="192" alt=""/>
           </div>
-          <hr>
           <p>Następnie należy edytować plik <strong>01-network-manager-all.yaml</strong> posługując się poleceniem <strong>nano</strong> z przedrostkiem <strong>sudo</strong> (jeśli polecenie zostanie wykonane bez przedrostka sudo, nie będzie można zapisać edytowanego pliku)<br><kbd>sudo nano 01-network-manager-all.yaml</kbd></p>
           <div class="banner">
             <img src="files/10.png" width="256" height="192" alt=""/>
@@ -161,6 +159,7 @@
           <div class="banner">
             <img src="files/18.png" width="256" height="192" alt=""/>
           </div>
+          <hr>
           <p>Aby skonfigurować drugi interfejs sieciowy, należy trzy razy się cofnąć, używając polecenia <strong>cd</strong>, a następnie edytować plik <strong>/etc/network/interfaces</strong> za pomocą polecenia <strong>nano</strong> z przedrostkiem <strong>sudo</strong><br><kbd>sudo nano /etc/network/interfaces</kbd></p>
           <div class="banner">
             <img src="files/20.png" width="256" height="192" alt=""/>
@@ -180,6 +179,7 @@
           <div class="banner">
             <img src="files/26.png" width="256" height="192" alt=""/>
           </div>
+          <hr>
           <p>Zresetować kartę sieciową można poleceniem<br><kbd>sudo /etc/init.d/networking restart</kbd><br>lub restartując system</p>
           <div class="banner">
             <img src="files/27.png" width="256" height="192" alt=""/>
