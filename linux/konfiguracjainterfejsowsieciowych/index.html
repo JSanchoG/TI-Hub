@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Poradnik - Usługi Windows Server 2016</title>
+  <title>Linux - Konfiguracja interfejsów sieciowych</title>
 
   <!-- Bootstrap core CSS -->
   <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -101,7 +101,7 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead animate__animated animate__fadeIn" style="background-image: url('https://2tihub.xyz/linux/konfiguracjainterfejsowsieciowych/linux.jpg')">
+  <header class="masthead animate__animated animate__fadeIn" style="background-image: url('https://2tihub.xyz/linux/konfiguracjainterfejsowsieciowych/files/linux.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -123,39 +123,33 @@
         <div class="col-lg-8 col-md-10 mx-auto">
 
           <h2 class="section-heading" id="konfiguracjainterfejsowsieciowych" style="padding-top:70px">Konfiguracja interfejsów sieciowych w systemie Linux Ubuntu 18.04</h2>
-          <p>Aby dodać rolę lub funkcję należy w prawym górnym rogu Menedżera Serwera klinąć <strong>Zarządzaj</strong> i wybrać <strong>Dodaj role i funkcje</strong></p>
-          <!-- <div class="dropdown">
-            <img src="files/funkcje/1.png" alt="Cinque Terre" width="256" height="192">
-            <div class="dropdown-content">
-              <img src="files/funkcje/1.png" alt="Cinque Terre" width="1024" height="768">
-            </div>
-          </div> -->
+          <p>Aby zacząć konfigurację interfejsu sieciowego, w wierszu poleceń należy wpisać <strong>ifconfig</strong>, jeżeli wystąpi się błąd, konieczna będzie instalacja narzędzi sieciowych za pomocą polecenia <strong>sudo apt install net-tools</strong>, pamiętając o przedrostku <strong>sudo</strong>, dzięki któremu polecenie wykonywane jest przez administratora</p>
           <div class="banner">
-            <img src="files/funkcje/1.png" width="256" height="192" alt=""/>
+            <img src="files/1.png" width="256" height="192" alt=""/>
           </div>
           <hr>
           <p>Następne 3 etapy można pominąć, klikając <strong>Dalej</strong></p>
           <div class="banner">
-            <img src="files/funkcje/2.png" width="256" height="192" alt=""/>
+            <img src="files/2.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/funkcje/3.png" width="256" height="192" alt=""/>
+            <img src="files/3.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/funkcje/4.png" width="256" height="192" alt=""/>
+            <img src="files/4.png" width="256" height="192" alt=""/>
           </div>
           <hr>
           <p>Następnie należy wybrać role i funkcje, które chcemy zainstalować</p>
           <div class="banner">
-            <img src="files/funkcje/5.png" width="256" height="192" alt=""/>
+            <img src="files/5.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/funkcje/6.png" width="256" height="192" alt=""/>
+            <img src="files/6.png" width="256" height="192" alt=""/>
           </div>
           <hr>
           <p>Po wybraniu ról i funkcji można je zainstalować oraz opcjonalnie odznaczyć automatyczny restart po wgraniu (jeśli wymagane)</p>
           <div class="banner">
-            <img src="files/funkcje/7.png" width="256" height="192" alt=""/>
+            <img src="files/7.png" width="256" height="192" alt=""/>
           </div>
 
           <h2 class="section-heading" id="adds" style="padding-top:70px">Usługi domenowe Active Directory (AD DS, Active Directory Domain Services)</h2>
@@ -167,7 +161,7 @@
           <h4 id="instalacjadomenylokalnejadds">Instalacja domeny lokalnej w AD DS</h4>
           <p>Aby kontynuować instalację AD DS, należy w prawym górnym rogu Menedżera Serwera kliknąć w <strong>ikonę flagi</strong> i wybrać <strong>Podniesienie poziomu serwera</strong></p>
           <div class="banner">
-            <img src="files/funkcje/8.png" width="256" height="192" alt=""/>
+            <img src="files/8.png" width="256" height="192" alt=""/>
           </div>
           <hr>
           <p>W następnym etapie wybrać <strong>Dodaj nowy las</strong> i poniżej wpisać dowolną nazwę domeny z przyrostkiem <strong>.local</strong></p>
