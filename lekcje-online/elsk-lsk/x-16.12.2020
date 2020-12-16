@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Lekcja Online - 16.12.2020</title>
+
+    <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://2tihub.xyz/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <link href="https://2tihub.xyz/css/2tihub.min.css" rel="stylesheet">
+    <link href="https://2tihub.xyz/css/darkmode.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="https://2tihub.xyz/">2TI Hub</a>
+      </div>
+    </nav>
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <h2 class="section-heading" id="temat">Temat: Transmisja IP.</h2>
+            <p>Ze względu na transmisję w sieci wyróżniamy następujące rodzaje adresów IP:</p>
+
+            <ul class="shadow list-group" style="margin-bottom:30px">
+              <li class="list-group-item">- adres pojedynczej emisji unicast - adres IP, który jest wysyłany przez interfejs źródłowy i odbierany tylko przez jeden interfejs docelowy, typ ten dotyczy protokołów IPv4 oraz IPv6</li>
+              <li class="list-group-item">- adres rozgłoszeniowy broadcast - adres IP, który jest wysyłany przez jeden interfejs źródłowy do wszystkich interfejsów docelowych w danej sieci. Pakiet wysyłany na adres rozgłoszeniowy jest odbierany przez każdy interfejs należący do danej sieci, typ ten występuje w protokole IPv4</li>
+              <li class="list-group-item">- anycast - adres IP, który jest wysyłany przez jeden interfejs źródłowy do grupy interfejsów docelowych. Grupa interfejsów docelowych znajduje się najbliżej wysyłanego interfejsu sieciowego, przy czym jest on odbierany tylko przez jeden interfejs docelowy, występuje w protokole IPv6</li>
+              <li class="list-group-item">- adres multiemisji multicast - adres IP, który jest wysyłany przez jeden interfejs źródłowy do grupy interfejsów docelowych. Pojedynczy interfejs sieciowy może zostać przypisany do kilku grup, pakiet wysyłany na adres multiemisji jest odbierany przez każdy interfejs należący do danej grupy, występuje w protokołach IPv4 oraz IPv6</li>
+            </ul>
+
+            <p>Ze względu na obszar działania wyróżniamy:</p>
+
+            <ul class="shadow list-group" style="margin-bottom:30px">
+              <li class="list-group-item">- adres publiczny - adres IP przypisany węzłowo w sieci globalnej</li>
+              <li class="list-group-item">- adres prywatny - adres IP przypisany węzłom i hostom w sieci lokalnej</li>
+              <li class="list-group-item">- adres zastrzeżony - adres IP zarezerwowany do zastosowań specjalnych</li>
+            </ul>
+
+            <p>Ze względu na sposób przydzielania wyróżniamy:</p>
+
+            <ul class="shadow list-group" style="margin-bottom:30px">
+              <li class="list-group-item">- adresy statyczne - adres IPv4 lub IPv6 jest na stałe przypisany do interfejsu karty sieciowej</li>
+              <li class="list-group-item">- adresy dynamiczne - adres IPv4 lub IPv6 jest automatycznie przydzielany do interfejsu karty sieciowej</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
+    <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://2tihub.xyz/js/2tihub.min.js"></script>
+    <script src="https://2tihub.xyz/js/darkmode.js"></script>
+
+  </body>
+</html>
