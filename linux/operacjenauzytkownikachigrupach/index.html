@@ -159,23 +159,26 @@
             <img src="files/addgroup.png" width="256" height="192" alt="">
           </div>
           <hr>
-          <p id="konfiguracja"></p>
-          <p>Po wejściu do klienta poczty, pierwsze dwa etapy można pominąć, klikając <strong>Dalej</strong></p>
+          <p><kbd>groupadd</kbd> - tworzy grupę zgodnie z opcjami wymienionymi w linii poleceń</p>
           <div class="banner">
-            <img src="files/4.png" width="256" height="192" alt=""/>
+            <img src="files/groupadd.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/5.png" width="256" height="192" alt=""/>
+            <img src="files/groupaddcustomid.png" width="256" height="192" alt=""/>
           </div>
-          <hr>
-          <p>Potem trzeba podać <strong>Imię i Nazwisko</strong> oraz <strong>Adres e-mail</strong> (dane nie muszą być prawdziwe)</p>
+          <p>Grupy domyślnie tworzą się z ID od 1000 do 60 000, można to przez edycję wartości <strong>GID_MIN</strong> i <strong>GID_MAX</strong> w pliku <strong>/etc/login.defs</strong> za pomocą dowolnego edytora tekstu</p>
           <div class="banner">
-            <img src="files/6.png" width="256" height="192" alt=""/>
+            <img src="files/sudonanologindefs.png" width="256" height="192" alt=""/>
           </div>
-          <hr>
-          <p>Następnie należy wprowadzić informacje o serwerze IMAP oraz SMTP (w tym przypadku klient sam uzupełnił te dane)</p>
           <div class="banner">
-            <img src="files/7.png" width="256" height="192" alt=""/>
+            <img src="files/nanocustomgid.png" width="256" height="192" alt=""/>
+          </div>
+          <p>ID utworzonych grup znajdują się w pliku <strong>/etc/group</strong>, który można otworzyć używając polecenia <kbd>sudo nano group</kbd> będąc w katalogu <strong>etc</strong>. Aby przejsć do tego katalogu wystarczy wpisać <kbd>cd /etc</kbd></p>
+          <div class="banner">
+            <img src="files/sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/nanoids2.png" width="256" height="192" alt=""/>
           </div>
           <hr>
           <p>Aby zakończyć instalację, należy nacisnąć <strong>Zastosuj</strong></p>
