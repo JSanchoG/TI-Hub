@@ -115,11 +115,11 @@
             <a class="navbar-brand font-weight-bold" href="#sudo">sudo</a>
             <a class="navbar-brand font-weight-bold" href="#groupadd">groupadd</a>
             <a class="navbar-brand font-weight-bold" href="#addgroup">addgroup</a>
-            <a style="color:pink" class="navbar-brand font-weight-bold" href="#">groupdel</a>
-            <a style="color:pink" class="navbar-brand font-weight-bold" href="#">groups</a>
+            <a class="navbar-brand font-weight-bold" href="#groupdel">groupdel</a>
+            <a class="navbar-brand font-weight-bold" href="#groups">groups</a>
             <a class="navbar-brand font-weight-bold" href="#adduser">adduser</a>
             <a class="navbar-brand font-weight-bold" href="#useradd">useradd</a>
-            <a style="color:pink" class="navbar-brand font-weight-bold" href="#">passwd</a>
+            <a class="navbar-brand font-weight-bold" href="#passwd">passwd</a>
             <a style="color:pink" class="navbar-brand font-weight-bold" href="#">userdel</a>
             <a style="color:pink" class="navbar-brand font-weight-bold" href="#">usermod</a>
             <a style="color:pink" class="navbar-brand font-weight-bold" href="#">groupmod</a>
@@ -181,24 +181,27 @@
             <img src="files/nanoids2.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Aby zakończyć instalację, należy nacisnąć <strong>Zastosuj</strong></p>
+          <p id="groupdel"><kbd>groupdel</kbd> - polecenie to służy do usuwania grup</p>
           <div class="banner">
-            <img src="files/8.png" width="256" height="192" alt=""/>
+            <img src="files/groupdel.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Klient powinien teraz poprosić użytkownika o hasło do konta e-mail oraz do konta użytkownika w celu weryfikacji</p>
+          <p id="groups"><kbd>groups</kbd> - polecenie to wyświetla grupy, w których znajduje się dany użytkownik</p>
           <div class="banner">
-            <img src="files/9.png" width="256" height="192" alt=""/>
+            <img src="files/groups.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/10.png" width="256" height="192" alt=""/>
+            <img src="files/groupsuzytkownik.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Na tym etapie klient poczty jest już gotowy do użytku, po chwili powinny załadować się wiadomości</p>
+          <p id="passwd"><kbd>passwd</kbd> - komenda służąca do zmiany lub zarządzania hasłem</p>
           <div class="banner">
-            <img src="files/11.png" width="256" height="192" alt=""/>
+            <img src="files/passwdsudo.png" width="256" height="192" alt=""/>
           </div>
-          <img src="files/12.png" width="503" height="72" alt="">
+          <p>Dodając do komendy parametr <kbd>-x 30</kbd> sprawiamy, że hasło wygaśnie za 30 dni. Usunąć hasło można używając parametru <kbd>-dK/kbd></p>
+          <div class="banner">
+            <img src="files/passwd.png" width="256" height="192" alt=""/>
+          </div>
         </div>
       </div>
     </div>
