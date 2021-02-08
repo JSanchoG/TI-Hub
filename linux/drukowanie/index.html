@@ -113,9 +113,9 @@
         <div class="col-lg-8 col-md-10 mx-auto">
 
           <h2 class="section-heading" id="instalacja" style="padding-top:50px;margin-top:0px">Instalacja drukarki lokalnej</h2>
-          <p>Drukarkę w systemie Linux można dodać na 2 sposoby: przez <span href="#ustawienia">ustawienia</span> lub przez <span href="#cups">CUPS</span></p>
+          <p>Drukarkę w systemie Linux można dodać na 2 sposoby: przez <a href="#ustawienia">ustawienia</a> lub przez <a href="#cups">CUPS</a></p>
           <hr>
-          <p id="ustawienia">Aby dodać drukarkę, należy kliknąć w przycisk zasilania znajdujący się w prawym górnym rogu i wybrać Ustawienia, następnie wybrać opcję Drukarki</p>
+          <p id="ustawienia">Aby dodać drukarkę, należy kliknąć przycisk zasilania znajdujący się w prawym górnym rogu i wybrać Ustawienia, następnie wybrać opcję <strong>Drukarki</strong></p>
           <div class="banner">
             <img src="files/1.png" width="256" height="192" alt=""/>
           </div>
@@ -123,21 +123,21 @@
             <img src="files/2.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p id="adduser"><kbd>adduser</kbd> i <kbd id="addgroup">addgroup</kbd> - dodają użytkowników i grupy do systemu zgodnie z opcjami wymienionymi w linii poleceń oraz konfiguracją zawartą w pliku <b>/etc/adduser.conf</b><br><br>Wywołując polecenie <kbd>sudo adduser uzytkownik</kbd>, system poprosi nas o hasło do konta administratora, następnie o dwukrotne wpisanie hasła dla tworzonego użytkownika, Imię i nazwisko, Numer pokoju, Telefon do pracy, Telefon domowy i Inne. Po dodaniu hasła wszystkie te wartości można zostawić puste, następnie potwierdzić przez wpisanie <kbd>T</kbd></p>
+          <p>Po kliknięciu zielonego przycisku <strong>Dodaj drukarkę...</strong> należy wybrać drukarkę i zatwierdzić wybór klikając <strong>Dodaj</strong></p>
           <div class="banner">
-            <img src="files/sudo3.png" width="256" height="192" alt="">
+            <img src="files/3.png" width="256" height="192" alt="">
           </div>
-          <p>Poleceniem <kbd>sudo addgroup</kbd> tworzymy grupę. Za pomocą różnych atrybutów możemy dodać ID grupy - <kbd>--gid 00000</kbd>, czy ścieżkę powłoki - <kbd>--shell /bin/sh</kbd>. ID grupy nie może się powtarzać</p>
+          <p>Na tym etapie drukarka lokalna jest już dodana i gotowa do wydruku, można ją jeszcze skonfigurować</p>
           <div class="banner">
-            <img src="files/addgroup.png" width="256" height="192" alt="">
+            <img src="files/4.png" width="256" height="192" alt="">
           </div>
           <hr>
-          <p id="groupadd"><kbd>groupadd</kbd> - tworzy grupę zgodnie z opcjami wymienionymi w linii poleceń</p>
+          <p id="cups">Drukarkę można dodać też za pomocą CUPS, wpisując w dowolnej przeglądarce adres <strong>localhost:631</strong></p>
           <div class="banner">
-            <img src="files/groupadd.png" width="256" height="192" alt=""/>
+            <img src="files/10.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/groupaddcustomid.png" width="256" height="192" alt=""/>
+            <img src="files/11.png" width="256" height="192" alt=""/>
           </div>
           <p>Grupy domyślnie tworzą się z ID od 1000 do 60 000, można to przez edycję wartości <strong>GID_MIN</strong> i <strong>GID_MAX</strong> w pliku <strong>/etc/login.defs</strong> za pomocą dowolnego edytora tekstu</p>
           <div class="banner">
