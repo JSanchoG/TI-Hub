@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="utf-8">
+  <meta rel="shortcut icon" href="https://2tihub.xyz/poradnik-WS2016/WS-logo.png" sizes="144x144" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Linux - Operacje na użytkownikach i grupach</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://2tihub.xyz/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="https://2tihub.xyz/css/2tihub.min.css" rel="stylesheet">
+  <link href="https://2tihub.xyz/css/darkmode.css" rel="stylesheet">
+
+  <link href="https://2tihub.xyz/poradnik-WS2016/files/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <style>
+	html {
+		scroll-behavior: smooth;
+	}
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+	.desc {
+		padding: 15px;
+		text-align: center;
+	}
+	.zdjecie {
+		display: inline-block;
+		margin: 0 0.5rem;
+		/*  animation: backInLeft; */
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+	}
+	.animacja {
+		display: inline-block;
+		margin: 0 0.5rem;
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+		--animate-delay: 2s;
+	}
+	.banner {
+		height: 192px;
+		width: 256px;
+		text-align: center;
+	}
+	.banner img {
+		text-align: center;
+		height: 192px;
+		width: 256px;
+		-webkit-transition: .30s;
+		   -moz-transition: .30s;
+		    -ms-transition: .30s;
+		     -o-transition: .30s;
+		        transition: .30s;
+	}
+	.banner:hover {
+		height: 768px;
+	}
+	.banner:hover img {
+		height: 192px;
+		width: 256px;
+	}
+	.banner img:hover {
+		height: 768px;
+		width: 1024px;
+	}
+</style>
+</head>
+
+<body>
+
+  <!-- Page Header -->
+  <header class="masthead animate__animated animate__fadeIn" style="background-image: url('https://2tihub.xyz/linux/operacjenauzytkownikachigrupach/linux.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1 class="animacja animate__animated animate__zoomIn" style="margin-bottom:25px">Linux - Operacje na użytkownikach i grupach</h1>
+
+            <span class="meta animacja animate__animated animate__fadeInUpBig">Jakub Gożuk - 26 Styczeń, 2021</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container animate__animated animate__bounceInLeft">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="container animate__animated animate__bounceInLeft">
+            <a class="navbar-brand font-weight-bold" href="#sudo">sudo</a>
+            <a class="navbar-brand font-weight-bold" href="#groupadd">groupadd</a>
+            <a class="navbar-brand font-weight-bold" href="#addgroup">addgroup</a>
+            <a class="navbar-brand font-weight-bold" href="#groupdel">groupdel</a>
+            <a class="navbar-brand font-weight-bold" href="#groups">groups</a>
+            <a class="navbar-brand font-weight-bold" href="#adduser">adduser</a>
+            <a class="navbar-brand font-weight-bold" href="#useradd">useradd</a>
+            <a class="navbar-brand font-weight-bold" href="#passwd">passwd</a>
+            <a class="navbar-brand font-weight-bold" href="#userdel">userdel</a>
+            <a class="navbar-brand font-weight-bold" href="#usermod">usermod</a>
+            <a class="navbar-brand font-weight-bold" href="#groupmod">groupmod</a>
+            <a class="navbar-brand font-weight-bold" href="#gpasswd">gpasswd</a>
+            <a class="navbar-brand font-weight-bold" href="#whoami">whoami</a>
+            <a class="navbar-brand font-weight-bold" href="#id">id</a>
+            <a  class="navbar-brand font-weight-bold" href="#users">users</a>
+            <a class="navbar-brand font-weight-bold" href="#who">who</a>
+            <a class="navbar-brand font-weight-bold" href="#w">w</a>
+            <a class="navbar-brand font-weight-bold" href="#finger">finger</a>
+            <a class="navbar-brand font-weight-bold" href="#last">last</a>
+            <a class="navbar-brand font-weight-bold" href="#ls">ls</a>
+            <a class="navbar-brand font-weight-bold" href="#chgrp">chgrp</a>
+            <a class="navbar-brand font-weight-bold" href="#chown">chown</a>
+            <a class="navbar-brand font-weight-bold" href="#chmod">chmod</a>
+          </div>
+          <h2 class="section-heading" id="instalacja" style="padding-top:50px;margin-top:0px">Komendy wiersza poleceń w systemie Linux i ich praktyczne zastosowanie</h2>
+          <p id="sudo"><kbd>sudo</kbd> - jest to program umożliwiający użytkownikom uruchomienie aplikacji jako inny użytkownik systemu. Najczęściej służy ono do uruchamiania aplikacji zarezerwowanych dla administratora.<br><br>Za pomocą tego polecenia można wykonać każde polecenie jako inny użytkownik - <kbd>sudo -u użytkownik polecenie</kbd><br>Lub w skróconej wersji polecenie wykonywane zostanie z nadanymi uprawnieniami administratora - <kbd>sudo polecenie</kbd></p>
+          <div class="banner">
+            <img src="files/sudo2.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/sudo4.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="useradd"><kbd>useradd</kbd> - narzędzie niskiego poziomu służące do dodawania użytkowników, administratorzy zamiast tego polecenia powinni używać <kbd>adduser</kbd><br><br>Wykonanie polecenia<br><kbd>sudo useradd uzytkownik2 --password haslo --create-home</kbd><br>spowoduje utworzenie użytkownika o nazwie <b>uzytkownik2</b> z hasłem <b>haslo</b> i katalogiem domowym, polecenie to można też wykonać w skróconej wersji:<br><kbd>sudo useradd uzytkownik2 -p haslo -m</kbd></p>
+          <div class="banner">
+            <img src="files/useradd.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="adduser"><kbd>adduser</kbd> i <kbd id="addgroup">addgroup</kbd> - dodają użytkowników i grupy do systemu zgodnie z opcjami wymienionymi w linii poleceń oraz konfiguracją zawartą w pliku <b>/etc/adduser.conf</b><br><br>Wywołując polecenie <kbd>sudo adduser uzytkownik</kbd>, system poprosi nas o hasło do konta administratora, następnie o dwukrotne wpisanie hasła dla tworzonego użytkownika, Imię i nazwisko, Numer pokoju, Telefon do pracy, Telefon domowy i Inne. Po dodaniu hasła wszystkie te wartości można zostawić puste, następnie potwierdzić przez wpisanie <kbd>T</kbd></p>
+          <div class="banner">
+            <img src="files/sudo3.png" width="256" height="192" alt="">
+          </div>
+          <p>Poleceniem <kbd>sudo addgroup</kbd> tworzymy grupę. Za pomocą różnych atrybutów możemy dodać ID grupy - <kbd>--gid 00000</kbd>, czy ścieżkę powłoki - <kbd>--shell /bin/sh</kbd>. ID grupy nie może się powtarzać</p>
+          <div class="banner">
+            <img src="files/addgroup.png" width="256" height="192" alt="">
+          </div>
+          <hr>
+          <p id="groupadd"><kbd>groupadd</kbd> - tworzy grupę zgodnie z opcjami wymienionymi w linii poleceń</p>
+          <div class="banner">
+            <img src="files/groupadd.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/groupaddcustomid.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Grupy domyślnie tworzą się z ID od 1000 do 60 000, można to przez edycję wartości <strong>GID_MIN</strong> i <strong>GID_MAX</strong> w pliku <strong>/etc/login.defs</strong> za pomocą dowolnego edytora tekstu</p>
+          <div class="banner">
+            <img src="files/nanologindefs.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/nanocustomgid.png" width="256" height="192" alt=""/>
+          </div>
+          <p>ID utworzonych grup znajdują się w pliku <strong>/etc/group</strong>, który można otworzyć używając polecenia <kbd>sudo nano group</kbd> będąc w katalogu <strong>etc</strong>. Aby przejsć do tego katalogu wystarczy wpisać <kbd>cd /etc</kbd>. Nowo utworzone grupy powinny znajdować się na samym końcu</p>
+          <div class="banner">
+            <img src="files/sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/nanoids2.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="groupdel"><kbd>groupdel</kbd> - polecenie to służy do usuwania grup</p>
+          <div class="banner">
+            <img src="files/groupdel.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="groups"><kbd>groups</kbd> - polecenie to wyświetla grupy, w których znajduje się dany użytkownik</p>
+          <div class="banner">
+            <img src="files/groups.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/groupsuzytkownik.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="passwd"><kbd>passwd</kbd> - komenda służąca do zmiany lub zarządzania hasłem</p>
+          <div class="banner">
+            <img src="files/passwdsudo.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Dodając do komendy parametr <kbd>-x 30</kbd> sprawiamy, że hasło wygaśnie za 30 dni. Usunąć hasło można używając parametru <kbd>-d</kbd></p>
+          <div class="banner">
+            <img src="files/passwd.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="id"><kbd>id</kbd> - komenda wyświetlająca ID użytkownika (UID), ID jego grupy (GID) oraz wszystkie jego grupy</p>
+          <div class="banner">
+            <img src="files/id.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="chgrp"><kbd>chgrp</kbd> - polecenie umożliwiające zmianę przypisania pliku do grupy</p>
+          <div class="banner">
+            <img src="files/chgrp.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="finger"><kbd>finger</kbd> - polecenie wyświetlające dane jednego użytkownika lub kilku, w tym informacje zawarte w katalogach domowych każdego z użytkowników</p>
+          <div class="banner">
+            <img src="files/finger.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="groupmod"><kbd>groupmod</kbd> - komenda do modyfikowania grup</p>
+          <div class="banner">
+            <img src="files/groupmod.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="last"><kbd>last</kbd> - polecenie pokazujące ostatnie logowania do poszczególnych terminali</p>
+          <div class="banner">
+            <img src="files/last.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="ls"><kbd>ls</kbd> - polecenie służące do listowania plików, gdy polecenie zostanie wywołane bez argumentów, listuje pliki w obecnym katalogu roboczym</p>
+          <div class="banner">
+            <img src="files/ls.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="usermod"><kbd>usermod</kbd> - polecenie służące do modyfikowania atrybutów danego użytkownika</p>
+          <div class="banner">
+            <img src="files/usermod.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="userdel"><kbd>userdel</kbd> - polecenie to służy do usuwania użytkowników</p>
+          <div class="banner">
+            <img src="files/userdel.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="users"><kbd>users</kbd> - komenda wyświetlająca obecnie zalogowanych użytkowników</p>
+          <div class="banner">
+            <img src="files/users.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="w"><kbd>w</kbd> - komenda pokazuje, co robią zalogowani użytkownicy</p>
+          <div class="w">
+            <img src="files/chgrp.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="who"><kbd>who</kbd> - wyświetla zalogowanych użytkowników oraz godziny ich logowania</p>
+          <div class="banner">
+            <img src="files/who.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="whoami"><kbd>whoami</kbd> - wyświetla, przez kogo zostało wykonane polecenie</p>
+          <div class="banner">
+            <img src="files/whoami.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="chown"><kbd>chown</kbd> - polecenie służące do zmiany właściciela pliku</p>
+          <div class="banner">
+            <img src="files/chown.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p id="chmod"><kbd>chmod</kbd> - polecenie służące do zmiany praw dostępu do pliku</p>
+          <div class="banner">
+            <img src="files/chmod.png" width="256" height="192" alt=""/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
+  <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="https://2tihub.xyz/js/2tihub.min.js"></script>
+  <script src="https://2tihub.xyz/js/darkmode.js"></script>
+
+</body></html>
