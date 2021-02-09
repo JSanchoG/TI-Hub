@@ -27,30 +27,27 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <h2 class="section-heading" id="temat">Temat: Transmisja IP.</h2>
-            <p>Ze względu na transmisję w sieci wyróżniamy następujące rodzaje adresów IP:</p>
+            <h2 class="section-heading" id="temat">Temat: Instalowanie pakietów.</h2>
+            <p>Menedżer pakietów jest oprogramowaniem służącym do automatycznej instalacji, aktualizacji, konfiguracji i usuwania pakietów oprogramowania.</p>
+            <p>Najpopularniejsze menedżery pakietów:</p>
 
             <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- adres pojedynczej emisji unicast - adres IP, który jest wysyłany przez interfejs źródłowy i odbierany tylko przez jeden interfejs docelowy, typ ten dotyczy protokołów IPv4 oraz IPv6</li>
-              <li class="list-group-item">- adres rozgłoszeniowy broadcast - adres IP, który jest wysyłany przez jeden interfejs źródłowy do wszystkich interfejsów docelowych w danej sieci. Pakiet wysyłany na adres rozgłoszeniowy jest odbierany przez każdy interfejs należący do danej sieci, typ ten występuje w protokole IPv4</li>
-              <li class="list-group-item">- anycast - adres IP, który jest wysyłany przez jeden interfejs źródłowy do grupy interfejsów docelowych. Grupa interfejsów docelowych znajduje się najbliżej wysyłanego interfejsu sieciowego, przy czym jest on odbierany tylko przez jeden interfejs docelowy, występuje w protokole IPv6</li>
-              <li class="list-group-item">- adres multiemisji multicast - adres IP, który jest wysyłany przez jeden interfejs źródłowy do grupy interfejsów docelowych. Pojedynczy interfejs sieciowy może zostać przypisany do kilku grup, pakiet wysyłany na adres multiemisji jest odbierany przez każdy interfejs należący do danej grupy, występuje w protokołach IPv4 oraz IPv6</li>
+              <li class="list-group-item">- apt, aptitude, dselect - osługiwane przez dystrybucje Debian i Ubuntu w formacie *.deb</li>
+              <li class="list-group-item">- yum - obsługiwane przez dystrybucje Fedora, SuSE i CentOS w formacie *.rpm</li>
+              <li class="list-group-item">- YaST - obsługiwane przez dystrybucję SuSE w formacie *.rpm</li>
             </ul>
 
-            <p>Ze względu na obszar działania wyróżniamy:</p>
+            <p>Oprogramowanie wchodzące w skład Ubuntu i innych jego odmian zostało podzielone na 4 sekcje zwane komponentami:</p>
 
             <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- adres publiczny - adres IP przypisany węzłowo w sieci globalnej</li>
-              <li class="list-group-item">- adres prywatny - adres IP przypisany węzłom i hostom w sieci lokalnej</li>
-              <li class="list-group-item">- adres zastrzeżony - adres IP zarezerwowany do zastosowań specjalnych</li>
+              <li class="list-group-item">- main - znajdują się tylko te aplikacje, które spełniają wymagania licencyjne Ubuntu i są wspierane przez zespół projektu, jest to najważniejsze oprogramowanie z punktu widzenia użytkownika</li>
+              <li class="list-group-item">- restricted - zawiera oprogramowanie niezbędne do pracy lub funkcjonalności systemu opublikowane na licencji niezgodnej z wymogami Ubuntu, np. sterowniki kart graficznych</li>
+              <li class="list-group-item">- universe - zawiera wolne oprogramowanie tworzone przez podmioty niezależne i nie wspierane przez zespół Ubuntu</li>
+              <li class="list-group-item">- multiverse - zawiera oprogramowanie na licencji niezgodnej z wymogami Ubuntu</li>
             </ul>
 
-            <p>Ze względu na sposób przydzielania wyróżniamy:</p>
+            <p>Pakiet to archiwum zawierające pliki programu i dodatkowe informacje o pakiecie oraz wymaganiach i sposobie jego instalacji</p>
 
-            <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- adresy statyczne - adres IPv4 lub IPv6 jest na stałe przypisany do interfejsu karty sieciowej</li>
-              <li class="list-group-item">- adresy dynamiczne - adres IPv4 lub IPv6 jest automatycznie przydzielany do interfejsu karty sieciowej</li>
-            </ul>
           </div>
         </div>
       </div>
