@@ -94,10 +94,46 @@ Czas pracy:
 		height: 768px;
 		width: 1024px;
 	}
-	.scrollspy-example {
-		position: relative;
-		overflow: auto;
+	.navbar {
+		transition: all 0.4s;
 	}
+	.navbar .nav-link {
+		color: #fff;
+	}
+	.navbar .nav-link:hover,
+	.navbar .nav-link:focus {
+		color: #fff;
+		text-decoration: none;
+	}
+	.navbar .navbar-brand {
+		color: #fff;
+	}
+/* Change navbar styling on scroll */
+	.navbar.active {
+		background: #fff;
+		box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+	}
+	.navbar.active .nav-link {
+		color: #555;
+	}
+	.navbar.active .nav-link:hover,
+	.navbar.active .nav-link:focus {
+		color: #555;
+		text-decoration: none;
+	}
+	.navbar.active .navbar-brand {
+		color: #555;
+	}
+/* Change navbar styling on small viewports
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
+} */
 </style>
 </head>
 
@@ -119,7 +155,7 @@ Czas pracy:
           <div class="post-heading">
             <h1 class="animacja animate__animated animate__zoomIn" style="margin-bottom:25px">Historia Internetu</h1>
 
-            <span class="meta animacja animate__animated animate__fadeInUpBig">Jakub Gożuk - 11 Luty, 2021</span>
+            <span class="meta animacja animate__animated animate__fadeInUpBig">Jakub Gożuk - 13 Luty, 2021</span>
           </div>
         </div>
       </div>
@@ -131,16 +167,10 @@ Czas pracy:
     <div class="container animate__animated animate__bounceInLeft">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-	  <div
-            data-mdb-spy="scroll"
-            data-mdb-target="#scrollspy"
-            data-mdb-offset="0"
-            class="scrollspy-example"
-          >
           <h2 class="section-heading" id="instalacja" style="padding-top:70px">Historia i sposób działania internetu</h2>
           <p>Początki internetu sięgają roku 1960, kiedy Joseph Licklider opisał projekt globalnej sieci komputerów. Dwa lata później powstała koncepcja internetu w formie 12-tomowej pracy wydanej przez Paula Barana. Pierwszą sieć komputerową wykonano na zlecenie Amerykańskich Sił Zbrojnych, ten wytrzymały projekt rozproszonych sieci cyfrowych transmisji danych miał przetrwać przewidywaną wówczas III wojnę światową.</p>
 
-          <center style="margin-top:60px;margin-bottom:60px" id="example-1">
+          <center style="margin-top:60px;margin-bottom:60px">
             <div class="row">
               <div class="col-md-12">
                 <hr>
@@ -184,11 +214,9 @@ Czas pracy:
             </div>
           </center>
 
-          <div id="example-2">
-            <p>Eksperyment ten zakładał budowę sieci komputerowej bez wyróżnionego punktu centralnego, aby sieć była funkcjonalna przy uszkodzeniu pewnej jej części. Było to rewolucyjne rozwiązanie, ponieważ wcześniej wszystkie sieci zarządzane były przez jeden główny komputer, którego awaria spowodowałaby pozbawienie możliwości pracy całej sieci. Wtedy też wysłano pierwsze dane z jednego węzła do drugiego z prędkością 56KB/s. W roku 1970 sieć powiększyła się o kolejne węzły oraz powstała zupełnie nowa sieć w Wielkiej Brytanii, a rok później kolejna w Stanach Zjednoczonych, zwana Merit Network. W tym okresie powstała także pierwsza poczta elektroniczna i został wysłany pierwszy e-mail, którego autorem był Raymond Tomlinson, e-mail ten wysłał on do siebie samego. Treść maila jest nam nieznana, lecz prawdopodobnie był to losowy ciąg znaków.</p>
-            <p>W 1973 r. ARPANET staje się już siecią międzynarodową (dociera m.in. do Norwegii), ale nie rozwija się tak szybko, jak obserwujemy to teraz. Przez niemal dekadę powstało zaledwie 100 węzłów sieciowych.</p>
-            <blockquote>Największą prędkość internetu udało się osiągnąć naukowcom z Uniwersytetu Monasha. W dniu 22 maja 2020 roku osiągneli oni prędkość 44.2Tb/s (5.525TB/s, 5932423577.6Kb/s), czyli 13 242 016.9 razy więcej niż prędkość sieci ARPANET u jej początków. Przy takiej prędkości można pobrać 1000 filmów w wysokiej rozdzielczości w zaledwie jedną sekundę, a przy prędkości 56KB/s w sieci ARPANET pobranie jednego filmu w wysokiej rozdzielczości zajmie aż 1 dzień 6 godzin 7 minut i 58 sekund, natomiast pobranie 1000 filmów w wysokiej rozdzielczości zajęłoby 3 lata 5 miesięcy 8 dni 12 godzin 56 minut i 42 sekundy.</blockquote>
-          </div>
+          <p>Eksperyment ten zakładał budowę sieci komputerowej bez wyróżnionego punktu centralnego, aby sieć była funkcjonalna przy uszkodzeniu pewnej jej części. Było to rewolucyjne rozwiązanie, ponieważ wcześniej wszystkie sieci zarządzane były przez jeden główny komputer, którego awaria spowodowałaby pozbawienie możliwości pracy całej sieci. Wtedy też wysłano pierwsze dane z jednego węzła do drugiego z prędkością 56KB/s. W roku 1970 sieć powiększyła się o kolejne węzły oraz powstała zupełnie nowa sieć w Wielkiej Brytanii, a rok później kolejna w Stanach Zjednoczonych, zwana Merit Network. W tym okresie powstała także pierwsza poczta elektroniczna i został wysłany pierwszy e-mail, którego autorem był Raymond Tomlinson, e-mail ten wysłał on do siebie samego. Treść maila jest nam nieznana, lecz prawdopodobnie był to losowy ciąg znaków.</p>
+          <p>W 1973 r. ARPANET staje się już siecią międzynarodową (dociera m.in. do Norwegii), ale nie rozwija się tak szybko, jak obserwujemy to teraz. Przez niemal dekadę powstało zaledwie 100 węzłów sieciowych.</p>
+          <blockquote>Największą prędkość internetu udało się osiągnąć naukowcom z Uniwersytetu Monasha. W dniu 22 maja 2020 roku osiągneli oni prędkość 44.2Tb/s (5.525TB/s, 5932423577.6Kb/s), czyli 13 242 016.9 razy więcej niż prędkość sieci ARPANET u jej początków. Przy takiej prędkości można pobrać 1000 filmów w wysokiej rozdzielczości w zaledwie jedną sekundę, a przy prędkości 56KB/s w sieci ARPANET pobranie jednego filmu w wysokiej rozdzielczości zajmie aż 1 dzień 6 godzin 7 minut i 58 sekund, natomiast pobranie 1000 filmów w wysokiej rozdzielczości zajęłoby 3 lata 5 miesięcy 8 dni 12 godzin 56 minut i 42 sekundy.</blockquote>
 
           <center style="margin-top:60px;margin-bottom:60px">
             <div class="row">
@@ -217,11 +245,9 @@ Czas pracy:
             </div>
           </center>
 
-          <div id="example-3">
-            <blockquote>Pierwsza zarejestrowana domena nosiła nazwę <a href="https://symbolics.com/" target="blank">Symbolics.com</a>, została ona zarejestrowana 15 marca 1985 roku, była to również pierwsza domena .com, którą sprzedano. Dziś jest to najstarsza z 350 milionów zarejestrowanych domen oraz adres historycznej strony (muzeum internetu).</blockquote>
-            <p>Pod koniec 1990 roku, Tim Berners-Lee używając komputera NeXT zaprojektowanego przez Steve'a Jobsa opracował technologie, które są podstawą sieci, w tym język programowania Hypertext Markup Lanuage (HTML) oraz dwa protokoły: Hypertext Transfer Protocol (HTTP) i Uniform Resource Locators (URL). Opracował również podstawową przeglądarkę i oprogramowanie serwera WWW.</p>
-            <p>Początek sieci jako publicznie dostępnej usługi w Internecie nastąpił 6 sierpnia 1991 roku, kiedy Berners-Lee opublikował pierwszą w historii witrynę internetową. Strona dotyczyła projektu World Wide Web, opisując sieć i sposób jej używania. Hostowana w CERN na komputerze NeXT należącym do Tima Barners-Lee. Adresem URL witryny było <a href="http://info.cern.ch/hypertext/WWW/TheProject.html" target="blank">http://info.cern.ch</a>. Co ciekawe, stronę nadal można odwiedzić pod adresem <a href="http://info.cern.ch/hypertext/WWW/TheProject.html" target="blank">http://info.cern.ch/hypertext/WWW/TheProject.html</a></p>
-          </div>
+          <blockquote>Pierwsza zarejestrowana domena nosiła nazwę <a href="https://symbolics.com/" target="blank">Symbolics.com</a>, została ona zarejestrowana 15 marca 1985 roku, była to również pierwsza domena .com, którą sprzedano. Dziś jest to najstarsza z 350 milionów zarejestrowanych domen oraz adres historycznej strony (muzeum internetu).</blockquote>
+          <p>Pod koniec 1990 roku, Tim Berners-Lee używając komputera NeXT zaprojektowanego przez Steve'a Jobsa opracował technologie, które są podstawą sieci, w tym język programowania Hypertext Markup Lanuage (HTML) oraz dwa protokoły: Hypertext Transfer Protocol (HTTP) i Uniform Resource Locators (URL). Opracował również podstawową przeglądarkę i oprogramowanie serwera WWW.</p>
+          <p>Początek sieci jako publicznie dostępnej usługi w Internecie nastąpił 6 sierpnia 1991 roku, kiedy Berners-Lee opublikował pierwszą w historii witrynę internetową. Strona dotyczyła projektu World Wide Web, opisując sieć i sposób jej używania. Hostowana w CERN na komputerze NeXT należącym do Tima Barners-Lee. Adresem URL witryny było <a href="http://info.cern.ch/hypertext/WWW/TheProject.html" target="blank">http://info.cern.ch</a>. Co ciekawe, stronę nadal można odwiedzić pod adresem <a href="http://info.cern.ch/hypertext/WWW/TheProject.html" target="blank">http://info.cern.ch/hypertext/WWW/TheProject.html</a></p>
 
           <center style="margin-top:60px;margin-bottom:60px">
             <div class="row">
@@ -251,7 +277,6 @@ Czas pracy:
             </div>
           </center>
 
-          </div>
           </div>
         </div>
       </div>
@@ -287,6 +312,17 @@ Czas pracy:
   <!-- Grid container -->
 </footer>
 
+  <script>
+    $(function () {
+      $(window).on('scroll', function () {
+        if ( $(window).scrollTop() > 10 ) {
+          $('.navbar').addClass('active');
+        } else {
+          $('.navbar').removeClass('active');
+        }
+      });
+    });
+  </script>
   <!-- Bootstrap core JavaScript -->
   <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
   <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
