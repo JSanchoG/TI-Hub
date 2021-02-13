@@ -32,6 +32,17 @@ Czas pracy:
 
   <link href="https://2tihub.xyz/poradnik-WS2016/files/style.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <script>
+    $(function () {
+      $(window).on('scroll', function () {
+        if ( $(window).scrollTop() > 10 ) {
+          $('.navbar').addClass('active');
+        } else {
+          $('.navbar').removeClass('active');
+        }
+      });
+    });
+  </script>
 
   <style>
 	html {
@@ -329,17 +340,6 @@ Czas pracy:
   <!-- Grid container -->
 </footer>
 
-  <script>
-    $(function () {
-      $(window).on('scroll', function () {
-        if ( $(window).scrollTop() > 10 ) {
-          $('.navbar').addClass('active');
-        } else {
-          $('.navbar').removeClass('active');
-        }
-      });
-    });
-  </script>
   <!-- Bootstrap core JavaScript -->
   <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
   <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
