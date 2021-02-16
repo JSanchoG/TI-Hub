@@ -41,6 +41,8 @@
 
             <p>iptables to filtr pakietów dla Linuxa używanym głownie jako firewall. iptables wyposażony jest w oddzielny łańcuch reguł dla każdego typu strumienia. Wykorzystując reguły Firewall podejmuje decyzje, czy pakiet przepuścić (allow), zablokować (deny), czy też podjąć inne działania.</p>
 
+            <p style="margin-bottom:10px">Składnia:</p>
+            <img class="rounded shadow-lg img-fluid" alt="" src="https://2tihub.xyz/lekcje-online/aso/skladnia.PNG">
           </div>
         </div>
       </div>
