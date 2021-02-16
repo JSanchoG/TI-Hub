@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Lekcja Online - 16.02.2021</title>
+
+    <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://2tihub.xyz/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <link href="https://2tihub.xyz/css/2tihub.min.css" rel="stylesheet">
+    <link href="https://2tihub.xyz/css/darkmode.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="https://2tihub.xyz/">2TI Hub</a>
+      </div>
+    </nav>
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <h2 class="section-heading" id="temat">Temat: Uruchamianie usług sieciowych.</h2>
+            <p>Usługi, czyli serwisy systemowe w Linuxie to programy uruchamiane w celu wykonywania pewnych czynności. Programy pracujące w tle i nieprzyłączone do terminalu nazywane są demonami. Demon zajmuje miejsce w pamięci komputera nawet wtedy, gdy tylko oczekuje na zadania. Super Demon, np. xinted to narzędzie kontrolujące wybrane porty i uruchamiające usługi tylko w razie potrzeby.</p>
+
+            <h2 class="section-heading" id="temat">Temat: Konfigurowanie Firewalla w systemie Linux.</h2>
+            <p>Zapora sieciowa realizuje funkcje filtrowania krążących w sieci pakietów danych. W zależności od sposobu konfiguracji, może zabezpieczać pojedynczy komputer, serwer albo całą sieć. Przez komputer w sieci mogą przepływać trzy strumienie danych:</p>
+
+            <ul class="shadow list-group" style="margin-bottom:30px">
+              <li class="list-group-item">- wejściowy (input)</li>
+              <li class="list-group-item">- wyjściowy (output)</li>
+              <li class="list-group-item">- przekazywany (forward)</li>
+            </ul>
+
+            <p>iptables to filtr pakietów dla Linuxa używanym głownie jako firewall. iptables wyposażony jest w oddzielny łańcuch reguł dla każdego typu strumienia. Wykorzystując reguły Firewall podejmuje decyzje, czy pakiet przepuścić (allow), zablokować (deny), czy też podjąć inne działania.</p>
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
+    <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://2tihub.xyz/js/2tihub.min.js"></script>
+    <script src="https://2tihub.xyz/js/darkmode.js"></script>
+
+  </body>
+</html>
