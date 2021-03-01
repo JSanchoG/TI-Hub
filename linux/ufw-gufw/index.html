@@ -121,37 +121,22 @@
         <div class="col-lg-8 col-md-10 mx-auto">
 
           <h2 class="section-heading" id="ufw" style="padding-top:70px;text-align:center">UFW</h2>
-          <p>UFW - nieskomplikowana zapora, która jest „nakładką” na iptables. Jej głównym celem jest uproszczenie zarządzania zaporą i zapewnienie łatwego w użyciu interfejsu. Jest dobrze obsługiwana i popularna w społeczności Linuksa – a nawet domyślnie instalowana w wielu dystrybucjach Linuksa. W związku z tym jest to świetny sposób, aby zabezpieczyć swój serwer.</p>
+          <blockquote>UFW - nieskomplikowana zapora, która jest „nakładką” na iptables. Jej głównym celem jest uproszczenie zarządzania zaporą i zapewnienie łatwego w użyciu interfejsu. Jest dobrze obsługiwana i popularna w społeczności Linuksa – a nawet domyślnie instalowana w wielu dystrybucjach Linuksa. W związku z tym jest to świetny sposób, aby zabezpieczyć swój serwer.</blockquote>
+          <p>Aby zainstalować UFW, w konsoli należy wywołać polecenie <kbd>sudo apt-get install ufw</kbd></p>
           <div class="banner">
-            <img src="files/1.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/1-2.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/2.png" width="256" height="192" alt=""/>
+            <img src="files/ufw/1.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Następnie system poprosi nas o potwierdzenie, wystarczy wtedy wpisać <kbd>T</kbd></p>
+          <p>Po instalacji jeszcze włączymy automatyczny start usługi wraz z systemem za pomocą polecenia <kbd>sudo nano /etc/ufw/ufw.conf</kbd>, należy tu zmienić <span class="border border-dark" style="padding-left:8px;padding-right:8px">ENABLED=no</span> na <span class="border border-dark" style="padding-left:8px;padding-right:8px">ENABLED=yes</span></p>
+          <div class="banner">
+            <img src="files/2-1.png" width="256" height="192" alt=""/>
+          </div>
           <div class="banner">
             <img src="files/2-2.png" width="256" height="192" alt=""/>
           </div>
+          <p>Można się jeszcze upewnić, czy mamy aktywną obsługę IPv6, dopisując <span class="border border-dark" style="padding-left:8px;padding-right:8px">IPV6=yes</span></p>
           <div class="banner">
             <img src="files/2-3.png" width="256" height="192" alt=""/>
-          </div>
-          <hr>
-          <p>Klient poczty powinien pojawić się w systemie, można wyszukać go po nazwie</p>
-          <div class="banner">
-            <img src="files/3.png" width="256" height="192" alt=""/>
-          </div>
-          <hr>
-          <p id="konfiguracja"></p>
-          <p>Po wejściu do klienta poczty, pierwsze dwa etapy można pominąć, klikając <strong>Dalej</strong></p>
-          <div class="banner">
-            <img src="files/4.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/5.png" width="256" height="192" alt=""/>
           </div>
           <hr>
           <p>Potem trzeba podać <strong>Imię i Nazwisko</strong> oraz <strong>Adres e-mail</strong> (dane nie muszą być prawdziwe)</p>
