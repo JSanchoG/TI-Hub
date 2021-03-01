@@ -121,7 +121,10 @@
         <div class="col-lg-8 col-md-10 mx-auto">
 
           <h2 class="section-heading" id="ufw" style="padding-top:70px;text-align:center">UFW</h2>
-          <blockquote>UFW - nieskomplikowana zapora, która jest „nakładką” na iptables. Jej głównym celem jest uproszczenie zarządzania zaporą i zapewnienie łatwego w użyciu interfejsu. Jest dobrze obsługiwana i popularna w społeczności Linuksa – a nawet domyślnie instalowana w wielu dystrybucjach Linuksa. W związku z tym jest to świetny sposób, aby zabezpieczyć swój serwer.</blockquote>
+          <blockquote style="margin-bottom:30px">UFW - nieskomplikowana zapora, która jest „nakładką” na iptables. Jej głównym celem jest uproszczenie zarządzania zaporą i zapewnienie łatwego w użyciu interfejsu. Jest dobrze obsługiwana i popularna w społeczności Linuksa – a nawet domyślnie instalowana w wielu dystrybucjach Linuksa. W związku z tym jest to świetny sposób, aby zabezpieczyć swój serwer.</blockquote>
+          <hr>
+          <h3 class="section-heading" id="ufw-instalacja" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Instalacja</h3>
+          <hr>
           <p>Aby zainstalować UFW, w konsoli należy wywołać polecenie <kbd>sudo apt-get install ufw</kbd></p>
           <div class="banner">
             <img src="files/ufw/1.png" width="256" height="192" alt=""/>
@@ -139,7 +142,7 @@
             <img src="files/ufw/2-3.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Stan UFW można sprawdzić poleceniem <kbd>sudo ufw status verbose</kbd>, na tym etapie UFW powinno być nieaktywne, lecz gdyby jakimś cudem byłby aktywny, należy tymczasowo wyłączyć UFW oraz zrestartować do wartości domyślnych poleceniami <kbd>sudo ufw disable</kbd> i <kbd>sudo ufw reset</kbd></p>
+          <p>Stan UFW można sprawdzić poleceniem <kbd>sudo ufw status verbose</kbd>, na tym etapie UFW powinno być nieaktywne, lecz gdyby jakimś cudem byłboy aktywne, należy tymczasowo wyłączyć UFW oraz zrestartować do wartości domyślnych poleceniami <kbd>sudo ufw disable</kbd> oraz <kbd>sudo ufw reset</kbd></p>
           <div class="banner">
             <img src="files/ufw/4-status.png" width="256" height="192" alt=""/>
           </div>
@@ -147,11 +150,11 @@
             <img src="files/ufw/9-1-disable.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <h3 class="section-heading" id="ufw" style="padding-top:40px;padding-bottom:40px;text-align:center">Konfiguracja</h3>
+          <h3 class="section-heading" id="ufw-konfiguracja" style="padding-top:40px;padding-bottom:40px;margin-top:8px;text-align:center">Konfiguracja</h3>
           <hr>
-          <p>Następnie należy wprowadzić informacje o serwerze IMAP oraz SMTP (w tym przypadku klient sam uzupełnił te dane)</p>
+          <p>Standardowo zaczynam konfigurację reguł UFW od 2 podstawowych reguł: incoming, odpowiadającej za pakiety przychodzące oraz outcoming, odpowiadającej za pakiety wysyłane. Pierwsza z nich blokuje cały ruch przychodzący, druga pozwala na ruch wychodzący, co jest bazą dla pozostałych reguł, w których będziemy zezwalać na połączenia przychodzące dla różnych portów/usług.</p>
           <div class="banner">
-            <img src="files/7.png" width="256" height="192" alt=""/>
+            <img src="files/ufw/5.png" width="256" height="192" alt=""/>
           </div>
           <hr>
           <p>Aby zakończyć instalację, należy nacisnąć <strong>Zastosuj</strong></p>
