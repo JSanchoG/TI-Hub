@@ -166,7 +166,7 @@
             <img src="files/ufw-2/1-2-deny-1024-1036.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Usunąć reguły można poleceniem <kbd>sudo ufw delete <b>[numer usługi]</b></kbd>, usunę więc reguły IPv6. Aby uzyskać numer usługi, należy najpierw włączyć UFW poleceniem <kbd>sudo ufw enable</kbd>, następnie wywołując polecenie <kbd>sudo ufw status numbered</kbd></p>
+          <p>Usunąć reguły można poleceniem <kbd>sudo ufw delete [numer usługi]</kbd>, usunę więc reguły IPv6. Aby uzyskać numer usługi, należy najpierw włączyć UFW poleceniem <kbd>sudo ufw enable</kbd>, następnie wywołując polecenie <kbd>sudo ufw status numbered</kbd></p>
           <div class="banner">
             <img src="files/ufw-2/2-delete.png" width="256" height="192" alt=""/>
           </div>
@@ -178,6 +178,54 @@
           <div class="banner">
             <img src="files/ufw-2/3-delete-allow-443.png" width="256" height="192" alt=""/>
           </div>
+
+          <h2 class="section-heading" id="gufw" style="padding-top:70px;text-align:center">GUFW</h2>
+          <blockquote style="margin-bottom:30px">GUFW - jest tym samym, co UFW, lecz posiada interfejs graficzny umożliwiający użytkownikowi łatwiejszą konfigurację zapory sieciowej.</blockquote>
+          <hr>
+          <h3 class="section-heading" id="gufw-instalacja" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Instalacja</h3>
+          <hr>
+          <p>Aby zainstalować GUFW, w konsoli należy wywołać polecenie <kbd>sudo apt-get install gufw</kbd></p>
+          <div class="banner">
+            <img src="files/gufw/1.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Aby włączyć GUFW wystarczy kliknąć w pasek stanu</p>
+          <div class="banner">
+            <img src="files/gufw/1.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/gufw-2/1.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Aby zresetować GUFW, należy kliknąć w <b>Edycja</b> na pasku nawigacji i wybrać z listy <b>Resetuj bieżący profil</b></p>
+          <div class="banner">
+            <img src="files/gufw-2/4-reset.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <h3 class="section-heading" id="gufw-konfiguracja" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Konfiguracja</h3>
+          <hr>
+          <p>Teraz, tak jak w poprzednim przypadku dodaję kilka reguł zapory sieciowej, lecz tym razer używając łatwego w użyciu interfejsu graficznego</p>
+          <div class="banner">
+            <img src="files/gufw-2/2-allow-http.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/gufw-2/2-allow-https.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/gufw-2/2-2-allow-10-90-90-90.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/gufw-2/2-3-allow-imap.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/gufw-2/2-4-reguly.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Tym samym sposobem zablokuję również ruch przychodzący z portów od 1024 do 1036</p>
+          <div class="banner">
+            <img src="files/gufw-2/3-deny-1024-1036.png" width="256" height="192" alt=""/>
+          </div>
+
+        </div>
       </div>
     </div>
   </article>
