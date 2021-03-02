@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Lekcja Online - 23.02.2021</title>
+
+    <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://2tihub.xyz/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <link href="https://2tihub.xyz/css/2tihub.min.css" rel="stylesheet">
+    <link href="https://2tihub.xyz/css/darkmode.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="https://2tihub.xyz/">2TI Hub</a>
+      </div>
+    </nav>
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <h2 class="section-heading" id="temat">Temat: Zapora sieciowa.</h2>
+            <p>Zapora sieciowa filtruje ruch w LAN przychodzący i wychodzący, przepuszczając tylko pakiety danych spełniające ustanowione reguły. Zapora sieciowa pracuje we wszystkich warstwach modelu OSI:</p>
+
+            <ul class="shadow list-group" style="margin-bottom:30px">
+              <li class="list-group-item">- fizycznej i łącza danych - filtruje po adresach MAC</li>
+              <li class="list-group-item">- sieciowej - filtruje po adresach IP</li>
+              <li class="list-group-item">- transportowej - filtruje po portach sesji, prezentacji i aplikacji - ochrona antywirusowa, serwer proxy</li>
+            </ul>
+
+            <p>Ze względu na sposób filtrowania danych przez zaporę sieciową rozróżniamy:</p>
+
+            <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">- filtrowanie ruchu sieciowego</li>
+            <li class="list-group-item">- filtrowanie przez sprawdzenie stanu komunikacji sieciowej</li>
+            <li class="list-group-item">- maskowanie adresów sieciowych w lokalnej sieci - usługa NAT</li>
+            <li class="list-group-item">- serwer pośredniczący</li>
+            </ul>
+
+            <p>Rodzaje zapór sieciowych:</p>
+            <p>1) metoda filtrowania pakietów danych:</p>
+
+            <ul class="shadow list-group" style="margin-bottom:30px">
+              <li class="list-group-item">- filtr pakietów - filtr statyczny dodany przez administratora sieci, może dotyczyć adresów, numerów portów, protokołów</li>
+              <li class="list-group-item">- filtr sprawdzający stan komunikacji sieciowej - analizuje nagłówki pakietów sprawdzając, czy pochodzą z zaufanych aplikacji lub adresów, wymaga częstej ingerencji administratora sieci, ma wyższy poziom bezpieczeństwa niż filtr pakietów</li>
+              <li class="list-group-item">- filtr proxy aplikacyjny - umożliwia szczegółową ..... analizę, zapewnia bardzo wysoki poziom bezpieczeństwa</li>
+              <li class="list-group-item">- filtr hybrydowy - zapewnia funkcjonalności poprzednich metod, zapewnia wysokie bezpieczeństwo i wydajność, lecz wiąże się to z wysokimi kosztami</li>
+            </ul>
+
+            <p>Ze względu na sposób budowy rozróżniamy:</p>
+
+            <ul class="shadow list-group" style="margin-bottom:30px">
+              <li class="list-group-item">- zapora sieciowa sprzętowa</li>
+              <li class="list-group-item">- zapora sieciowa programowa</li>
+              <li class="list-group-item"></li>
+              <li class="list-group-item"></li>
+              <li class="list-group-item"></li>
+            </ul>
+
+            <p></p>
+
+            <ul class="shadow list-group" style="margin-bottom:30px">
+              <li class="list-group-item"></li>
+              <li class="list-group-item"></li>
+              <li class="list-group-item"></li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
+    <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://2tihub.xyz/js/2tihub.min.js"></script>
+    <script src="https://2tihub.xyz/js/darkmode.js"></script>
+
+  </body>
+</html>
