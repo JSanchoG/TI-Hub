@@ -94,7 +94,7 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#ufw">UFW</a>
-      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#konfiguracja">Konfiguracja</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#gufw">GUFW</a>
     </div>
   </nav>
 
@@ -157,10 +157,30 @@
             <img src="files/ufw/5.png" width="256" height="192" alt=""/>
           </div>
           <hr>
+          <p>Teraz dodam kilka reguł zapory sieciowej, aby zezwolić na odbieranie pakietów przez usługi: HTTP [80], HTTPS [443], IMAP [143] oraz odbieranie pakietów z adresu 10.90.90.90</p>
+          <div class="banner">
+            <img src="files/ufw-2/1-allow-ports.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Zablokuję również ruch przychodzący z portów od 1024 do 1036</p>
+          <div class="banner">
+            <img src="files/ufw-2/1-2-deny-1024-1036.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Usunąć reguły można poleceniem <kbd>sudo ufw delete <b>[numer usługi]</b></kbd>, usunę więc reguły IPv6. Aby uzyskać numer usługi, należy najpierw włączyć UFW poleceniem <kbd>sudo ufw enable</kbd>, następnie wywołując polecenie <kbd>sudo ufw status numbered</kbd></p>
+          <div class="banner">
+            <img src="files/ufw-2/2-delete.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Zablokuję również ruch przychodzący z portów od 1024 do 1036</p>
+          <div class="banner">
+            <img src="files/ufw-2/2-2-delete.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Aby usunąć regułę, która jest odpowiedzialna za zezwolenie na połączenia przychodzące z usługi HTTPS na porcie 443, należy posłużyć się poleceniem <kbd>sudo ufw delete allow 443</kbd></p>
+          <div class="banner">
+            <img src="files/ufw-2/3-delete-allow-443.png" width="256" height="192" alt=""/>
+          </div>
       </div>
     </div>
   </article>
-
   <!-- Footer -->
 
   <!-- Bootstrap core JavaScript -->
