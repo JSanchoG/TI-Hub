@@ -180,31 +180,15 @@
           <hr>
           <h3 class="section-heading" id="sesja" style="padding-top:40px;padding-bottom:40px;margin-top:8px;text-align:center">Sesja</h3>
           <hr>
-          <p>Aby nawiązać zdalne połączenie telnet, na stacji roboczej należy wykonać polecenie <kbd>telnet</kbd></p>
+          <p>Aby nawiązać zdalne połączenie telnet, na stacji roboczej należy wykonać polecenie <kbd>telnet [adres serwera docelowego]</kbd>, podać nazwę i hasło użytkownika istniejącego na serwerze</p>
           <div class="banner">
-            <img src="files/ufw/5.png" width="256" height="192" alt=""/>
+            <img src="files/ubuntu1stacja-klient/4-telnet-connect.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Teraz dodam kilka reguł zapory sieciowej, aby zezwolić na odbieranie pakietów przez usługi: HTTP [80], HTTPS [443], IMAP [143] oraz odbieranie pakietów z adresu 10.90.90.90</p>
+          <p>Teraz możemy wydawać serwerowi polecenia z pozycji klienta, a co za tym idzie zarządzać plikami, zmieniać ustawienia lub zarządzać użytkownikami</p>
+          <p>Aby zdalnie utworzyć użytkownika na serwerze wystarczy zrobić to poleceniem <kbd>sudo adduser [nazwa użytkownika]</kbd><br>Dodanie utworzonego właśnie użytkownika do grupy sudo można zainicjować poleceniem <kbd>sudo usermod -a -G sudo [nazwa użytkownika]</kbd><br>Upewnić się, że użytkownik został dodany do danej grupy można za pomocą polecenie <kbd>groups [nazwa użytkownika]</kbd></p>
           <div class="banner">
-            <img src="files/ufw-2/1-allow-ports.png" width="256" height="192" alt=""/>
-          </div>
-          <p>Zablokuję również ruch przychodzący z portów od 1024 do 1036</p>
-          <div class="banner">
-            <img src="files/ufw-2/1-2-deny-1024-1036.png" width="256" height="192" alt=""/>
-          </div>
-          <hr>
-          <p>Usunąć reguły można poleceniem <kbd>sudo ufw delete [numer usługi]</kbd>, usunę więc reguły IPv6. Aby uzyskać numer usługi, należy najpierw włączyć UFW poleceniem <kbd>sudo ufw enable</kbd>, następnie wywołując polecenie <kbd>sudo ufw status numbered</kbd></p>
-          <div class="banner">
-            <img src="files/ufw-2/2-delete.png" width="256" height="192" alt=""/>
-          </div>
-          <p>Zablokuję również ruch przychodzący z portów od 1024 do 1036</p>
-          <div class="banner">
-            <img src="files/ufw-2/2-2-delete.png" width="256" height="192" alt=""/>
-          </div>
-          <p>Aby usunąć regułę, która jest odpowiedzialna za zezwolenie na połączenia przychodzące z usługi HTTPS na porcie 443, należy posłużyć się poleceniem <kbd>sudo ufw delete allow 443</kbd></p>
-          <div class="banner">
-            <img src="files/ufw-2/3-delete-allow-443.png" width="256" height="192" alt=""/>
+            <img src="files/ubuntu1stacja-klient/5-telnet-adduser.png" width="256" height="192" alt=""/>
           </div>
 
         </div>
