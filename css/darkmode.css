@@ -4,27 +4,28 @@
     --font-color: #2F3136;
     --bg-color: #fff;
     --heading-color: #292922;
+    --cloud: #f5f4f5;
 }
 
 [data-theme="dark"] {
     --primary-color: #9A97F3;
     --secondary-color: #818cab;
     --font-color: #f5f4f5;
-    --bg-color: #2F3136;
+    --bg-color: #0D1117;
     --heading-color: #818cab;
+    --cloud: #f5f4f5;
 }
 
 body {
   background-color: var(--bg-color);
-  color: var(--font-color);
 }
 
 h2 {
-    color: var(--font-color);
+    color: var(--cloud);
 }
 
 h3 {
-    color: var(--font-color);
+    color: var(--cloud);
 }
 
 a {
