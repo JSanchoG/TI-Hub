@@ -1,35 +1,75 @@
- /* :root {
+:root {
     --primary-color: #302AE6;
     --secondary-color: #536390;
     --font-color: #2F3136;
-    --bg-color: #fff;
+    --bg-color: #ffffff;
     --heading-color: #292922;
     --cloud: #f5f4f5;
+    --h1: #ffffff;
+    --h2: #212529;
+    --h3: #212529;
+    --span: #ffffff;
+    --p: #869cc2;
+    --nav: #ffffff;
+    --paypalbgc: #21262d;
+    --paypalbgb: #ffffff;
 }
 
 [data-theme="dark"] {
-    --primary-color: #9A97F3;
-    --secondary-color: #818cab;
-    --font-color: #f5f4f5;
-    --bg-color: #0D1117;
-    --heading-color: #818cab;
+    --primary-color: #;
+    --secondary-color: #;
+    --font-color: #;
+    --bg-color: #06090f;
+    --heading-color: #;
     --cloud: #f5f4f5;
+    --h1: #ffffff;
+    --h2: #ffffff;
+    --h3: #ffffff;
+    --span: #ffffff;
+    --p: #c9d1d9;
+    --nav: #161b22;
+    --paypalbgc: #ffffff;
+    --paypalbgb: #21262d;
 }
 
 body {
   background-color: var(--bg-color);
 }
 
+h1 {
+    color: var(--h1)
+}
 h2 {
-    color: var(--cloud);
+    color: var(--h2);
 }
 
 h3 {
-    color: var(--cloud);
+    color: var(--h3);
 }
 
 a {
-  color: var(--font-color);
+  color: var(--a);
+}
+
+p {
+    color: var(--p);
+}
+
+span {
+    color: var(--span);
+}
+
+#mainNav {
+    background-color: var(--nav);
+}
+
+element.style {
+    background-color: var(--paypalbg);
+}
+
+#paypalbg {
+    color: var(--paypalbgc);
+    background-color: var(--paypalbgb);
 }
 
 .theme-switch-wrapper {
@@ -89,5 +129,3 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
-*/
