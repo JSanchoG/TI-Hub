@@ -83,7 +83,6 @@ element.style {
 }
 .theme-switch {
   display: inline-block;
-  height: 34px;
   position: relative;
   width: 60px;
 }
