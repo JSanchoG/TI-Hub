@@ -6,7 +6,7 @@
     --h3: #212529;
     --span: #ffffff;
     --p: #869cc2;
-    --paypalbgc: #f4f4f2;
+    --paypalbgc: #ffffff00;
     --a: #f4f4f2;
 }
 
@@ -18,7 +18,7 @@
     --h3: #ffffff;
     --span: #ffffff;
     --p: #c9d1d9;
-    --paypalbgc: #f4f4f2;
+    --paypalbgc: #ffffff00;
     --a: #f4f4f2;
 }
 
@@ -47,10 +47,6 @@ p {
 
 span {
     color: var(--span);
-}
-
-element.style {
-    background-color: var(--paypalbg);
 }
 
 #paypalbg {
