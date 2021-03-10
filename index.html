@@ -73,6 +73,15 @@
   <!-- Main Content -->
 <div class="container">
 
+<button>Show Alert</button>
+  <div class="alert hide">
+    <span class="fas fa-exclamation-circle"></span>
+    <span class="msg">Warning: This is a warning alert!</span>
+    <div class="close-btn">
+      <span class="fas fa-times"></span>
+    </div>
+</div>
+
 <div class="row">
   <div class="col-lg-8 col-md-10 mx-auto">
     <div class="post-preview">
@@ -453,6 +462,21 @@
 
 <hr>
 
+  <script>
+      $('button').click(function(){
+        $('.alert').addClass("show");
+        $('.alert').removeClass("hide");
+        $('.alert').addClass("showAlert");
+        setTimeout(function(){
+          $('.alert').removeClass("show");
+          $('.alert').addClass("hide");
+        },5000);
+      });
+      $('.close-btn').click(function(){
+        $('.alert').removeClass("show");
+        $('.alert').addClass("hide");
+      });
+    </script>
   <!-- Bootstrap core JavaScript -->
   <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
   <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
