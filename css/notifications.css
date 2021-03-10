@@ -1,34 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
-button{
-  padding: 8px 16px;
-  font-size: 25px;
-  font-weight: 500;
-  border-radius: 4px;
-  border: none;
-  outline: none;
-  background: #e69100;
-  color: white;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-.alert{
-  background: #ffdb9b;
-  padding: 20px 40px;
-  min-width: 420px;
-  position: absolute;
-  right: 0;
-  top: 10px;
-  border-radius: 4px;
-  border-left: 8px solid #ffa502;
-  overflow: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-.alert.showAlert{
-  opacity: 1;
-  pointer-events: auto;
-}
 .alert.show{
   animation: show_slide 1s ease forwards;
 }
