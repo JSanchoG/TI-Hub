@@ -44,10 +44,20 @@
             <a class="nav-link">
               <nav>
                 <div class="theme-switch-wrapper">
-                  <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox">
-                    <div class="slider round"></div>
-                  </label>
+                  <button>
+                    <div class="alert hide">
+                      <span class="fas fa-exclamation-circle"></span>
+                      <span class="msg">Ciemny Tryb wciąż jest w fazie testów</span>
+                      <div class="close-btn">
+                        <span class="fas fa-times"></span>
+                      </div>
+                    </div>
+
+                    <label class="theme-switch" for="checkbox">
+                      <input type="checkbox" id="checkbox">
+                      <div class="slider round"></div>
+                    </label>
+                  </button>
                 </div>
               </nav>
             </a>
@@ -473,7 +483,7 @@
         setTimeout(function(){
           $('.alert').removeClass("show");
           $('.alert').addClass("hide");
-        },5000);
+        },3500);
       });
       $('.close-btn').click(function(){
         $('.alert').removeClass("show");
