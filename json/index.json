@@ -23,7 +23,7 @@
       {"subject": "ELSK", "date": "17 Listopad, 2020", "referral": "lekcje-online/elsk-lsk/6-17.11.2020.html", "icon": "far fa-sticky-note fa-xs", "description": "Notatki z Lekcji Online"},
       {"subject": "LSK", "date": "10 Listopad, 2020", "referral": "lekcje-online/elsk-lsk/5-10.11.2020.html", "icon": "far fa-sticky-note fa-xs", "description": "Notatki z Lekcji Online"},
       {"subject": "LSK", "date": "27/29 Październik, 2020", "referral": "lekcje-online/elsk-lsk/3,5-27-29.10.2020.html", "icon": "far fa-sticky-note fa-xs", "description": "Notatki z Lekcji Online"},
-      {"subject": "ELSK", "date": "28 Październik, 2020", "referral": "lekcje-online/elsk-lsk/4-28.10.2020.html", "icon": "far fa-sticky-note fa-xs", "description": "Notatki z Lekcji Online"},
+      {"subject": "ELSK", "date": "28 Październik, 2020", "referral": "lekcje-online/elsk-lsk/4-28.10.2020.html", "icon": "far fa-sticky-note fa-xs", "description": "Notatki z Lekcji Online"}
     ],
     "linux": [
       {"subject": "Linux", "date": "2 Marzec, 2021", "referral": "linux/ufw-gufw/", "icon": "fab fa-ubuntu fa-xs", "description": "Konfiguracja UFW i GUFW"},
