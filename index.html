@@ -439,6 +439,22 @@
 <hr>
 
   <script>
+    let url = 'https://2tihub.xyz/json/index.json';
+
+    fetch(url)
+    // Send an HTTP request to the API using fetch.
+    .then(res => res.json())
+    // Parse the data as JSON.
+    .then((out) => {
+    //  document.getElementById("tematy").innerHTML = (out.menu.elements.notes.length);
+      console.log("Łącznie tematów:" + out.menu.elements.notes.length);
+      // Retrieve the member count.
+      // Use this data and output it somewhere in your HTML... (Perhaps using HTML DOM?)
+    })
+    .catch(err => { throw err });
+    // For debugging/ error-handling purposes.
+  </script>
+  <script>
       $('button').click(function(){
         $('.alert').addClass("show");
         $('.alert').removeClass("hide");
