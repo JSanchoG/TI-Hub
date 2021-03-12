@@ -150,10 +150,6 @@
 					"referral": "lekcje-online/elsk-lsk/4-28.10.2020.html",
 					"icon": "far fa-sticky-note fa-xs",
 					"description": "Notatki z Lekcji Online"
-				},
-				{
-					"value": "Close",
-					"onclick": "CloseDoc()"
 				}
 			],
 			"linux": [
