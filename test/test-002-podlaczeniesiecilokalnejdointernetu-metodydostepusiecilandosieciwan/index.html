@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="utf-8">
+  <meta rel="shortcut icon" href="https://2tihub.xyz/poradnik-WS2016/WS-logo.png" sizes="144x144" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Telnet</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://2tihub.xyz/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="https://2tihub.xyz/css/2tihub.min.css" rel="stylesheet">
+  <link href="https://2tihub.xyz/css/darkmode.css" rel="stylesheet">
+
+  <link href="https://2tihub.xyz/poradnik-WS2016/files/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <style>
+	html {
+		scroll-behavior: smooth;
+	}
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+	.desc {
+		padding: 15px;
+		text-align: center;
+	}
+	.zdjecie {
+		display: inline-block;
+		margin: 0 0.5rem;
+		/*  animation: backInLeft; */
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+	}
+	.animacja {
+		display: inline-block;
+		margin: 0 0.5rem;
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+		--animate-delay: 2s;
+	}
+	.banner {
+		height: 192px;
+		width: 256px;
+		text-align: center;
+	}
+	.banner img {
+		text-align: center;
+		height: 192px;
+		width: 256px;
+		-webkit-transition: .30s;
+		   -moz-transition: .30s;
+		    -ms-transition: .30s;
+		     -o-transition: .30s;
+		        transition: .30s;
+	}
+	.banner:hover {
+		height: 768px;
+	}
+	.banner:hover img {
+		height: 192px;
+		width: 256px;
+	}
+	.banner img:hover {
+		height: 768px;
+		width: 1024px;
+	}
+</style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#instalacja">Instalacja</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#sesja">Sesja</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead animate__animated animate__fadeIn" style="background-image: url('https://2tihub.xyz/linux/ufw-gufw/linux.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1 class="animacja animate__animated animate__zoomIn" style="margin-bottom:25px">Wykonanie połączenia zdalnego Telnet</h1>
+
+            <span class="meta animacja animate__animated animate__fadeInUpBig">Jakub Gożuk - 8 Marzec, 2021</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container animate__animated animate__bounceInLeft">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <h2 class="section-heading" id="telnet" style="padding-top:70px;text-align:center">Telnet</h2>
+          <blockquote style="margin-bottom:30px">Telnet – standard protokołu komunikacyjnego używanego w sieciach komputerowych do obsługi odległego terminala w architekturze klient-serwer.<br><br>Protokół obsługuje tylko terminale alfanumeryczne, co oznacza, że nie obsługuje myszy ani innych urządzeń wskazujących. Nie obsługuje także graficznych interfejsów użytkownika. Wszystkie polecenia muszą być wprowadzane w trybie znakowym w wierszu poleceń. Polecenia wydawane za pomocą komputera-klienta przysłane są poprzez sieć do serwera, na którym zainstalowane jest oprogramowanie serwera telnetu. W odpowiedzi serwer odsyła komunikaty, które następnie wyświetlane są na ekranie komputera-klienta.</blockquote>
+          <hr>
+          <h3 class="section-heading" id="instalacja" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Instalacja</h3>
+          <hr>
+          <p>Na początek na stacji roboczej i na serwerze zainstaluje UFW, aby odblokować usługę Telnet na porcie 23</p>
+          <div class="banner">
+            <img src="files/ubuntu1stacja-klient/1-ufw-install.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/ubuntu2stacja-serwer/1-ufw-install.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Następnie na obu stacjach instaluję Telnet poleceniem <kbd>sudo apt-get install telnetd -y</kbd></p>
+          <div class="banner">
+            <img src="files/ubuntu1stacja-klient/2-telnet-install.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/ubuntu2stacja-serwer/2-telnet-install.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <blockquote>Aby to zadziałało, w programie VirtualBox trzeba w obu systemach ustawić pierwszą kartę sieciową na NAT, a drugą na Sieć wewnętrzną</blockquote>
+          <div class="banner">
+            <img src="files/vb-karta-1.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/vb-karta-2.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Teraz, aby wykonać połączenie między dwoma stacjami należy zmienić ich adres IP, na stacji roboczej adresem tym będzie <kbd>192.168.69.10</kbd> na karcie enp0s8</p>
+          <div class="banner">
+            <img src="files/ubuntu1stacja-klient/3-ustawienia-lista.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/ubuntu1stacja-klient/3-1-ustawienia.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/ubuntu1stacja-klient/3-2-ustawienia-ip.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Na stacji pełniącej role serwera Telnet adresem będzie <kbd>192.168.69.11</kbd> na karcie enp0s8</p>
+          <div class="banner">
+            <img src="files/ubuntu2stacja-serwer/3-ustawienia.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/ubuntu2stacja-serwer/3-1-ustawienia-ip.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/ubuntu2stacja-serwer/3-2-ifconfig.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Aby zezwolić na odbieranie pakietów przez usługę Telnet na porcie 23, wywołam polecenie <kbd>sudo ufw allow telnet</kbd> na obu stacjach (konieczne do działania usługi)<p>
+          <div class="banner">
+            <img src="files/ubuntu2stacja-serwer/4-ufw-allow.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Aby zabronić odbierania pakietów przez usługę Telnet na porcie 23, trzeba wywołać polecenie <kbd>sudo ufw deny telnet</kbd></p>
+          <div class="banner">
+            <img src="files/ubuntu2stacja-serwer/4-ufw-allow.png" width="256" height="192" alt=""/>
+          </div> 
+          <hr>
+          <h3 class="section-heading" id="sesja" style="padding-top:40px;padding-bottom:40px;margin-top:8px;text-align:center">Sesja</h3>
+          <hr>
+          <p>Aby nawiązać zdalne połączenie telnet, na stacji roboczej należy wykonać polecenie <kbd>telnet [adres serwera docelowego]</kbd>, podać nazwę i hasło użytkownika istniejącego na serwerze</p>
+          <div class="banner">
+            <img src="files/ubuntu1stacja-klient/4-telnet-connect.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Teraz możemy wydawać serwerowi polecenia z pozycji klienta, a co za tym idzie zarządzać plikami, zmieniać ustawienia lub zarządzać użytkownikami</p>
+          <p>Aby zdalnie utworzyć użytkownika na serwerze wystarczy zrobić to poleceniem <kbd>sudo adduser [nazwa użytkownika]</kbd><br>Dodanie utworzonego właśnie użytkownika do grupy sudo można zainicjować poleceniem <kbd>sudo usermod -a -G sudo [nazwa użytkownika]</kbd><br>Upewnić się, że użytkownik został dodany do danej grupy można za pomocą polecenie <kbd>groups [nazwa użytkownika]</kbd></p>
+          <div class="banner">
+            <img src="files/ubuntu1stacja-klient/5-telnet-adduser.png" width="256" height="192" alt=""/>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </article>
+  <!-- Footer -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
+  <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="https://2tihub.xyz/js/2tihub.min.js"></script>
+  <script src="https://2tihub.xyz/js/darkmode.js"></script>
+
+</body></html>
