@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Jakub Gożuk">
+  <meta name="keywords" content="Jakub Gożuk, 2TI">
+
+  <title>Jakub Gożuk - 2TI Hub</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://2tihub.xyz/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="https://2tihub.xyz/css/2tihub.min.css" rel="stylesheet">
+  <link href="https://2tihub.xyz/css/darkmode.css" rel="stylesheet">
+  <link href="https://2tihub.xyz/css/notifications.css" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <!-- Google AdSense -->
+  <script data-ad-client="ca-pub-8415349582262966" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+
+<ul class="navbar-nav ml-auto">
+  <li class="nav-item">
+    <a class="nav-link">
+      <nav>
+        <div class="theme-switch-wrapper">
+          <button>
+            <div class="alert hide">
+              <span class="fas fa-exclamation-circle"></span>
+              <span class="msg">Ciemny Tryb wciąż jest w fazie testów</span>
+              <div class="close-btn">
+                <span class="fas fa-times"></span>
+              </div>
+            </div>
+
+            <label class="theme-switch" for="checkbox">
+              <input type="checkbox" id="checkbox">
+              <div class="slider round"></div>
+            </label>
+          </button>
+        </div>
+      </nav>
+    </a>
+  </li>
+</ul>
+
+</div>
+
+<hr>
+
+  <script>
+      $('button').click(function(){
+        $('.alert').addClass("show");
+        $('.alert').removeClass("hide");
+        $('.alert').addClass("showAlert");
+        setTimeout(function(){
+          $('.alert').removeClass("show");
+          $('.alert').addClass("hide");
+        },3500);
+      });
+      $('.close-btn').click(function(){
+        $('.alert').removeClass("show");
+        $('.alert').addClass("hide");
+      });
+    </script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
+  <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="https://2tihub.xyz/js/2tihub.min.js"></script>
+  <script src="https://2tihub.xyz/js/darkmode.js"></script>
+
+</body></html>
