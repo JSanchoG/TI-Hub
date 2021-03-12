@@ -8,7 +8,6 @@
     --p: #212529;
     --paypalbgc: #ffffff00;
     --a: #f4f4f2;
-    --post-meta: #869cc2;
     --lgabg: #ffffff;
     --lga: #212529;
 }
@@ -23,7 +22,6 @@
     --p: #c9d1d9;
     --paypalbgc: #ffffff00;
     --a: #f4f4f2;
-    --post-meta: #212529;
     --lgabg: #202020;
     --lga: #ffffff;
 }
@@ -58,10 +56,6 @@ span {
 #paypalbg {
     color: var(--paypalbgc);
     background-color: var(--paypalbgb);
-}
-
-.post-meta {
-    color: var(--post-meta);
 }
 
 .list-group-item {
