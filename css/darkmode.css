@@ -5,9 +5,10 @@
     --h2: #212529;
     --h3: #212529;
     --span: #ffffff;
-    --p: #869cc2;
+    --p: #212529;
     --paypalbgc: #ffffff00;
     --a: #f4f4f2;
+    --post-meta: #869cc2;
 }
 
 [data-theme="dark"] {
@@ -20,6 +21,7 @@
     --p: #c9d1d9;
     --paypalbgc: #ffffff00;
     --a: #f4f4f2;
+    --post-meta: #212529;
 }
 
 body {
@@ -52,6 +54,10 @@ span {
 #paypalbg {
     color: var(--paypalbgc);
     background-color: var(--paypalbgb);
+}
+
+.post-meta {
+    color: var(--post-meta);
 }
 
 .theme-switch-wrapper {
