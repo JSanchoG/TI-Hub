@@ -194,6 +194,7 @@
 					"subject": "Windows Server 2016",
 					"date": "24/25 Listopad, 2020",
 					"referral": "poradnik-WS2016/",
+					"icon": "fab fa-windows fa-xs",
 					"description": "Poradnik - Usługi Windows Server 2016"
 				}
 			]
