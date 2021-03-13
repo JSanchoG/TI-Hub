@@ -124,7 +124,7 @@
 
           <p>Istnieje wiele sposobów na połączenie komputera z internetem. Różnią się one rozwiązaniem technicznym, prędkością transferu oraz jego kosztem. W każdym przypadku jednak, aby uzyskać dostęp do sieci globalnej, należy zwrócić się do dostawcy usług internetowych. Jest nim instytucja lub firma pojadająca serwer internetowy zwany inaczej serwerem dostępowym, połączony jest on z internetem za pomocą szybkiego łącza takiego jak światłowód. Oferuje ona klientom, za odpowiednią opłatą podłączenie do swojego serwera i tym samym zapewnia im dostęp do Internetu. Dostawca dysponuje także pulą internetowych adresów IP, które można przydzielać użytkownikom swojej sieci czy łącza.</p>
           <p>Metody dostępu do Internetu można podzielić ze względu na wykorzystywane medium transmisyjne na następujące grupy:</p>
-          <ul class="shadow list-group" style="margin-bottom:30px">
+          <ul class="shadow list-group">
             <li class="list-group-item">- techniki oparte na kablach miedzianych: xdsl, PLC, HFC i Ethernet</li>
             <li class="list-group-item">- techniki oparte na kablach światłowodowych: FITL</li>
             <li class="list-group-item">- techniki bezprzewodowe: WLAN, transmisja optyczna, LMDS I MMDS</li>
@@ -144,9 +144,33 @@
 
           <p>Zalety i wady technik DSL:</p>
           <ul class="shadow list-group" style="margin-bottom:30px">
-            <li class="list-group-item" style="background-color:green">- wykorzystują istniejącą infrastrukturę miedzianą</li>
+            <li class="list-group-item" style="background-color:green">- wykorzystanie istniejącej infrastruktury miedzianej</li>
             <li class="list-group-item" style="background-color:green">- łatwość z dostosowaniem się do wymagań użytkownika ze względu na wiele odmian DSL</li>
             <li class="list-group-item" style="background-color:darkred">- podatność na szumy, interferencje elektromagnetyczne, przesłuchy</li>
+          </ul>
+
+          <hr>
+          <h3 class="section-heading" id="instalacja" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Techniki oparte na kablach miedzianych PLC</h3>
+          <blockquote>PLC - Power line communication (Komunikacja elektroenergetyczną siecią rozdzielczą) – zbiór technologii umożliwiających transmisję danych przez sieć elektroenergetyczną</blockquote>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">- Jedną z koncepcji sieci dostępowych są sieci wykorzystujące technikę DPL/PLC (Digital Power Line/Power Line Communication). PLC oznacza przesył danych sygnałem wysokiej częstotliwości z wykorzystaniem ostatniej mili sieci energetycznych. Przyjmuje się, że system PLC jest szerokopasmowy, a DPL wąskopasmowy. Medium to umożliwia przesyłanie danych z prędkością do 24 Mb/s na odległość 250 m.</li>
+            <li class="list-group-item" style="background-color:green">- Rozwiązanie wymaga separacji sygnałów transmisji danych od sygnałów elektroenergetycznych. Po odseparowaniu sygnałów przekształcona w ten sposób sieć rozdzielcza nosi w skrócie nazwę "HFCPN" (High Frequency Conditioned Power Network).</li>
+            <li class="list-group-item" style="background-color:green">- Sieć taka charakteryzuje się: małymi zakłóceniami pochodzącymi od domowych odbiorników elektrycznych, małym współczynnikiem odbicia sygnałów wysokiej częstotliwości od końców toru transmisyjnego oraz stałą przepustowością niezależną od poboru mocy przyłączonych do niej odbiorników elektroenergetycznych.</li>
+          </ul>
+
+          <p>Elementy składowe PLC:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">1. Stacja bazowa - jest najważniejszym elementem systemu dostępowego PLC instalowanym w pobliżu transformatora rozdzielczego 15/0,4 kv. W strukturze funkcjonalnej systemu wykonuje funkcję węzła obsługującego ruch informatyczny lub telefoniczny abonentów bezpośrednio do niej przyłączonych.</li>
+            <li class="list-group-item" style="background-color:green">2. Moduł komunikacyjny - instalowany u odbiorcy energii elektrycznej i usług teleinformatycznych. Moduł ten jest montowany przy liczniku energii elektrycznej. Od strony abonenckiej moduł ten na ogół posiada złącze interfejsu: analogowego, telefonicznego, transmisji danych (USB, 10BaseT, RS232) oraz aplikacyjnego do podłączenia urządzeń inteligentnego domu.</li>
+            <li class="list-group-item" style="background-color:green">3. Sprzęgacze - instaluje się w celu wydzielenia sygnałów DPL/PLC od sygnałów energii elektrycznej. Sprzęgacz jest układem złożonym z dwóch filtrów biernych instalowanym zarówno w podstacji transformatorowej, jak i u wszystkich odbiorców energii elektrycznej dołączonych do wykorzystywanych obwodów fazowych sieci energetycznej.</li>
+            <li class="list-group-item" style="background-color:green">4. Filtry - są instalowane w różnych elementach sieci elektroenergetycznej w zależności od występujących zakłóceń. Głównym zadaniem filtrów jest eliminacja niekorzystnych zjawisk, które mogą mieć wpływ na transmisję danych.</li>
+          </ul>
+
+          <p>Zalety i wady technik PLC:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">- wykorzystanie istniejącej infrastruktury energetycznej</li>
+            <li class="list-group-item" style="background-color:darkred">- konieczność zapewnienia kompatybilności elektromagnetycznej pomiędzy urządzeniami PLC, a urządzeniami służb radiowych</li>
+            <li class="list-group-item" style="background-color:darkred">- ograniczony zasięg</li>
           </ul>
 
         </div>
