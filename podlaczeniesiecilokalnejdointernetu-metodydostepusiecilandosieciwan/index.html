@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="utf-8">
+  <meta rel="shortcut icon" href="https://2tihub.xyz/poradnik-WS2016/WS-logo.png" sizes="144x144" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Podłączenie sieci lokalnej do internetu / Metody dostępu sieci LAN do sieci WAN</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://2tihub.xyz/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="https://2tihub.xyz/css/2tihub.min.css" rel="stylesheet">
+  <link href="https://2tihub.xyz/css/darkmode.css" rel="stylesheet">
+
+  <link href="https://2tihub.xyz/poradnik-WS2016/files/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <style>
+	html {
+		scroll-behavior: smooth;
+	}
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+	.desc {
+		padding: 15px;
+		text-align: center;
+	}
+	.zdjecie {
+		display: inline-block;
+		margin: 0 0.5rem;
+		/*  animation: backInLeft; */
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+	}
+	.animacja {
+		display: inline-block;
+		margin: 0 0.5rem;
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+		--animate-delay: 2s;
+	}
+	.banner {
+		height: 192px;
+		width: 256px;
+		text-align: center;
+	}
+	.banner img {
+		text-align: center;
+		height: 192px;
+		width: 256px;
+		-webkit-transition: .30s;
+		   -moz-transition: .30s;
+		    -ms-transition: .30s;
+		     -o-transition: .30s;
+		        transition: .30s;
+	}
+	.banner:hover {
+		height: 768px;
+	}
+	.banner:hover img {
+		height: 192px;
+		width: 256px;
+	}
+	.banner img:hover {
+		height: 768px;
+		width: 1024px;
+	}
+</style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#xdsl">xDSL</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#plc">PLC</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#hfc">HFC</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#ethernet">Ethernet</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#fitl">FITL</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#wlan">WLAN</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#transmisjaoptyczna">Transmisja optyczna</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#lmds">LMDS</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#mmds">MMDS</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead animate__animated animate__fadeIn" style="background-image: url('https://2tihub.xyz/podlaczeniesiecilokalnejdointernetu-metodydostepusiecilandosieciwan/serwerownia.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1 class="animacja animate__animated animate__zoomIn" style="margin-bottom:25px">Podłączenie sieci lokalnej do internetu / Metody dostępu sieci LAN do sieci WAN</h1>
+
+            <span class="meta animacja animate__animated animate__fadeInUpBig">Jakub Gożuk - 13 Marzec, 2021</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container animate__animated animate__bounceInLeft">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+        <p>Rodzaje dostępu do internetu:</p>
+        <ul class="shadow list-group" style="margin-bottom:30px">
+          <li class="list-group-item"><b>1. Połączenia za pomocą sieci telefonicznej</b> - Połączenie tego typu pomimo małej prędkości transmisji danych nieprzekraczającej 56,6 Kb/s wciąż jest najczęstszym sposobem uzyskiwania dostępu do sieci przez użytkownika.</li>
+          <li class="list-group-item"><b>2. Połączenie za pomocą sieci ISDN</b> - Dostęp do internetu jest możliwy również poprzez telefoniczną sieć cyfrową ISDL (Integrated Services Digital Network). W tym celu odcinek tradycyjnej sieci pomiędzy gniazdkiem a cyfrową centralą telefoniczną zostaje przystosowany do przekazu cyfrowego za pomocą specjalnych urządzeń zwanych modemami cyfrowymi. Jakość transmisji w tym przypadku jest znacznie lepsza niż w przypadku zwykłych linii telefonicznych i może osiągnąć prędkość nawet 128 Kb/s.</li>
+          <li class="list-group-item"><b>3. Połączenie za pomocą łączy stałych</b> - Połączenie za pomocą łączy stałych polega na tym, że indywidualny użytkownik lub cała sieć lokalna są połączone "na stałe" kablem sieciowym z serwerem internetowym i tym samym mają ciągły dostęp do Internetu. Techniczne sposoby połączenia stałego mogą być następujące:<br><br>a) Sieć lokalna - dostęp do internetu w tym przypadku polega na tworzeniu sieci lokalnej skupiającej komputery na danym obszarze, a następnie podłączeniu całej sieci do serwera dostępowego. Prędkość transmisji zależy w tym przypadku od przepustowości łącza, jakim dysponuje usługodawca internetowy dla danej sieci oraz liczby jej użytkowników.<br><br>b) SDI - usługa oferowana w Polsce przez Orange Polska. Została ona oparta na technologii HIS firmy Ericsson, w ramach której użytkownik za pośrednictwem zwykłego łącza telefonicznego otrzymuje stały dostęp do internetu z możliwością równoczesnego prowadzenie rozmów telefonicznych. Maksymalna prędkość transmisji danych sięga 115,2 Kb/s.<br><br>c) Neostrada - alternatywna dla SDI usługa stałego dostępu do internetu oferowana przez Orange. Neostrada umożliwia dostęp do internetu za pośrednictwem zwykłej linii telefonicznej, jednak w tym przypadku technologia przesyłania sygnału jest inna niż przy tradycyjnym połączeniu modemowym. Maksymalna prędkość transmisji sięga 512 Kb/s w kierunku abonenta i 128 Kb/s w kierunku przeciwnym.</li>
+          <li class="list-group-item"><b>4. Inne sposoby dostępu do Internetu</b> - Oprócz przedstawionych sposobów uzyskania dostępu do Internetu, połączenie z tą siecią jest możliwe także poprzez:<br><br>a) Sieć telewizji kablowej – w komputerze abonenta jest instalowany specjalny modem kablowy, którego zadaniem jest wyselekcjonowanie z dostarczanego sygnału danych dla komputera. Z kolei z drugiej strony kabla, czyli u operatora sieci telewizji kablowej, montowane jest urządzenie umożliwiające transmisje danych przez sieć telewizji kablowej oraz przyjmowanie danych wysyłanych przez abonentów.<br><br>b) Satelitę – obecnie istnieje kilka rozwiązań tego typu. Najprostszym jest wyposażenie komputera w odpowiedni modem i antenę do odbioru sygnałów z satelity. W ten sposób odbierane są informacje z sieci Internet. Różne mogą być także sposoby połączenia zwrotnego – wysyłania informacji od użytkownika do sieci. Ze względu na wysoki koszt anten nadawczych stosowane są połączenia za pomocą modemu i łączy telefonicznych. W praktyce wygląda to tak, że użytkownik wysyła dane i zapytania do sieci poprzez modem, a informacje zwrotne otrzymuje z satelity. Możliwe są oczywiście połączenia za pomocą satelity w obie strony.<br><br>c) Telefon komórkowy – ten sposób połączenia jest praktykowany w miejscach, gdzie nie ma linii telefonicznych ani innego połączenia (np. w górach). Dostęp komputera do Internetu jest możliwy dzięki zainstalowaniu w nim karty modemowej połączonej łączem kablowym (lub na podczerwień) z telefonem komórkowym (karta i aparat muszą udostępniać taką opcję) bądź poprzez kartę modemową instalowaną bezpośrednio w aparacie telefonicznym. W podobny sposób można się połączyć z Internetem przy użyciu kieszonkowego komputera zwanego palmtopem.<br><br>d) Sieć energetyczna – okazuje się, że przy zastosowaniu odpowiednich technologii istnieje możliwość wykorzystania sieci elektroenergetycznych do cyfrowej transmisji danych. Pozwala to na połączenie komputera z Internetem poprzez zwykłe gniazdo sieciowe, jakie mamy w domu. Użytkownik otrzymuje specjalny modem, który z jednej strony wpina do dowolnego gniazdka w mieszkaniu, a z drugiej do komputera za pomocą kabla USB lub karty sieciowej. Maksymalna odległość użytkownika od serwera zlokalizowanego w stacji transformatorowej nie może przekraczać 300 metrów. Rozwiązanie to pozwala także na podpięcie aparatów telefonicznych.</li>
+        </ul>
+
+          <p>Istnieje wiele sposobów na połączenie komputera z internetem. Różnią się one rozwiązaniem technicznym, prędkością transferu oraz jego kosztem. W każdym przypadku jednak, aby uzyskać dostęp do sieci globalnej, należy zwrócić się do dostawcy usług internetowych. Jest nim instytucja lub firma pojadająca serwer internetowy zwany inaczej serwerem dostępowym, połączony jest on z internetem za pomocą szybkiego łącza takiego jak światłowód. Oferuje ona klientom, za odpowiednią opłatą podłączenie do swojego serwera i tym samym zapewnia im dostęp do Internetu. Dostawca dysponuje także pulą internetowych adresów IP, które można przydzielać użytkownikom swojej sieci czy łącza.</p>
+          <p>Metody dostępu do Internetu można podzielić ze względu na wykorzystywane medium transmisyjne na następujące grupy:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">- Techniki oparte na kablach miedzianych: xdsl, PLC, HFC i Ethernet</li>
+            <li class="list-group-item">- Techniki oparte na kablach światłowodowych: FITL</li>
+            <li class="list-group-item">- Techniki bezprzewodowe: WLAN, transmisja optyczna, LMDS I MMDS</li>
+          </ul>
+          <blockquote style="margin-bottom:30px">Medium transmisyjne – nośnik używany do transmisji sygnałów w telekomunikacji. Jest podstawowym elementem systemów telekomunikacyjnych. Możliwości transmisji zależą od parametrów użytego medium. Wyróżnia się media przewodowe i bezprzewodowe.</blockquote>
+          <hr>
+          <h3 class="section-heading" id="xdsl" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Techniki oparte na kablach miedzianych xDSL</h3>
+          <blockquote style="margin-bottom:30px">Techniki DSL (Digital Subscriber Line - Cyfrowa linia abonencka) do transmisji wykorzystują skrętkę przewodów miedzianych</blockquote>
+          <p>Wyróżnia się pięć odmian techniki DSL:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">- HDSL (High data rate Digital Subscriber Line) – jest to technika symetryczna wykorzystująca do transmisji dwie (obecnie) lub trzy (w przeszłości) pary przewodów. Umożliwia przesyłanie danych z prędkością 2 Mb/s na odległość 5 km (dla kabla 0,5 mm).</li>
+            <li class="list-group-item">- SDSL (Single line Digital Subscriber Line) – jest to technika symetryczna wykorzystująca do transmisji jedną parę przewodów. Maksymalna prędkość transmisji to 2,3 Mb/s przy zasięgu 2 km (dla kabla 0,4 mm).</li>
+            <li class="list-group-item">- ADSL (Asymetric Digital Subscriber Line) – jest to technika asymetryczna, znaczy to, że prędkość transmisji do abonenta jest większa niż prędkość strumienia danych od abonenta do sieci. Do transmisji danych wykorzystywana jest jedna para przewodów. Możliwy jest przesył danych z prędkością 8 Mb/s do abonenta i 640 kb/s od abonenta do sieci (dla kabla 0,5 mm).</li>
+            <li class="list-group-item">- SHDSL (Single-pair High-speed Digital Subscriber Line) – jest to system symetryczny umożliwiający transmisję danych z prędkością do 2,3 Mb/s na odległość do 3 km. System wykorzystuje jedną parę przewodów. W przypadku użycia dwóch par prędkość transmisji podwaja się.</li>
+            <li class="list-group-item">- VDSL (Very high data rate Digital Subscriber Line) – transmisja może być symetryczna lub asymetyczna. Wykorzystuje się jedną parę przewodów miedzianych. Maksymalna prędkość transmisji wynosi 52 Mb/s przy zasięgu 300 m.</li>
+          </ul>
+
+          <p>Zalety i wady technik DSL:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">- wykorzystanie istniejącej infrastruktury miedzianej</li>
+            <li class="list-group-item" style="background-color:green">- łatwość z dostosowaniem się do wymagań użytkownika ze względu na wiele odmian DSL</li>
+            <li class="list-group-item" style="background-color:darkred">- podatność na szumy, interferencje elektromagnetyczne, przesłuchy</li>
+          </ul>
+
+          <hr>
+          <h3 class="section-heading" id="plc" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Techniki oparte na kablach miedzianych PLC</h3>
+          <blockquote style="margin-bottom:30px">PLC (Power line communication - Komunikacja elektroenergetyczną siecią rozdzielczą) – zbiór technologii umożliwiających transmisję danych przez sieć elektroenergetyczną</blockquote>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">- Jedną z koncepcji sieci dostępowych są sieci wykorzystujące technikę DPL/PLC (Digital Power Line/Power Line Communication). PLC oznacza przesył danych sygnałem wysokiej częstotliwości z wykorzystaniem ostatniej mili sieci energetycznych. Przyjmuje się, że system PLC jest szerokopasmowy, a DPL wąskopasmowy. Medium to umożliwia przesyłanie danych z prędkością do 24 Mb/s na odległość 250 m.</li>
+            <li class="list-group-item">- Rozwiązanie wymaga separacji sygnałów transmisji danych od sygnałów elektroenergetycznych. Po odseparowaniu sygnałów przekształcona w ten sposób sieć rozdzielcza nosi w skrócie nazwę "HFCPN" (High Frequency Conditioned Power Network).</li>
+            <li class="list-group-item">- Sieć taka charakteryzuje się: małymi zakłóceniami pochodzącymi od domowych odbiorników elektrycznych, małym współczynnikiem odbicia sygnałów wysokiej częstotliwości od końców toru transmisyjnego oraz stałą przepustowością niezależną od poboru mocy przyłączonych do niej odbiorników elektroenergetycznych.</li>
+          </ul>
+
+          <p>Elementy składowe PLC:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">1. Stacja bazowa - jest najważniejszym elementem systemu dostępowego PLC instalowanym w pobliżu transformatora rozdzielczego 15/0,4 kv. W strukturze funkcjonalnej systemu wykonuje funkcję węzła obsługującego ruch informatyczny lub telefoniczny abonentów bezpośrednio do niej przyłączonych.</li>
+            <li class="list-group-item">2. Moduł komunikacyjny - instalowany u odbiorcy energii elektrycznej i usług teleinformatycznych. Moduł ten jest montowany przy liczniku energii elektrycznej. Od strony abonenckiej moduł ten na ogół posiada złącze interfejsu: analogowego, telefonicznego, transmisji danych (USB, 10BaseT, RS232) oraz aplikacyjnego do podłączenia urządzeń inteligentnego domu.</li>
+            <li class="list-group-item">3. Sprzęgacze - instaluje się w celu wydzielenia sygnałów DPL/PLC od sygnałów energii elektrycznej. Sprzęgacz jest układem złożonym z dwóch filtrów biernych instalowanym zarówno w podstacji transformatorowej, jak i u wszystkich odbiorców energii elektrycznej dołączonych do wykorzystywanych obwodów fazowych sieci energetycznej.</li>
+            <li class="list-group-item">4. Filtry - są instalowane w różnych elementach sieci elektroenergetycznej w zależności od występujących zakłóceń. Głównym zadaniem filtrów jest eliminacja niekorzystnych zjawisk, które mogą mieć wpływ na transmisję danych.</li>
+          </ul>
+
+          <p>Zalety i wady technik PLC:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">- wykorzystanie istniejącej infrastruktury energetycznej</li>
+            <li class="list-group-item" style="background-color:darkred">- konieczność zapewnienia kompatybilności elektromagnetycznej pomiędzy urządzeniami PLC, a urządzeniami służb radiowych</li>
+            <li class="list-group-item" style="background-color:darkred">- ograniczony zasięg</li>
+          </ul>
+
+          <hr>
+          <h3 class="section-heading" id="hfc" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Techniki oparte na kablach miedzianych HFC</h3>
+          <blockquote style="margin-bottom:30px">HFC (Hybrid fibre-coaxial) – angielski termin z dziedziny telekomunikacji oznaczający hybrydową sieć wykorzystującą medium światłowodowe (fibre) i różnego rodzaju koncentryczne kable sygnałowe (coaxial cables). W zależności od umiejscowienia w strukturze sieci są to np. typy od QR860, QR625, QR540, TX15 (magistralne, najlepsze parametry techniczne) aż do RG11 i RG6 łączącego telewizor i/lub modem kablowy z siecią operatora</blockquote>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">- Rolę dostawcy internetu w przypadku sieci HFC (Hybrid Fiber Coax) pełni telewizja kablowa. Medium transmisyjnym wykorzystywanym w tych sieciach jest światłowód oraz kabel współosiowy. Światłowód wykorzystywany jest w torach magistralnych (od stacji czołowych do węzłów optycznych), a kabel współosiowy w torach rozprowadzających sygnał z węzłów optycznych do abonentów.</li>
+            <li class="list-group-item">- Maksymalna przepływność modemów kablowych wynosi 30 Mb/s w przypadku danych przesyłanych do użytkownika oraz 10 Mb/s dla kanału zwrotnego.</li>
+          </ul>
+
+          <p>Zalety i wady technik HFC:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">- przysyłanie w tym samym torze transmisyjnym zarówno programów telewizyjnych jak i danych oraz programów cyfrowych</li>
+            <li class="list-group-item" style="background-color:darkred">- konieczność przebudowy istniejącej sieci kablowej, jeśli bazuje tylko na kablach koncentrycznych</li>
+          </ul>
+
+          <hr>
+          <h3 class="section-heading" id="ethernet" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Techniki oparte na kablach miedzianych Ethernet</h3>
+          <blockquote style="margin-bottom:30px">Ethernet – technika, w której zawarte są standardy wykorzystywane w budowie głównie lokalnych sieci komputerowych. Obejmuje ona specyfikację przewodów oraz przesyłanych nimi sygnałów. Ethernet opisuje również format ramek i protokoły z dwóch najniższych warstw Modelu OSI. Jego pierwotna specyfikacja została podana w standardzie IEEE 802.3</blockquote>
+          <p>Technika niezwykle popularna w sieciach osiedlowych. Medium jest światłowód stosowany do łączenia budynków oraz skrętka kategorii 5 stosowana do bezpośredniego przyłączania użytkowników. Niski koszt powoduje, iż jest chętnie wykorzystywana zarówno w sieciach amatorskich jak i budowanych przez firmy komercyjne.<p>
+
+          <p>Zalety i wady technik Ethernet:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">- niski koszt</li>
+            <li class="list-group-item" style="background-color:green">- możliwość uzyskania znacznego zasięgu, rzędu kilkunastu km</li>
+            <li class="list-group-item" style="background-color:green">- szybkość 1Gb/s w sieci szkieletowej, 100Mb/s do użytkowników</li>
+            <li class="list-group-item" style="background-color:green">- łatwość eksploatacji</li>
+            <li class="list-group-item" style="background-color:darkred">- skomplikowana topologia gwiazdy</li>
+          </ul>
+
+          <hr>
+          <h3 class="section-heading" id="fitl" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Techniki oparte na kablach światłowodowych FITL</h3>
+          <blockquote style="margin-bottom:30px">FITL (Fiber in the Loop) - wiele odmian abonenckiej sieci światłowodowej adresowanej do operatorów telekomunikacyjnych doprowadzających włókna optyczne o wysokiej przepływności bezpośrednio w pobliże abonenta. Do najczęściej używanych należą: FTTC (Fiber in the Curb), FTTB (Fiber in the Building), FTTD (Fiber to the Desk), FTTH (Fiber in the Home), FTTO (Fiber in the Office) i FTTZ (Fiber in the Zone). Światłowodowa technologia FITL obejmuje dystrybucję przez pasywne węzły optyczne PON (Passive Optical Network) i aktywne AON (Active Optical Network)</blockquote>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">Dostępowe sieci FITL (Fiber in the Loop) w szerokim zakresie wykorzystują technikę światłowodową w magistralnej oraz rozdzielczej części sieci telekomunikacyjnej.</li>
+            <li class="list-group-item">W zależności od umiejscowienia jednostki ONU wyróżniamy następujące rodzaje sieci FITL: FTTH (Fibre to the Home) gdy ONU jest ulokowana w domu abonenta FTTB (Fibre to the Building) gdy ONU jest instalowana w budynku FTTC (Fibre to the Curb) gdy ONU znajduje się w szafie ulicznej. FTTB i FTTC wymaga współdziałania z innymi technikami dostępu (np. DSL do połączenia ONU z abonentem).</li>
+          </ul>
+
+          <p>Zalety i wady technik FITL:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">- praktycznie nieograniczone pasmo</li>
+            <li class="list-group-item" style="background-color:darkred">- konieczność budowy sieci światłowodowej</li>
+            <li class="list-group-item" style="background-color:darkred">- wysoki koszt konwerterów sygnału optycznego na elektryczny</li>
+          </ul>
+
+          <hr>
+          <h3 class="section-heading" id="wlan" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Techniki bezprzewodowe - WLAN</h3>
+          <blockquote style="margin-bottom:30px">WLAN (Wireless Local Area Network) jest to bezprzewodowa sieć lokalna, dzięki której możliwe jest połączenie dwóch lub więcej urządzeń bez użycia dodatkowego okablowania w sieci LAN. Najczęściej do funkcjonowania sieci niezbędnych jest kilka elementów: bezprzewodowa karta sieciowa, router oraz dostęp do internetu</blockquote>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">Sieci WLAN (Wireless Local Area Network) jako medium transmisyjnego używają fal radiowych. W warunkach europejskich moc nadajników nie może przekraczać 100 mw, co gwarantuje działanie systemu w zasięgu do kilku metrów w pomieszczeniach zamkniętych oraz kilkaset metrów na zewnątrz budynków.</li>
+          </ul>
+
+          <p>IEEE (Institute of Electrical and Electronics Engineers) zdefiniowało trzy standardy dla sieci bezprzewodowych. Są to:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">- 802.11b - pasmo 2,4-2,4835 GHz, szybkość transmisji do 11 Mb/s</li>
+            <li class="list-group-item">- 802.11a - pasmo 5,15-5,825 GHz, szybkość transmisji do 54 Mb/s</li>
+            <li class="list-group-item">- 802.11g - pasmo 2,4-2,4835 GHz, szybkość transmisji do 54 Mb/s</li>
+          </ul>
+          <p>Standard IEEE definiuje 2 typy sieci radiowych:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">- Jednokomórkowe stacje robocze znajdujące się w zasięgu własnej słyszalności są grupowane jako sieci o nietrwałej strukturze organizacyjnej (sieci ad hoc).</li>
+            <li class="list-group-item">- Wielokomórkowe stacje robocze znajdujące się w różnych obszarach obsługi BSA (Basic Service Area) komunikują się wzajemnie za pośrednictwem punktów dostępu AP (Access Point).</li>
+          </ul>
+
+          <p>Zalety i wady technik WLAN:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">- elastyczność pracy oraz swoboda ruchu stacji roboczych</li>
+            <li class="list-group-item" style="background-color:green">- możliwość zapewnienia komunikacji w miejscach, w których instalacja infrastruktury przewodowej jest niemożliwa oraz nieopłacalna</li>
+            <li class="list-group-item" style="background-color:green">- możliwość łatwej modyfikacji i rozbudowy sieci</li>
+            <li class="list-group-item" style="background-color:darkred">- trudne osiągnięcie wysokiej jakości transmisji</li>
+            <li class="list-group-item" style="background-color:darkred">- zaniki przesyłanych sygnałów spowodowane zjawiskiem wielodrogowości i tłumieniem</li>
+            <li class="list-group-item" style="background-color:darkred">- przy przesyłaniu sygnału na duże odległości w systemach zewnętrznych konieczne jest zapewnienie widoczności anten</li>
+            <li class="list-group-item" style="background-color:darkred">- brak przydziału i organizacji kanałów powoduje możliwość wzajemnego zakłócania sąsiadujących sieci</li>
+          </ul>
+
+          <hr>
+          <h3 class="section-heading" id="transmisjaoptyczna" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Techniki bezprzewodowe - Transmisja optyczna</h3>
+          <blockquote style="margin-bottom:30px">Transmisja optyczna - W środowiskach, w których występują znaczne zmiany temperatury, kurz, wibracje, zakłócenia elektromagnetyczne, nie zawsze możliwe jest przesyłanie informacji przez kable miedziane lub drogą radiową. Skuteczne okazują się systemy transmisji optycznej, wykorzystujące np. światło lasera, światłowody, podczerwień itp</blockquote>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">Rozwiązanie wykorzystuje promieniowanie optyczne o długości fal z zakresu nm (promieniowanie podczerwone). Wykorzystuje się 2 typy źródeł światła: wąskopasmowe diody elektroluminescencyjne LED emitujące widmo w paśmie podczerwieni o szerokości ok.120 nm z mocą optyczną 1 mw. Osiąga się zasięgi transmisji rzędu 1,5 km o prędkości transmisji do 1,25 Gb/s.</li>
+            <li class="list-group-item">Diody laserowe, za pomocą których uzyskuje się promieniowanie koherentne, którego szerokość widma nie przekracza 2 nm. Moc optyczna jest kilkakrotnie większa niż w przypadku diod LED. Nadajniki wielowiązkowe osiągają prędkości transmisji 2,5 Gb/s przy zasięgu ok. 1 km.</li>
+          </ul>
+
+          <p>Zalety i wady technik transmisji optycznej:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">- wąska wiązka optyczna generowana przez lasery uniemożliwia podsłuchanie lub przejęcie transmisji bez jej zerwania</li>
+            <li class="list-group-item" style="background-color:green">- niezależność transmisji od systemów radiowych, odporność na interferencje elektromagnetyczne</li>
+            <li class="list-group-item" style="background-color:darkred">- konieczność zapewnienia bezpośredniej widoczności nadajnika i odbiornika</li>
+            <li class="list-group-item" style="background-color:darkred">- możliwość zakłócenia transmisji (poprzez przejście przez wiązkę)</li>
+            <li class="list-group-item" style="background-color:darkred">- rozmycie impulsu wskutek wielu odbić sygnału i opóźnienia</li>
+            <li class="list-group-item" style="background-color:darkred">- wysoka tłumienność jednostkowa sygnału, pogorszenie transmisji w przypadku mgły, dymu, czy deszczu</li>
+          </ul>
+
+          <hr>
+          <h3 class="section-heading" id="lmds" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Techniki bezprzewodowe - LMDS</h3>
+          <blockquote style="margin-bottom:30px">LMDS (Local Multipoint Distribution Service) – technologia szerokopasmowego bezprzewodowego dostępu do internetu, wykorzystująca transmisję radiową w paśmie wysokich częstotliwości 20-40 GHz, w obrębie obszarów o powierzchni kilku kilometrów kwadratowych. Technologia ta umożliwia dobrej jakości transmisję o wysokiej przepustowości nawet do 1 Gb/s. Transmisja w paśmie 26–28 GHz nie powoduje żadnych zakłóceń w pracy urządzeń nadawczo-odbiorczych innych operatorów, charakteryzując się jednocześnie wysoką odpornością na zakłócenia. Jest jednak podatna na wpływ warunków atmosferycznych. Technika ta jest wykorzystywana w wielu firmach chcących mieć duże bezpieczeństwo przesyłanych informacji</blockquote>
+          <p>LMDS (Local Multipoint Distribution Services - Wielopunktowe Lokalne Usługi Dystrybucyjne) to system bezprzewodowy, wykorzystujący transmisję radiową w paśmie wysokich częstotliwości w obrębie niewielkich obszarów o średnicy kilku kilometrów. System składa się ze stacji bazowej i komunikujących się z nią niewielkich stacji odbiorczych (terminali). Osiąga się prędkości transmisji od 155 Mb/s przy zasięgu poniżej 10 km.</p>
+
+          <p>Zalety i wady technik LMDS:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">- małe rozmiary urządzeń nadawczych i odbiorczych sprzyjają łatwej instalacji na dachach lub elewacjach budynków</li>
+            <li class="list-group-item" style="background-color:green">- możliwość elastycznej rozbudowy sieci i zwiększenia zasięgu działania</li>
+            <li class="list-group-item" style="background-color:darkred">- wrażliwość na interferencje elektromagnetyczne</li>
+          </ul>
+
+          <hr>
+          <h3 class="section-heading" id="mmds" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Techniki bezprzewodowe - MMDS</h3>
+          <blockquote style="margin-bottom:30px">MMDS (Multichannel Multipoint Distribution Service - Wielokanałowa usługa dystrybucji wielopunktowej) - wcześniej znana jako BRS (Broadband Radio Service), a także znana jako Wireless Cable, to bezprzewodowa technologia telekomunikacyjna używana do ogólnych sieci szerokopasmowych, lub częściej jako alternatywna metoda programowania telewizji kablowej</blockquote>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">- Technologia MMDS (Multichannel Multipoint Distribution Service) została wymyślona, by rozprowadzić kilkanaście programów telewizyjnych drogą radiową. Miała zastapić telewizję kablową w terenach słabo zurbanizowanych i o znikomej sieci kablowej. Jednakże jest też wykorzystywana do zapewniania dostępu do Internetu.</li>
+            <li class="list-group-item">- Sygnały mogą być transmitowane na odległość nawet 50 km od stacji bazowej. MMDS wykorzystuje pasmo 2,5 GHz - 2,7 GHz zapewniając przepływność do 10 Mb/s na kanał w kierunku abonenta. Planuje się zwiększenie w przyszłości tej wartości do 27 Mb/s.</li>
+          </ul>
+
+          <p>Zalety i wady technik MMDS:</p>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item" style="background-color:green">- małe rozmiary urządzeń nadawczych i odbiorczych sprzyjają łatwej instalacji na dachach lub elewacjach budynków</li>
+            <li class="list-group-item" style="background-color:green">- możliwość elastycznej rozbudowy sieci i zwiększenia zasięgu działania</li>
+            <li class="list-group-item" style="background-color:green">- niska częstotliwość pozwala osiągnąć większy zasięg</li>
+            <li class="list-group-item" style="background-color:green">- niska częstotliwość to tańszy sprzęt</li>
+            <li class="list-group-item" style="background-color:darkred">- wrażliwość na interferencje elektromagnetyczne</li>
+            <li class="list-group-item" style="background-color:darkred">- mała przepustowość</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center text-lg-start" style="padding-bottom:0px;margin-top:80px">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="padding-bottom:50px">
+          <h5 class="text-uppercase">Źródła</h5>
+          <ul class="list-unstyled mb-0" style="text-align:left">
+            <li><a href="https://pl.wikipedia.org/wiki/Medium_transmisyjne" target="blank" class="text-dark">https://pl.wikipedia.org/</a></li>
+            <li><a href="https://docplayer.pl/1973894-Metody-dostepu-do-internetu.html" target="blank" class="text-dark">https://docplayer.pl/</a></li>
+            <li><a href="https://sciaga.pl/tekst/56360-57-rodzaje_dostepu_do_internetu" target="blank" class="text-dark">https://sciaga.pl/</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
+  <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="https://2tihub.xyz/js/2tihub.min.js"></script>
+  <script src="https://2tihub.xyz/js/darkmode.js"></script>
+
+</body></html>
