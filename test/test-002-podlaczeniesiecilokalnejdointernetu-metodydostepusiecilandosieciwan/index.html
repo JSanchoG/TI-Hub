@@ -125,71 +125,14 @@
           <hr>
           <h3 class="section-heading" id="instalacja" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Instalacja</h3>
           <hr>
-          <p>Na początek na stacji roboczej i na serwerze zainstaluje UFW, aby odblokować usługę Telnet na porcie 23</p>
-          <div class="banner">
-            <img src="files/ubuntu1stacja-klient/1-ufw-install.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/1-ufw-install.png" width="256" height="192" alt=""/>
-          </div>
+          <p>Metody dostępu do Internetu można podzielić ze względu na wykorzystywane medium transmisyjne na następujące grupy:</p>
+          <blockquote style="margin-bottom:30px">Medium transmisyjne – nośnik używany do transmisji sygnałów w telekomunikacji. Jest podstawowym elementem systemów telekomunikacyjnych. Możliwości transmisji zależą od parametrów użytego medium. Wyróżnia się media przewodowe i bezprzewodowe.</blockquote>
+          <ul class="shadow list-group" style="margin-bottom:30px">
+            <li class="list-group-item">- techniki oparte na kablach miedzianych: xdsl, PLC, HFC i Ethernet</li>
+            <li class="list-group-item">- techniki oparte na kablach światłowodowych: FITL</li>
+            <li class="list-group-item">- techniki bezprzewodowe: WLAN</li><li class="list-group-item">- transmisja optyczna: LMDS i MMDS</li>
+          </ul>
           <hr>
-          <p>Następnie na obu stacjach instaluję Telnet poleceniem <kbd>sudo apt-get install telnetd -y</kbd></p>
-          <div class="banner">
-            <img src="files/ubuntu1stacja-klient/2-telnet-install.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/2-telnet-install.png" width="256" height="192" alt=""/>
-          </div>
-          <hr>
-          <blockquote>Aby to zadziałało, w programie VirtualBox trzeba w obu systemach ustawić pierwszą kartę sieciową na NAT, a drugą na Sieć wewnętrzną</blockquote>
-          <div class="banner">
-            <img src="files/vb-karta-1.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/vb-karta-2.png" width="256" height="192" alt=""/>
-          </div>
-          <p>Teraz, aby wykonać połączenie między dwoma stacjami należy zmienić ich adres IP, na stacji roboczej adresem tym będzie <kbd>192.168.69.10</kbd> na karcie enp0s8</p>
-          <div class="banner">
-            <img src="files/ubuntu1stacja-klient/3-ustawienia-lista.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/ubuntu1stacja-klient/3-1-ustawienia.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/ubuntu1stacja-klient/3-2-ustawienia-ip.png" width="256" height="192" alt=""/>
-          </div>
-          <p>Na stacji pełniącej role serwera Telnet adresem będzie <kbd>192.168.69.11</kbd> na karcie enp0s8</p>
-          <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/3-ustawienia.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/3-1-ustawienia-ip.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/3-2-ifconfig.png" width="256" height="192" alt=""/>
-          </div>
-          <hr>
-          <p>Aby zezwolić na odbieranie pakietów przez usługę Telnet na porcie 23, wywołam polecenie <kbd>sudo ufw allow telnet</kbd> na obu stacjach (konieczne do działania usługi)<p>
-          <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/4-ufw-allow.png" width="256" height="192" alt=""/>
-          </div>
-          <p>Aby zabronić odbierania pakietów przez usługę Telnet na porcie 23, trzeba wywołać polecenie <kbd>sudo ufw deny telnet</kbd></p>
-          <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/4-ufw-allow.png" width="256" height="192" alt=""/>
-          </div> 
-          <hr>
-          <h3 class="section-heading" id="sesja" style="padding-top:40px;padding-bottom:40px;margin-top:8px;text-align:center">Sesja</h3>
-          <hr>
-          <p>Aby nawiązać zdalne połączenie telnet, na stacji roboczej należy wykonać polecenie <kbd>telnet [adres serwera docelowego]</kbd>, podać nazwę i hasło użytkownika istniejącego na serwerze</p>
-          <div class="banner">
-            <img src="files/ubuntu1stacja-klient/4-telnet-connect.png" width="256" height="192" alt=""/>
-          </div>
-          <hr>
-          <p>Teraz możemy wydawać serwerowi polecenia z pozycji klienta, a co za tym idzie zarządzać plikami, zmieniać ustawienia lub zarządzać użytkownikami</p>
-          <p>Aby zdalnie utworzyć użytkownika na serwerze wystarczy zrobić to poleceniem <kbd>sudo adduser [nazwa użytkownika]</kbd><br>Dodanie utworzonego właśnie użytkownika do grupy sudo można zainicjować poleceniem <kbd>sudo usermod -a -G sudo [nazwa użytkownika]</kbd><br>Upewnić się, że użytkownik został dodany do danej grupy można za pomocą polecenie <kbd>groups [nazwa użytkownika]</kbd></p>
-          <div class="banner">
-            <img src="files/ubuntu1stacja-klient/5-telnet-adduser.png" width="256" height="192" alt=""/>
-          </div>
 
         </div>
       </div>
