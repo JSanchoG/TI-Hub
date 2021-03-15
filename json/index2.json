@@ -5,6 +5,13 @@
 		"elements": {
 			"notes": [
 				{
+					"subject": "ELSK",
+					"date": "15 Marzec, 2021",
+					"referral": "lekcje-online/elsk-lsk/x-15.03.2021.html",
+					"icon": "far fa-sticky-note fa-xs",
+					"description": "Notatki z Lekcji Online"
+				},
+				{
 					"subject": "ASO",
 					"date": "10 Marzec, 2021",
 					"referral": "lekcje-online/aso/x-10.03.2021.html",
