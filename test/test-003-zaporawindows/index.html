@@ -90,14 +90,6 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#ufw">UFW</a>
-      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#gufw">GUFW</a>
-    </div>
-  </nav>
-
   <!-- Page Header -->
   <header class="masthead animate__animated animate__fadeIn" style="background-image: url('https://2tihub.xyz/windowsserver/poradnik/files/serwerownia.jpg')">
     <div class="overlay"></div>
@@ -123,114 +115,126 @@
           <h2 class="section-heading" id="konfiguracja" style="padding-top:70px;text-align:center">Konfiguracja zapory sieciowej</h2>
           <p>W systemie Windows Server 2016 usługa zapory sieciowej powinna zostać zaimplementowana przy instalacji samego systemu, więc nie trzeba jej doinstalowywać.</p>
           <hr>
-
-
-
-
-
-          <p>Aby zainstalować UFW, w konsoli należy wywołać polecenie <kbd>sudo apt-get install ufw</kbd></p>
+          <p>Aby przejść do ustawień zapory sieciowej należy w prawym górnym rogu Menedżera Serwera klinąć <b>Narzędzia</b> i wybrać <b>Zapora systemu Windows z zabezpieczeniami zaawansowanymi</b></p>
           <div class="banner">
-            <img src="files/ufw/1.png" width="256" height="192" alt=""/>
+            <img src="files/1.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/2.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Po instalacji jeszcze włączymy automatyczny start usługi wraz z systemem za pomocą polecenia <kbd>sudo nano /etc/ufw/ufw.conf</kbd>, należy tu zmienić <span class="border border-dark" style="padding-left:8px;padding-right:8px">ENABLED=no</span> na <span class="border border-dark" style="padding-left:8px;padding-right:8px">ENABLED=yes</span></p>
+          <p>Następnie przejść do <b>Właściwości Zapory systemu Windows</b></p>
           <div class="banner">
-            <img src="files/ufw/2-1.png" width="256" height="192" alt=""/>
+            <img src="files/2e.png" width="256" height="192" alt=""/>
           </div>
+          <p>Zapora domyślnie powinna być włączona. W Profilu domeny, Profilu publicznym i Profilu prywatnym Połączenia przychodzące należy ustawić na <b>Zablokuj</b>, a Połączenia wychodzące na <b>Zezwalaj</b></p>
           <div class="banner">
-            <img src="files/ufw/2-2.png" width="256" height="192" alt=""/>
-          </div>
-          <p>Można się jeszcze upewnić, czy mamy aktywną obsługę IPv6, dopisując <span class="border border-dark" style="padding-left:8px;padding-right:8px">IPV6=yes</span></p>
-          <div class="banner">
-            <img src="files/ufw/2-3.png" width="256" height="192" alt=""/>
+            <img src="files/3.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Stan UFW można sprawdzić poleceniem <kbd>sudo ufw status verbose</kbd>, na tym etapie UFW powinno być nieaktywne, lecz gdyby jakimś cudem byłboy aktywne, należy tymczasowo wyłączyć UFW oraz zrestartować do wartości domyślnych poleceniami <kbd>sudo ufw disable</kbd> oraz <kbd>sudo ufw reset</kbd></p>
+          <p>Aby dodać regułę, trzeba w zakładce <b>Reguły przychodzące</b> lub <b>Reguły wychodzące</b> w Akcjach wybrać <b>Nowa reguła...</b></p>
           <div class="banner">
-            <img src="files/ufw/4-status.png" width="256" height="192" alt=""/>
+            <img src="files/4.png" width="256" height="192" alt=""/>
           </div>
+          <p>W nowo otwartym oknie należy wybrać <b>Port</b> i kliknąć <b>Dalej</b></p>
           <div class="banner">
-            <img src="files/ufw/9-1-disable.png" width="256" height="192" alt=""/>
+            <img src="files/4-1.png" width="256" height="192" alt=""/>
           </div>
-          <hr>
-          <h3 class="section-heading" id="ufw-konfiguracja" style="padding-top:40px;padding-bottom:40px;margin-top:8px;text-align:center">Konfiguracja</h3>
-          <hr>
-          <p>Standardowo zaczynam konfigurację reguł UFW od 2 podstawowych reguł: incoming, odpowiadającej za pakiety przychodzące oraz outcoming, odpowiadającej za pakiety wysyłane. Pierwsza z nich blokuje cały ruch przychodzący, druga pozwala na ruch wychodzący, co jest bazą dla pozostałych reguł, w których będziemy zezwalać na połączenia przychodzące dla różnych portów/usług.</p>
+          <p>W następnym oknie wybrać <b>Określone porty lokalne</b> i wpisać dany port, w tym przypadku będzie to port 80 (HTTP)</p>
           <div class="banner">
-            <img src="files/ufw/5.png" width="256" height="192" alt=""/>
+            <img src="files/4-2.png" width="256" height="192" alt=""/>
           </div>
-          <hr>
-          <p>Teraz dodam kilka reguł zapory sieciowej, aby zezwolić na odbieranie pakietów przez usługi: HTTP [80], HTTPS [443], IMAP [143] oraz odbieranie pakietów z adresu 10.90.90.90</p>
+          <p>Następnie wybrać <b>Zezwalaj na połączenie</b> i przejść Dalej</p>
           <div class="banner">
-            <img src="files/ufw-2/1-allow-ports.png" width="256" height="192" alt=""/>
+            <img src="files/4-3.png" width="256" height="192" alt=""/>
           </div>
-          <p>Zablokuję również ruch przychodzący z portów od 1024 do 1036</p>
+          <p>Teraz wybrać, gdzie reguła będzie miała zastosowanie</p>
           <div class="banner">
-            <img src="files/ufw-2/1-2-deny-1024-1036.png" width="256" height="192" alt=""/>
+            <img src="files/4-4.png" width="256" height="192" alt=""/>
           </div>
-          <hr>
-          <p>Usunąć reguły można poleceniem <kbd>sudo ufw delete [numer usługi]</kbd>, usunę więc reguły IPv6. Aby uzyskać numer usługi, należy najpierw włączyć UFW poleceniem <kbd>sudo ufw enable</kbd>, następnie wywołując polecenie <kbd>sudo ufw status numbered</kbd></p>
+          <p>Potem wystarczy ją nazwać i opcjonalnie dodać opis</p>
           <div class="banner">
-            <img src="files/ufw-2/2-delete.png" width="256" height="192" alt=""/>
-          </div>
-          <p>Zablokuję również ruch przychodzący z portów od 1024 do 1036</p>
-          <div class="banner">
-            <img src="files/ufw-2/2-2-delete.png" width="256" height="192" alt=""/>
-          </div>
-          <p>Aby usunąć regułę, która jest odpowiedzialna za zezwolenie na połączenia przychodzące z usługi HTTPS na porcie 443, należy posłużyć się poleceniem <kbd>sudo ufw delete allow 443</kbd></p>
-          <div class="banner">
-            <img src="files/ufw-2/3-delete-allow-443.png" width="256" height="192" alt=""/>
-          </div>
-
-          <h2 class="section-heading" id="gufw" style="padding-top:70px;text-align:center">GUFW</h2>
-          <blockquote style="margin-bottom:30px">GUFW - jest tym samym, co UFW, lecz posiada interfejs graficzny umożliwiający użytkownikowi łatwiejszą konfigurację zapory sieciowej.</blockquote>
-          <hr>
-          <h3 class="section-heading" id="gufw-instalacja" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Instalacja</h3>
-          <hr>
-          <p>Aby zainstalować GUFW, w konsoli należy wywołać polecenie <kbd>sudo apt-get install gufw</kbd></p>
-          <div class="banner">
-            <img src="files/gufw/1.png" width="256" height="192" alt=""/>
+            <img src="files/4-5.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Aby włączyć GUFW wystarczy kliknąć w pasek stanu</p>
+          <p>Dodam jeszcze 2 reguły dla portów 443 (HTTPS) i 143 (IMAP)</p>
           <div class="banner">
-            <img src="files/gufw/1.png" width="256" height="192" alt=""/>
+            <img src="files/4-2-1.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/gufw-2/1.png" width="256" height="192" alt=""/>
-          </div>
-          <p>Aby zresetować GUFW, należy kliknąć w <b>Edycja</b> na pasku nawigacji i wybrać z listy <b>Resetuj bieżący profil</b></p>
-          <div class="banner">
-            <img src="files/gufw-2/4-reset.png" width="256" height="192" alt=""/>
-          </div>
-          <hr>
-          <h3 class="section-heading" id="gufw-konfiguracja" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Konfiguracja</h3>
-          <hr>
-          <p>Teraz, tak jak w poprzednim przypadku dodaję kilka reguł zapory sieciowej, lecz tym razer używając łatwego w użyciu interfejsu graficznego</p>
-          <div class="banner">
-            <img src="files/gufw-2/2-allow-http.png" width="256" height="192" alt=""/>
+            <img src="files/4-2-2.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/gufw-2/2-allow-https.png" width="256" height="192" alt=""/>
+            <img src="files/4-2-3.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/gufw-2/2-2-allow-10-90-90-90.png" width="256" height="192" alt=""/>
+            <img src="files/4-2-4.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/gufw-2/2-3-allow-imap.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/gufw-2/2-4-reguly.png" width="256" height="192" alt=""/>
+            <img src="files/4-2-5.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Tym samym sposobem zablokuję również ruch przychodzący z portów od 1024 do 1036</p>
           <div class="banner">
-            <img src="files/gufw-2/3-deny-1024-1036.png" width="256" height="192" alt=""/>
+            <img src="files/4-3-1.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/4-3-2.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/4-3-3.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/4-3-4.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/4-3-5.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Od teraz system będzie mógł odbierać pakiety z portów 80 (HTTP), 443 (HTTPS) i 143 (IMAP)</p>
+          <hr>
+          <p>Jeżeli chcemy dodać nową Regułę wychodzącą, należy powtórzyć przykład powyżej, lecz wybrać zakładkę <b>Reguły wychodzące</b></p>
+          <div class="banner">
+            <img src="files/5.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Reguły można łatwo usuwać klikając na daną regułę i znak minusa</p>
+          <p>W Regułach wychodzących zablokuje możliwość wysyłania pakietów z portów 20 i 21 (FTP) oraz zakresu portów UDP od 1024 do 1036</p>
           <div class="banner">
-            <img src="files/gufw-2/2-4-reguly.png" width="256" height="192" alt=""/>
+            <img src="files/5-1.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/5-2.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/5-3.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/5-4.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/5-5.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <div class="banner">
+            <img src="files/5-2-1.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/5-2-2.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/5-2-3.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/5-2-4.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/5-2-5.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Reguły powinny być już aktywne</p>
+          <div class="banner">
+            <img src="files/6-1.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/6-2.png" width="256" height="192" alt=""/>
           </div>
 
         </div>
