@@ -164,7 +164,7 @@
             <img src="files/serwer/2-2-conf.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Teraz można wykonać połączenie SSH do serwera, używając polecenia <kbd>ssh -p [numer portu] [nazwa użytkownika na serwerze]/[adres serwera]</kbd> (<kbd>ssh -p 22 sancho2@192.168.69.11</kbd>), terminal poprosi nas o hasło do użytkownika, do którego próbujemy się zalogować</p>
+          <p>Teraz można wykonać połączenie SSH do serwera, używając na stacji roboczej polecenia <kbd>ssh -p [numer portu] [nazwa użytkownika na serwerze]@[adres serwera]</kbd> (<kbd>ssh -p 22 sancho2@192.168.69.11</kbd>), terminal poprosi nas o hasło do użytkownika, do którego próbujemy się zalogować</p>
           <div class="banner">
             <img src="files/stacja/2-ssh-connect-ip.png" width="256" height="192" alt=""/>
           </div>
@@ -192,76 +192,40 @@
           <hr>
           <p>Od teraz do logowania zamiast adresu IP można używać stworzonego aliasu</p>
           <div class="banner">
-          <img src="files/stacja/5-1-ssh-connect-alias.png" width="256" height="192" alt=""/>
+            <img src="files/stacja/5-1-ssh-connect-alias.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-          <hr>
-          <p>Następnie na obu stacjach instaluję Telnet poleceniem <kbd>sudo apt-get install telnetd -y</kbd></p>
+          <p>Teraz utworzę na stacji roboczej stworzę plik o nazwie <b>jakub_3.txt</b> i skopiuje go na serwer</p>
           <div class="banner">
-            <img src="files/ubuntu1stacja-klient/2-telnet-install.png" width="256" height="192" alt=""/>
+            <img src="files/serwer/3-1-pusty-folder.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/2-telnet-install.png" width="256" height="192" alt=""/>
-          </div>
-          <hr>
-          <blockquote>Aby to zadziałało, w programie VirtualBox trzeba w obu systemach ustawić pierwszą kartę sieciową na NAT, a drugą na Sieć wewnętrzną</blockquote>
-          <div class="banner">
-            <img src="files/vb-karta-1.png" width="256" height="192" alt=""/>
+            <img src="files/stacja/6-tworzeniefolderu.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/vb-karta-2.png" width="256" height="192" alt=""/>
+            <img src="files/stacja/7-kopiowaniefolderu-na-serwer.png" width="256" height="192" alt=""/>
           </div>
-          <p>Teraz, aby wykonać połączenie między dwoma stacjami należy zmienić ich adres IP, na stacji roboczej adresem tym będzie <kbd>192.168.69.10</kbd> na karcie enp0s8</p>
+          <p>Plik powiniem znaleźć się na serwerze</p>
           <div class="banner">
-            <img src="files/ubuntu1stacja-klient/3-ustawienia-lista.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/ubuntu1stacja-klient/3-1-ustawienia.png" width="256" height="192" alt=""/>
+            <img src="files/stacja/3-2-1-folder-z-plikiem.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/ubuntu1stacja-klient/3-2-ustawienia-ip.png" width="256" height="192" alt=""/>
-          </div>
-          <p>Na stacji pełniącej role serwera Telnet adresem będzie <kbd>192.168.69.11</kbd> na karcie enp0s8</p>
-          <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/3-ustawienia.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/3-1-ustawienia-ip.png" width="256" height="192" alt=""/>
-          </div>
-          <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/3-2-ifconfig.png" width="256" height="192" alt=""/>
+            <img src="files/serwer/3-2-2-folder-z-plikiem-z-plikiem.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <p>Aby zezwolić na odbieranie pakietów przez usługę Telnet na porcie 23, wywołam polecenie <kbd>sudo ufw allow telnet</kbd> na obu stacjach (konieczne do działania usługi)<p>
+          <p>Teraz utworzę na serwerze plik o nazwie <b>3_jakub.txt</b> i skopiuję go na stację roboczą</p>
           <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/4-ufw-allow.png" width="256" height="192" alt=""/>
+            <img src="files/stacja/8-1-plik-na-stacji.png" width="256" height="192" alt=""/>
           </div>
-          <p>Aby zabronić odbierania pakietów przez usługę Telnet na porcie 23, trzeba wywołać polecenie <kbd>sudo ufw deny telnet</kbd></p>
           <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/4-ufw-allow.png" width="256" height="192" alt=""/>
-          </div> 
-          <hr>
-          <h3 class="section-heading" id="sesja" style="padding-top:40px;padding-bottom:40px;margin-top:8px;text-align:center">Sesja</h3>
-          <hr>
-          <p>Aby nawiązać zdalne połączenie telnet, na stacji roboczej należy wykonać polecenie <kbd>telnet [adres serwera docelowego]</kbd>, podać nazwę i hasło użytkownika istniejącego na serwerze</p>
-          <div class="banner">
-            <img src="files/ubuntu1stacja-klient/4-telnet-connect.png" width="256" height="192" alt=""/>
+            <img src="files/stacja/4-1-tworzenie-pliku-na-serwerze.png" width="256" height="192" alt=""/>
           </div>
-          <hr>
-          <p>Teraz możemy wydawać serwerowi polecenia z pozycji klienta, a co za tym idzie zarządzać plikami, zmieniać ustawienia lub zarządzać użytkownikami</p>
-          <p>Aby zdalnie utworzyć użytkownika na serwerze wystarczy zrobić to poleceniem <kbd>sudo adduser [nazwa użytkownika]</kbd><br>Dodanie utworzonego właśnie użytkownika do grupy sudo można zainicjować poleceniem <kbd>sudo usermod -a -G sudo [nazwa użytkownika]</kbd><br>Upewnić się, że użytkownik został dodany do danej grupy można za pomocą polecenie <kbd>groups [nazwa użytkownika]</kbd></p>
           <div class="banner">
-            <img src="files/ubuntu1stacja-klient/5-telnet-adduser.png" width="256" height="192" alt=""/>
+            <img src="files/stacja/4-2-kopiowanie-pliku-na-stacje.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Plik powinien znaleźć się na stacji roboczej</p>
+          <div class="banner">
+            <img src="files/stacja/8-2-plik-na-stacji.png" width="256" height="192" alt=""/>
           </div>
 
         </div>
