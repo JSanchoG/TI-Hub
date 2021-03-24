@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="utf-8">
+  <meta rel="shortcut icon" href="https://2tihub.xyz/poradnik-WS2016/WS-logo.png" sizes="144x144" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SSH</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://2tihub.xyz/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="https://2tihub.xyz/css/2tihub.min.css" rel="stylesheet">
+  <link href="https://2tihub.xyz/css/darkmode.css" rel="stylesheet">
+
+  <link href="https://2tihub.xyz/poradnik-WS2016/files/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <style>
+	html {
+		scroll-behavior: smooth;
+	}
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+	.desc {
+		padding: 15px;
+		text-align: center;
+	}
+	.zdjecie {
+		display: inline-block;
+		margin: 0 0.5rem;
+		/*  animation: backInLeft; */
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+	}
+	.animacja {
+		display: inline-block;
+		margin: 0 0.5rem;
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+		--animate-delay: 2s;
+	}
+	.banner {
+		height: 192px;
+		width: 256px;
+		text-align: center;
+	}
+	.banner img {
+		text-align: center;
+		height: 192px;
+		width: 256px;
+		-webkit-transition: .30s;
+		   -moz-transition: .30s;
+		    -ms-transition: .30s;
+		     -o-transition: .30s;
+		        transition: .30s;
+	}
+	.banner:hover {
+		height: 768px;
+	}
+	.banner:hover img {
+		height: 192px;
+		width: 256px;
+	}
+	.banner img:hover {
+		height: 768px;
+		width: 1024px;
+	}
+</style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#instalacja">Instalacja</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#sesja">Sesja</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead animate__animated animate__fadeIn" style="background-image: url('https://2tihub.xyz/linux/ufw-gufw/linux.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1 class="animacja animate__animated animate__zoomIn" style="margin-bottom:25px">SSH</h1>
+
+            <span class="meta animacja animate__animated animate__fadeInUpBig">Jakub Gożuk - 24 Marzec, 2021</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container animate__animated animate__bounceInLeft">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <h2 class="section-heading" id="ssh" style="padding-top:70px;text-align:center">SSH</h2>
+          <blockquote style="margin-bottom:30px">SSH (Secure Shell) - standard protokołów komunikacyjnych używanych w sieciach komputerowych TCP/IP, w architekturze klient-serwer a od wersji 2 nawet w architekturze serwer-klient.<br>W ścisłym znaczeniu SSH to tylko następca protokołu Telnet, służącego do terminalowego łączenia się ze zdalnymi komputerami. SSH różni się od Telnetu tym, że transfer wszelkich danych jest zaszyfrowany oraz możliwe jest rozpoznawanie użytkownika na wiele różnych sposobów. W szerszym znaczeniu SSH to wspólna nazwa dla całej rodziny protokołów, nie tylko terminalowych, lecz także służących do przesyłania plików (SCP, SFTP), zdalnej kontroli zasobów, tunelowania i wielu innych zastosowań. Wspólną cechą wszystkich tych protokołów jest identyczna z SSH technika szyfrowania danych i rozpoznawania użytkownika. Obecnie protokoły z rodziny SSH praktycznie wyparły wszystkie inne mniej bezpieczne protokoły, takie, jak np. rlogin czy RSH.<br>SSH jest zwykle używany do zdalnego logowania z komputerem i wykonywania poleceń, ale obsługuje także tunele, przekazywanie portów TCP i X11. Możliwe jest przesyłanie plików przy użyciu protokołów przesyłania plików SSH (SFTP) lub SCP. SSH używa modelu klient-serwer.</blockquote>
+          <hr>
+          <h3 class="section-heading" id="instalacja" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Instalacja</h3>
+          <hr>
+          <p>Na początek na stacji roboczej i na serwerze zainstaluję usługę klienta i serwera SSH i sprawdzę, czy jest ona aktywna</p>
+          <div class="banner">
+            <img src="files/stacja/1-2.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/stacja/1-4.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <div class="banner">
+            <img src="files/serwer/1-2.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/1-3.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Po tych czynnościach sprawdzę, czy między dwoma systemami działającymi w VirtualBox jest połączenie</p>
+          <div class="banner">
+            <img src="files/stacja/1-1.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/1-1.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Jeśli zapora sieciowa jest aktywna, należy dodać regułę, która będzie pozwalać na przesył danych w SSH</p>
+          <div class="banner">
+            <img src="files/stacja/1-3.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/1-4.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Przed połączeniem można ustalić, na którym porcie będzie działać usługa</p>
+          <div class="banner">
+            <img src="files/serwer/2-1-ll.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/2-2-conf.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Teraz można wykonać połączenie SSH do serwera, używając na stacji roboczej polecenia <kbd>ssh -p [numer portu] [nazwa użytkownika na serwerze]@[adres serwera]</kbd> (<kbd>ssh -p 22 sancho2@192.168.69.11</kbd>), terminal poprosi nas o hasło do użytkownika, do którego próbujemy się zalogować</p>
+          <div class="banner">
+            <img src="files/stacja/2-ssh-connect-ip.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Jeśli nie chcemy, aby za każdym razem przy próbie połączenia terminal prosił nas o hasło, należy wygenerować klucz prywatny i klucz publiczny dla usługi, a następnie skopiować go na serwer</p>
+          <div class="banner">
+            <img src="files/stacja/3-1-ssh-keygen.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/stacja/3-2-ssh-copy-id.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Od teraz można łączyć się z serwerem bez podawania hasłą</p>
+          <div class="banner">
+            <img src="files/stacja/3-3-ssh-connect-ip-nopassword.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Nie trzeba posługiwać się adresem IP, można zamiast tego utworzyć alias (alternatywna nazwa służąca do identyfikacji obiektów) dla adresu serwera na stacji roboczej. Aby to zrobić, w pliku /etc/hosts należy dopisać adres serwera i alfanumeryczną nazwę (alias)</p>
+          <div class="banner">
+            <img src="files/stacja/4-1-alias-path.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/stacja/4-2-alias-add.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Od teraz do logowania zamiast adresu IP można używać stworzonego aliasu</p>
+          <div class="banner">
+            <img src="files/stacja/5-1-ssh-connect-alias.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Teraz utworzę na stacji roboczej stworzę plik o nazwie <b>jakub_3.txt</b> i skopiuje go na serwer</p>
+          <div class="banner">
+            <img src="files/serwer/3-1-pusty-folder.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/stacja/6-tworzeniefolderu.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/stacja/7-kopiowaniefolderu-na-serwer.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Plik powiniem znaleźć się na serwerze</p>
+          <div class="banner">
+            <img src="files/stacja/3-2-1-folder-z-plikiem.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/3-2-2-folder-z-plikiem-z-plikiem.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Teraz utworzę na serwerze plik o nazwie <b>3_jakub.txt</b> i skopiuję go na stację roboczą</p>
+          <div class="banner">
+            <img src="files/stacja/8-1-plik-na-stacji.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/stacja/4-1-tworzenie-pliku-na-serwerze.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/stacja/4-2-kopiowanie-pliku-na-stacje.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Plik powinien znaleźć się na stacji roboczej</p>
+          <div class="banner">
+            <img src="files/stacja/8-2-plik-na-stacji.png" width="256" height="192" alt=""/>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </article>
+  <!-- Footer -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
+  <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="https://2tihub.xyz/js/2tihub.min.js"></script>
+  <script src="https://2tihub.xyz/js/darkmode.js"></script>
+
+</body></html>
