@@ -125,13 +125,86 @@
           <hr>
           <h3 class="section-heading" id="instalacja" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Instalacja</h3>
           <hr>
-          <p>Na początek na stacji roboczej i na serwerze zainstaluje UFW, aby odblokować usługę Telnet na porcie 23</p>
+          <p>Na początek na stacji roboczej i na serwerze zainstaluję usługę klienta i serwera SSH i sprawdzę, czy jest ona aktywna</p>
           <div class="banner">
-            <img src="files/ubuntu1stacja-klient/1-ufw-install.png" width="256" height="192" alt=""/>
+            <img src="files/stacja/1-2.png" width="256" height="192" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/ubuntu2stacja-serwer/1-ufw-install.png" width="256" height="192" alt=""/>
+            <img src="files/stacja/1-4.png" width="256" height="192" alt=""/>
           </div>
+          <hr>
+          <div class="banner">
+            <img src="files/serwer/1-2.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/1-3.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Po tych czynnościach sprawdzę, czy między dwoma systemami działającymi w VirtualBox jest połączenie</p>
+          <div class="banner">
+            <img src="files/stacja/1-1.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/1-1.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Jeśli zapora sieciowa jest aktywna, należy dodać regułę, która będzie pozwalać na przesył danych w SSH</p>
+          <div class="banner">
+            <img src="files/stacja/1-3.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/1-4.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Przed połączeniem można ustalić, na którym porcie będzie działać usługa</p>
+          <div class="banner">
+            <img src="files/serwer/2-1-ll.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/2-2-conf.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Teraz można wykonać połączenie SSH do serwera, używając polecenia <kbd>ssh -p [numer portu] [nazwa użytkownika na serwerze]/[adres serwera]</kbd> (<kbd>ssh -p 22 sancho2@192.168.69.11</kbd>), terminal poprosi nas o hasło do użytkownika, do którego próbujemy się zalogować</p>
+          <div class="banner">
+            <img src="files/stacja/2-ssh-connect-ip.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Jeśli nie chcemy, aby za każdym razem przy próbie połączenia terminal prosił nas o hasło, należy wygenerować klucz prywatny i klucz publiczny dla usługi, a następnie skopiować go na serwer</p>
+          <div class="banner">
+            <img src="files/stacja/3-1-ssh-keygen.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/stacja/3-2-ssh-copy-id.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Od teraz można łączyć się z serwerem bez podawania hasłą</p>
+          <div class="banner">
+            <img src="files/stacja/3-3-ssh-connect-ip-nopassword.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Nie trzeba posługiwać się adresem IP, można zamiast tego utworzyć alias (alternatywna nazwa służąca do identyfikacji obiektów) dla adresu serwera na stacji roboczej. Aby to zrobić, w pliku /etc/hosts należy dopisać adres serwera i alfanumeryczną nazwę (alias)</p>
+          <div class="banner">
+            <img src="files/stacja/4-1-alias-path.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/stacja/4-2-alias-add.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Od teraz do logowania zamiast adresu IP można używać stworzonego aliasu</p>
+          <div class="banner">
+          <img src="files/stacja/5-1-ssh-connect-alias.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
           <hr>
           <p>Następnie na obu stacjach instaluję Telnet poleceniem <kbd>sudo apt-get install telnetd -y</kbd></p>
           <div class="banner">
