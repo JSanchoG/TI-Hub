@@ -468,21 +468,6 @@
     .catch(err => { throw err });
     // For debugging/ error-handling purposes.
   </script>
-  <script>
-      $('button').click(function(){
-        $('.alert').addClass("show");
-        $('.alert').removeClass("hide");
-        $('.alert').addClass("showAlert");
-        setTimeout(function(){
-          $('.alert').removeClass("show");
-          $('.alert').addClass("hide");
-        },3500);
-      });
-      $('.close-btn').click(function(){
-        $('.alert').removeClass("show");
-        $('.alert').addClass("hide");
-      });
-    </script>
   <!-- Bootstrap core JavaScript -->
   <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
   <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
