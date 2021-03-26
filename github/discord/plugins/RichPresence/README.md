@@ -4,7 +4,7 @@ Automatycznie włącza aplikację Rich Presence, kiędy włączysz Discorda.
 
 Konfiguracja - Poradnik: https://www.youtube.com/watch?v=JIUOreTNj-o
 
-![Example](https://2tihub.xyz/github/files/example_RichPresence.png)
+![Example](https://github.2tihub.xyz/files/example_RichPresence.png)
 
 ## Rozwiązywanie problemów
 
