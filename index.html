@@ -61,38 +61,38 @@
   <script>
     $(document).ready(function () {
 
-      // FETCHING DATA FROM JSON FILE
-          $.getJSON("https://2tihub.xyz/json/notes.json", 
-          function (data) {
-            var student = '';
+        // FETCHING DATA FROM JSON FILE
+        $.getJSON("https://2tihub.xyz/json/notes.json", 
+        function (data) {
+          var student = '';
 
-            // ITERATING THROUGH OBJECTS
-            $.each(data, function (key, value) {
+          // ITERATING THROUGH OBJECTS
+          $.each(data, function (key, value) {
 
-              //CONSTRUCTION OF ROWS HAVING
-              // DATA FROM JSON OBJECT
-              student += '<div class="row">';
-              student += '<div class="col-lg-8 col-md-10 mx-auto">';
-              student += '<div class="post-preview">';
-              student += '<a href="https://2tihub.xyz/' + value.referral + '">';
+            //CONSTRUCTION OF ROWS HAVING
+            // DATA FROM JSON OBJECT
+            student += '<div class="row">';
+            student += '<div class="col-lg-8 col-md-10 mx-auto">';
+            student += '<div class="post-preview">';
+            student += '<a href="https://2tihub.xyz/' + value.referral + '">';
 
-              student += '<h2 class="post-title"><i class="' + value.icon + '"></i> ' + value.subject + '</h2>';
-              student += '<h3 class="post-subtitle">' + value.description + '</h3>';
+            student += '<h2 class="post-title"><i class="' + value.icon + '"></i> ' + value.subject + '</h2>';
+            student += '<h3 class="post-subtitle">' + value.description + '</h3>';
 
-              student += '</a>';
-              student += '<p class="post-meta">' + value.date + '</p>';
-              student += '</div>';
-              student += '</div>';
-              student += '</div>';
-              student += '<hr>';
-            });
-                          
-            //INSERTING ROWS INTO CONTAINER 
-            $('#kontener').append(student);
+            student += '</a>';
+            student += '<p class="post-meta">' + value.date + '</p>';
+            student += '</div>';
+            student += '</div>';
+            student += '</div>';
+            student += '<hr>';
           });
+                          
+          //INSERTING ROWS INTO CONTAINER 
+          $('#kontener').append(student);
         });
-      </script>
-    </div>
+      });
+    </script>
+  </div>
 
   <script>
     let url = 'https://2tihub.xyz/json/notes.json';
