@@ -58,38 +58,38 @@
   <!-- Main Content -->
   <div id="kontener" class="container">
 
-  <script>
-    $(document).ready(function () {
-
-        // FETCHING DATA FROM JSON FILE
-        $.getJSON("https://2tihub.xyz/json/notes.json", 
-        function (data) {
-          var jsonFetch = '';
-
-          // ITERATING THROUGH OBJECTS
-          $.each(data, function (key, value) {
-
-            //CONSTRUCTION OF ROWS HAVING
-            // DATA FROM JSON OBJECT
-            jsonFetch += '<div class="row">';
-            jsonFetch += '<div class="col-lg-8 col-md-10 mx-auto">';
-            jsonFetch += '<div class="post-preview">';
-            jsonFetch += '<a href="https://2tihub.xyz/' + value.referral + '">';
-
-            jsonFetch += '<h2 class="post-title"><i class="' + value.icon + '"></i> ' + value.subject + '</h2>';
-            jsonFetch += '<h3 class="post-subtitle">' + value.description + '</h3>';
-
-            jsonFetch += '</a>';
-            jsonFetch += '<p class="post-meta">' + value.date + '</p>';
-            jsonFetch += '</div>';
-            jsonFetch += '</div>';
-            jsonFetch += '</div>';
-            jsonFetch += '<hr>';
+    <script>
+      $(document).ready(function () {
+                
+          // FETCHING DATA FROM JSON FILE
+          $.getJSON("https://2tihub.xyz/json/notes.json", 
+          function (data) {
+            var student = '';
+                
+            // ITERATING THROUGH OBJECTS
+            $.each(data, function (key, value) {
+                
+              //CONSTRUCTION OF ROWS HAVING
+              // DATA FROM JSON OBJECT
+              student += '<div class="row">';
+              student += '<div class="col-lg-8 col-md-10 mx-auto">';
+              student += '<div class="post-preview">';
+              student += '<a href="https://2tihub.xyz/' + value.referral + '">';
+                
+              student += '<h2 class="post-title"><i class="' + value.icon + '"></i> ' + value.subject + '</h2>';
+              student += '<h3 class="post-subtitle">' + value.description + '</h3>';
+                
+              student += '</a>';
+              student += '<p class="post-meta">' + value.date + '</p>';
+              student += '</div>';
+              student += '</div>';
+              student += '</div>';
+              student += '<hr>';
+            });
+                                          
+            //INSERTING ROWS INTO CONTAINER 
+            $('#kontener').append(student);
           });
-                          
-          //INSERTING ROWS INTO CONTAINER 
-          $('#kontener').append(jsonFetch);
-        });
       });
     </script>
   </div>
