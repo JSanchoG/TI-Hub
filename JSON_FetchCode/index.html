@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Test</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body><div class="container"><div class="row"><div class="codeblock"><pre data-trimmed="true"><code data-language="javascript"><span class="keyword operator">&lt;</span><span class="script">script</span><span class="keyword operator">&gt;</span>
+    <span class="dolar">$</span><span class="support">(document).</span><span class="function call">ready</span><span class="szary">(</span><span class="storage function">function</span><span class="szary"> () {</span>
+
+        <span class="comment">// FETCHING DATA FROM JSON FILE</span>
+        <span class="dolarszary">$.</span><span class="function call">getJSON</span><span class="szary">(</span><span class="link">"https://2tihub.xyz/json/notes.json"</span><span class="szary">,</span>
+        <span class="storage function">function</span><span class="szary"> (data) {</span>
+          <span class="storage type">var</span><span class="szary"> fetchJSON </span><span class="keyword rownasie">=</span> <span class="string">''</span><span class="szary">;</span>
+
+          <span class="comment">// ITERATING THROUGH OBJECTS</span>
+          <span class="dolarszary">$.</span><span class="function call">each</span><span class="szary">(data, </span><span class="storage function">function</span><span class="szary"> (key, value) {</span>
+
+            <span class="comment">// CONSTRUCTION OF ROWS HAVING</span>
+            <span class="comment">// DATA FROM JSON OBJECT</span>
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="div">'&lt;div class="row"&gt;'</span><span class="szary">;</span>
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="div">'&lt;div class="col-lg-8 col-md-10 mx-auto"&gt;'</span><span class="szary">;</span>
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="div">'&lt;div class="post-preview"&gt;'</span><span class="szary">;</span>
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="a">'&lt;a href="https://2tihub.xyz/'</span> <span class="keyword plus">+</span> <span class="value">value.</span><span class="valueof">referral</span> <span class="keyword plus">+</span> <span class="string">'"&gt;'</span><span class="szary">;</span>
+
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="h">'&lt;h2 class="post-title"&gt;&lt;i class="'</span> <span class="keyword plus">+</span> <span class="value">value.</span><span class="valueof">icon</span> <span class="keyword plus">+</span> <span class="adblue">'"</span><span class="adblue">&gt;</span><span class="adblue">&lt;</span><span class="adblue"><span class="adblue">/</span>i&gt; ' + value.subject + '&lt;<span class="adblue">/</span></span><span class="h">h2</span><span class="keyword operator">&gt;</span><span class="adblue">'</span><span class="szary">;</span>
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="h">'&lt;h3 class="post-subtitle"&gt;'</span> <span class="keyword plus">+</span> <span class="value">value.</span><span class="valueof">description</span> <span class="keyword plus">+</span> <span class="h">'&lt;/h3&gt;'</span><span class="szary">;</span>
+
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="a">'&lt;/a&gt;'</span><span class="szary">;</span>
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="p">'&lt;p class="post-meta"&gt;'</span> <span class="keyword plus">+</span> <span class="value">value.</span><span class="valueof">date</span> <span class="keyword plus">+</span> <span class="string">'&lt;/p&gt;'</span><span class="szary">;</span>
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="div">'&lt;/div&gt;'</span><span class="szary">;</span>
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="div">'&lt;/div&gt;'</span><span class="szary">;</span>
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="div">'&lt;/div&gt;'</span><span class="szary">;</span>
+            <span class="fetchjson">fetchJSON</span> <span class="keyword plus">+</span><span class="keyword rownasie">=</span> <span class="hr">'&lt;hr&gt;'</span><span class="szary">;</span>
+          <span class="nawiasy">});</span>
+
+          <span class="comment">// INSERTING ROWS INTO CONTAINER</span>
+          <span class="dolar">$</span><span class="szary">(</span><span class="id">'#kontener'</span><span class="szary">).</span><span class="function call">append</span><span class="szary">(fetchJSON);</span>
+        <span class="nawiasy">});</span>
+    <span class="nawiasy">});</span>
+<span class="keyword operator">&lt;</span><span class="script">/script</span><span class="keyword operator">&gt;</span></code></pre></div></div></div>
+
+
+<!-- <pre><code data-language="javascript"><script>
+    $(document).ready(function () {
+                
+        // FETCHING DATA FROM JSON FILE
+        $.getJSON("https://2tihub.xyz/json/notes.json", 
+        function (data) {
+          var student = '';
+                
+          // ITERATING THROUGH OBJECTS
+          $.each(data, function (key, value) {
+                
+            //CONSTRUCTION OF ROWS HAVING
+            // DATA FROM JSON OBJECT
+            student += '<div class="row">';
+            student += '<div class="col-lg-8 col-md-10 mx-auto">';
+            student += '<div class="post-preview">';
+            student += '<a href="https://2tihub.xyz/' + value.referral + '">';
+                
+            student += '<h2 class="post-title"><i class="' + value.icon + '"></i> ' + value.subject + '</h2>';
+            student += '<h3 class="post-subtitle">' + value.description + '</h3>';
+                
+            student += '</a>';
+            student += '<p class="post-meta">' + value.date + '</p>';
+            student += '</div>';
+            student += '</div>';
+            student += '</div>';
+            student += '<hr>';
+          });
+                                          
+          //INSERTING ROWS INTO CONTAINER 
+          $('#kontener').append(student);
+        });
+    });
+</script></code></pre> -->
+    </body>
+</html>

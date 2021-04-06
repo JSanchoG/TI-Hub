@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+}
+.codeblock {
+    background-color: #0D1117;
+    padding: 15px;
+}
+span.script {
+    color: #31C687;
+}
+span.fetchjson {
+    color: #C9D1D9;
+}
+span.value {
+    color: #C9D1D9;
+}
+span.nawiasy {
+    color: #C9D1D9;
+}
+span.keyword.operator {
+    color: #C9D1D9;
+}
+span.support {
+    color: #C9D1D9;
+}
+span.dolarszary {
+    color: #C9D1D9;
+}
+span.szary {
+    color: #C9D1D9;
+}
+span.valueof {
+    color: #79C0FF;
+}
+span.plus {
+    color: #79C0FF;
+}
+span.rownasie {
+    color: #79C0FF;
+}
+span.div {
+    color: #A5D6FF;
+}
+span.a {
+    color: #A5D6FF;
+}
+span.p {
+    color: #A5D6FF;
+}
+span.id {
+    color: #A5D6FF;
+}
+span.hr {
+    color: #A5D6FF;
+}
+span.link {
+    color: #A5D6FF;
+}
+span.string {
+    color: #A5D6FF;
+}
+span.adblue {
+    color: #A5D6FF;
+}
+span.h {
+    color: #A5D6FF;
+}
+span.comment {
+    color: #8B949E;
+}
+span.function.call {
+    color: #D2A8FF;
+}
+span.dolar {
+    color: #D2A8FF;
+}
+span.storage.function {
+    color: #FF7B72;
+}
+span.storage.type {
+    color: #FF7B72;
+}
