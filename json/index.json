@@ -34,7 +34,8 @@
       {"subject": "Linux", "date": "15 Grudzień, 2020", "referral": "linux/klientpoczty/", "icon": "fab fa-ubuntu fa-xs", "description": "Klient poczty"},
       {"subject": "Linux", "date": "8 Grudzień, 2020", "referral": "linux/konfiguracjainterfejsowsieciowych/", "icon": "fab fa-ubuntu fa-xs", "description": "Konfiguracja interfejsów sieciowych"}
     ],
-    "windowsserver": [{"subject": "Windows Server 2016", "date": "16 Marzec, 2021", "referral": "poradnik-WS2016/", "icon": "fab fa-windows fa-xs", "description": "Zapora Sieciowa"},
+    "windowsserver": [
+      {"subject": "Windows Server 2016", "date": "16 Marzec, 2021", "referral": "poradnik-WS2016/", "icon": "fab fa-windows fa-xs", "description": "Zapora Sieciowa"},
       {"subject": "Windows Server 2016", "date": "24/25 Listopad, 2020", "referral": "zapora-sieciowa/", "icon": "fab fa-windows fa-xs", "description": "Poradnik - Usługi Windows Server 2016"}
     ]
   }
