@@ -42,93 +42,43 @@
   </header>
 
   <!-- Main Content -->
-<div class="container">
+  <div id="kontener" class="container">
 
-<div class="row">
-  <div class="col-lg-8 col-md-10 mx-auto">
-    <div class="post-preview">
-      <a href="https://2tihub.xyz/linux/ssh/">
-        <h2 class="post-title"><i class="fab fa-ubuntu fa-xs"></i> Linux</h2>
-        <h3 class="post-subtitle"> SSH</h3>
-      </a>
-      <p class="post-meta">24 Marzec, 2021</p>
-    </div>
+    <script>
+      $(document).ready(function () {
+                
+          // FETCHING DATA FROM JSON FILE
+          $.getJSON("https://2tihub.xyz/json/linux.json", 
+          function (data) {
+            var fetchJSON = '';
+                
+            // ITERATING THROUGH OBJECTS
+            $.each(data, function (key, value) {
+                
+              // CONSTRUCTION OF ROWS HAVING
+              // DATA FROM JSON OBJECT
+              fetchJSON += '<div class="row">';
+              fetchJSON += '<div class="col-lg-8 col-md-10 mx-auto">';
+              fetchJSON += '<div class="post-preview">';
+              fetchJSON += '<a href="https://2tihub.xyz/' + value.referral + '">';
+                
+              fetchJSON += '<h2 class="post-title"><i class="' + value.icon + '"></i> ' + value.subject + '</h2>';
+              fetchJSON += '<h3 class="post-subtitle">' + value.description + '</h3>';
+                
+              fetchJSON += '</a>';
+              fetchJSON += '<p class="post-meta">' + value.date + '</p>';
+              fetchJSON += '</div>';
+              fetchJSON += '</div>';
+              fetchJSON += '</div>';
+              fetchJSON += '<hr>';
+            });
+                                          
+            // INSERTING ROWS INTO CONTAINER 
+            $('#kontener').append(fetchJSON);
+          });
+      });
+    </script>
   </div>
-</div>
-
-<hr>
-
-<div class="row">
-  <div class="col-lg-8 col-md-10 mx-auto">
-    <div class="post-preview">
-      <a href="https://2tihub.xyz/linux/ufw-gufw/">
-        <h2 class="post-title"><i class="fab fa-ubuntu fa-xs"></i> Linux</h2>
-        <h3 class="post-subtitle"> Konfiguracja UFW i GUFW</h3>
-      </a>
-      <p class="post-meta">2 Marzec, 2021</p>
-    </div>
-  </div>
-</div>
-
-<hr>
-
-<div class="row">
-  <div class="col-lg-8 col-md-10 mx-auto">
-    <div class="post-preview">
-      <a href="https://2tihub.xyz/linux/drukowanie/">
-        <h2 class="post-title"><i class="fab fa-ubuntu fa-xs"></i> Linux</h2>
-        <h3 class="post-subtitle"> Drukowanie</h3>
-      </a>
-      <p class="post-meta">8 Luty, 2021</p>
-    </div>
-  </div>
-</div>
-
-<hr>
-
-<div class="row">
-  <div class="col-lg-8 col-md-10 mx-auto">
-    <div class="post-preview">
-      <a href="https://2tihub.xyz/linux/operacjenauzytkownikachigrupach/">
-        <h2 class="post-title"><i class="fab fa-ubuntu fa-xs"></i> Linux</h2>
-        <h3 class="post-subtitle"> Operacje na użytkownikach i grupach</h3>
-      </a>
-      <p class="post-meta">26 Styczeń, 2021</p>
-    </div>
-  </div>
-</div>
-
-<hr>
-
-<div class="row">
-  <div class="col-lg-8 col-md-10 mx-auto">
-    <div class="post-preview">
-      <a href="https://2tihub.xyz/linux/klientpoczty/">
-        <h2 class="post-title"><i class="fab fa-ubuntu fa-xs"></i> Linux</h2>
-        <h3 class="post-subtitle"> Klient poczty</h3>
-      </a>
-      <p class="post-meta">15 Grudzień, 2020</p>
-    </div>
-  </div>
-</div>
-
-<hr>
-
-<div class="row">
-  <div class="col-lg-8 col-md-10 mx-auto">
-    <div class="post-preview">
-      <a href="https://2tihub.xyz/linux/konfiguracjainterfejsowsieciowych/">
-        <h2 class="post-title"><i class="fab fa-ubuntu fa-xs"></i> Linux</h2>
-        <h3 class="post-subtitle"> Konfiguracja interfejsów sieciowych</h3>
-      </a>
-      <p class="post-meta">8 Grudzień, 2020</p>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<hr>
 
   <!-- Bootstrap core JavaScript -->
   <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
