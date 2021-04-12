@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Lekcja Online - 18.01.2021</title>
+    <title>Lekcja Online - 03.03.2021</title>
+    <link rel="shortcut icon" href="https://2tihub.xyz/icons/2tihub.ico">
 
     <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,15 +28,25 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <h2 class="section-heading" id="temat">Temat: Uwierzytelnienie klientów Wi-Fi za pomocą serwera RADIUS.</h2>
-            <p>Serwer RADIUS jest wykorzystywany jako protokół uwierzytelnienia i autoryzacji. Uwierzytelnienie to proces polegający na potwierdzeniu zadeklarowanej tożsamości podmiotu biorącego udział w procesie komunikacji. Podczas autoryzacji podmiotowi nadawane są uprawnienia do danych. Zaletą stosowania uwierzytelnienia z wykorzystaniem serwera RADIUS jest to, że może zabezpieczać za równo małe sieci składające się tylko z kilku komputerów oraz duże sieci miejskie. Protokół RADIUS pracuje w architekturze klient-serwer, w okresie początkowym wykorzystywał port UDP 1645 oraz UDP 1646, następnie przyznano mu porty 1812 i 1813, wszystkie te cztery porty mogą być wykorzystywane do komunikacji. Po sprawdzeniu danych użytkownika we własnej bazie danych, serwer RADIUS może odpowiedzieć jednym z następujących komunikatów:</p>
+            <h2 class="section-heading" id="temat">Temat: Przygotowanie do pracy serwera DHCP.</h2>
+            <p>Protokół i usługa DHCP (Dynamic Host Configuration Protocol) służy do automatycznej (dynamicznej) konfiguracji hostów w lokalnej sieci komputerowej przez nadanie im:</p>
 
             <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- accept - oznacza sukces uwierzytelnienia</li>
-              <li class="list-group-item">- reject - użytkownik nie został poprawnie uwierzytelniony, dostęp do zasobów sieci jest zabroniony</li>
-              <li class="list-group-item">- challenge - prośba o wprowadzenie dodatkowych danych uwierzytelniających</li>
+              <li class="list-group-item">- adresu IP</li>
+              <li class="list-group-item">- maski podsieci</li>
+              <li class="list-group-item">- adresów serwerów DNS</li>
+              <li class="list-group-item">- adresu bramy</li>
             </ul>
+            
+            <p>Pojęcia dotyczące DHCP:</p>
 
+            <ul class="shadow list-group" style="margin-bottom:30px">
+              <li class="list-group-item">- brama (z ang. gateway) - jest to urządzenie, przez które komputery w sieci lokalnej mogą wymieniać dane z siecią WAN</li>
+              <li class="list-group-item">- maska podsieci - liczba, za pomocą której można wyodbrębnić w adresie IP adres sieci LAN oraz adres komputera użytkownika tej sieci</li>
+              <li class="list-group-item">- wykluczenie adresów IP - adresy IP, które nie powinny być przydzielane dynamicznie</li>
+              <li class="list-group-item">- zastrzeżenie adresów IP - adresy IP, które powinny być przypisane na stałe do danego komputera sieci LAN</li>
+              <li class="list-group-item">- czas dzierżawy - czas, na jaki będzie dzierżawiony adres IP</li>
+            </ul>
           </div>
         </div>
       </div>

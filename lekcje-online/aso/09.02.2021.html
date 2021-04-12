@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Lekcja Online - 09.02.2021</title>
+    <link rel="shortcut icon" href="https://2tihub.xyz/icons/2tihub.ico">
 
     <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,32 +28,27 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <h2 class="section-heading" id="temat">Temat: Adresacja IPv6.</h2>
-            <p>Adres IPv6 ma długość 128 bitów, co pozwala na uzyskanie od 2 do 128 adresów, podzielone jest na 8 16-bitowych fragmentów, oddzielone dwukropkami, każdy 16-bitowy blok reprezentowany jest za pomocą czterocyfrowej liczby szesnastkowej</p>
-            <p>W adresacji wykorzystywanej w protokole IPv6 używane są trzy typy adresów:</p>
+            <h2 class="section-heading" id="temat">Temat: Instalowanie pakietów.</h2>
+            <p>Menedżer pakietów jest oprogramowaniem służącym do automatycznej instalacji, aktualizacji, konfiguracji i usuwania pakietów oprogramowania.</p>
+            <p>Najpopularniejsze menedżery pakietów:</p>
 
             <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- unicast - identyfikujące pojedynczy interfejs</li>
-              <li class="list-group-item">- multicast - identyfikujące grupę interfejsów</li>
-              <li class="list-group-item">- anycast - podobnie jak adresy multicast, identyfikują one grupę interfejsów, jednak pakiet wysyłany na adres anycast jest dostarczany do najbliższego węzła, np. serwera DNS</li>
+              <li class="list-group-item">- apt, aptitude, dselect - osługiwane przez dystrybucje Debian i Ubuntu w formacie *.deb</li>
+              <li class="list-group-item">- yum - obsługiwane przez dystrybucje Fedora, SuSE i CentOS w formacie *.rpm</li>
+              <li class="list-group-item">- YaST - obsługiwane przez dystrybucję SuSE w formacie *.rpm</li>
             </ul>
 
-            <p>W IPv6 rozróżniane są zakresy adresów:</p>
+            <p>Oprogramowanie wchodzące w skład Ubuntu i innych jego odmian zostało podzielone na 4 sekcje zwane komponentami:</p>
 
             <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- adresy lokalne dla łącza</li>
-              <li class="list-group-item">- unikalne adresy lokalne - adresy będące odpowiednikiem adresów prywatnych z protokołu IPv4</li>
-              <li class="list-group-item">- adresy globalne</li>
+              <li class="list-group-item">- main - znajdują się tylko te aplikacje, które spełniają wymagania licencyjne Ubuntu i są wspierane przez zespół projektu, jest to najważniejsze oprogramowanie z punktu widzenia użytkownika</li>
+              <li class="list-group-item">- restricted - zawiera oprogramowanie niezbędne do pracy lub funkcjonalności systemu opublikowane na licencji niezgodnej z wymogami Ubuntu, np. sterowniki kart graficznych</li>
+              <li class="list-group-item">- universe - zawiera wolne oprogramowanie tworzone przez podmioty niezależne i nie wspierane przez zespół Ubuntu</li>
+              <li class="list-group-item">- multiverse - zawiera oprogramowanie na licencji niezgodnej z wymogami Ubuntu</li>
             </ul>
 
-            <p>Adresy specjalne w IPv6:</p>
+            <p>Pakiet to archiwum zawierające pliki programu i dodatkowe informacje o pakiecie oraz wymaganiach i sposobie jego instalacji</p>
 
-            <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- ::/128 - adres nieokreślony</li>
-              <li class="list-group-item">- ::1/128 - pętla zwrotna</li>
-              <li class="list-group-item">- 2001:db8::/32 - pula wykorzystywana w przykładach i dokumentacji</li>
-              <li class="list-group-item">- FF00::/8 - pula multicastowa używana do komunikacji multicast</li>
-            </ul>
           </div>
         </div>
       </div>

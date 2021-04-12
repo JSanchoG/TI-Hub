@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Lekcja Online - 09.02.2021</title>
+    <title>Lekcja Online - 17.11.2020</title>
+    <link rel="shortcut icon" href="https://2tihub.xyz/icons/2tihub.ico">
 
     <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,27 +28,24 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <h2 class="section-heading" id="temat">Temat: Instalowanie pakietów.</h2>
-            <p>Menedżer pakietów jest oprogramowaniem służącym do automatycznej instalacji, aktualizacji, konfiguracji i usuwania pakietów oprogramowania.</p>
-            <p>Najpopularniejsze menedżery pakietów:</p>
+            <h2 class="section-heading" id="temat">Temat: Konfiguracja routera sprzętowego.</h2>
+            <p>Konfiguracja routera w lokalnej sieci komputerowej powinna uwzględniać następujące etapy:</p>
 
             <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- apt, aptitude, dselect - osługiwane przez dystrybucje Debian i Ubuntu w formacie *.deb</li>
-              <li class="list-group-item">- yum - obsługiwane przez dystrybucje Fedora, SuSE i CentOS w formacie *.rpm</li>
-              <li class="list-group-item">- YaST - obsługiwane przez dystrybucję SuSE w formacie *.rpm</li>
+              <li class="list-group-item">- Fizyczne podłączenie interfejsów routera do sieci</li>
+              <li class="list-group-item">- Konfigurację interfejsów, czyli zaadresowanie interfejsów podłączonych do poszczególnych segmentów sieci</li>
+              <li class="list-group-item">- Wybór sposobu konfiguracji rutingu</li>
+              <li class="list-group-item">- Zapisanie wprowadzonych zmian konfiguracyjnych</li>
+              <li class="list-group-item">- Sprawdzenie działania routera</li>
             </ul>
 
-            <p>Oprogramowanie wchodzące w skład Ubuntu i innych jego odmian zostało podzielone na 4 sekcje zwane komponentami:</p>
+            <p>Ruting statyczny wykorzystuje trasy statyczne wprowadzane manualnie do tablicy rutingu. Trasa statyczna powinna zawierać adres sieciowy, maskę podsieci oraz adres routera następnego skoku. Ruting statyczny konfigurowany jest w następujących sytuacjach:</p>
 
             <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- main - znajdują się tylko te aplikacje, które spełniają wymagania licencyjne Ubuntu i są wspierane przez zespół projektu, jest to najważniejsze oprogramowanie z punktu widzenia użytkownika</li>
-              <li class="list-group-item">- restricted - zawiera oprogramowanie niezbędne do pracy lub funkcjonalności systemu opublikowane na licencji niezgodnej z wymogami Ubuntu, np. sterowniki kart graficznych</li>
-              <li class="list-group-item">- universe - zawiera wolne oprogramowanie tworzone przez podmioty niezależne i nie wspierane przez zespół Ubuntu</li>
-              <li class="list-group-item">- multiverse - zawiera oprogramowanie na licencji niezgodnej z wymogami Ubuntu</li>
+              <li class="list-group-item">- Połącznie z internetem realizowane jest tylko przez jednego dostawcę, który jest jedynym punktem połączenia z internetem</li>
+              <li class="list-group-item">- W danej sieci jest tylko kilka routerów</li>
+              <li class="list-group-item">- Sieć jest skonfigurowana w topologii gwiazdy, składa się z punktu centralnego i punktów zewnętrznych połączonych pojedynczo z koncentratorem</li>
             </ul>
-
-            <p>Pakiet to archiwum zawierające pliki programu i dodatkowe informacje o pakiecie oraz wymaganiach i sposobie jego instalacji</p>
-
           </div>
         </div>
       </div>

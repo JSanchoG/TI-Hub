@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Lekcja Online - 18.01.2021</title>
+    <title>Lekcja Online - 09.02.2021</title>
+    <link rel="shortcut icon" href="https://2tihub.xyz/icons/2tihub.ico">
 
     <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,33 +28,31 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <h2 class="section-heading" id="temat">Temat: Uwierzytelnienie klientów Wi-Fi za pomocą serwera RADIUS.</h2>
-            <p>Antena jest to urządzenie zmieniające fale elektromagnetyczne na sygnał elektryczny i odwrotnie. Podział anten Wi-Fi:</p>
+            <h2 class="section-heading" id="temat">Temat: Adresacja IPv6.</h2>
+            <p>Adres IPv6 ma długość 128 bitów, co pozwala na uzyskanie od 2 do 128 adresów, podzielone jest na 8 16-bitowych fragmentów, oddzielone dwukropkami, każdy 16-bitowy blok reprezentowany jest za pomocą czterocyfrowej liczby szesnastkowej</p>
+            <p>W adresacji wykorzystywanej w protokole IPv6 używane są trzy typy adresów:</p>
 
-            <p>1. ze względu na budowę:</p>
             <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- mikropaskowe</li>
-              <li class="list-group-item">- yagi-uda</li>
-              <li class="list-group-item">- szczelinowe</li>
-              <li class="list-group-item">- helicalne</li>
-              <li class="list-group-item">- paraboliczne</li>
-              <li class="list-group-item">- biquad</li>
-              <li class="list-group-item">- kolinearne</li>
-              <li class="list-group-item">- OMNI</li>
-              <li class="list-group-item">- dipolowe</li>
+              <li class="list-group-item">- unicast - identyfikujące pojedynczy interfejs</li>
+              <li class="list-group-item">- multicast - identyfikujące grupę interfejsów</li>
+              <li class="list-group-item">- anycast - podobnie jak adresy multicast, identyfikują one grupę interfejsów, jednak pakiet wysyłany na adres anycast jest dostarczany do najbliższego węzła, np. serwera DNS</li>
             </ul>
 
-            <p>2. Ze względu na kierunkowość:</p>
+            <p>W IPv6 rozróżniane są zakresy adresów:</p>
+
             <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- dookolne - wysyła i odbiera fale radiowe we wszystkich kierunkach</li>
-              <li class="list-group-item">- sektorowe</li>
-              <li class="list-group-item">- kierunkowe - wysyłają i odbierają fale radiowe w jednym, wybieranym kierunku</li>
+              <li class="list-group-item">- adresy lokalne dla łącza</li>
+              <li class="list-group-item">- unikalne adresy lokalne - adresy będące odpowiednikiem adresów prywatnych z protokołu IPv4</li>
+              <li class="list-group-item">- adresy globalne</li>
             </ul>
 
-            <p>3. Ze względu na zastosowanie:</p>
+            <p>Adresy specjalne w IPv6:</p>
+
             <ul class="shadow list-group" style="margin-bottom:30px">
-              <li class="list-group-item">- bazowe</li>
-              <li class="list-group-item">- klienckie</li>
+              <li class="list-group-item">- ::/128 - adres nieokreślony</li>
+              <li class="list-group-item">- ::1/128 - pętla zwrotna</li>
+              <li class="list-group-item">- 2001:db8::/32 - pula wykorzystywana w przykładach i dokumentacji</li>
+              <li class="list-group-item">- FF00::/8 - pula multicastowa używana do komunikacji multicast</li>
             </ul>
           </div>
         </div>
