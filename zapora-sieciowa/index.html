@@ -93,8 +93,8 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#instalacjadhcp">Instalacja DHCP</a>
-      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#konfiguracjadhcp">Konfiguracja DHCP</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#filtrowaniepakietow">Filtry</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#proxy">Proxy</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#instalacjadns">Instalacja DNS</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#konfiguracjadns">Konfiguracja DNS</a>
     </div>
@@ -122,20 +122,21 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-          <h2 class="section-heading" id="ssh" style="padding-top:70px;text-align:center">Zapora sieciowa</h2>
-          <blockquote>DHCP (Dynamic Host Configuration Protocol – protokół dynamicznego konfigurowania hostów) – protokół komunikacyjny umożliwiający hostom uzyskanie od serwera danych konfiguracyjnych, np. adresu IP hosta, adresu IP bramy sieciowej, adresu serwera DNS, maski podsieci.</blockquote>
-          <blockquote style="margin-bottom:30px">DNS (Domain Name System) - protokół, którego główna funkcja polega na tłumaczeniu łatwych do zapamiętania przez człowieka nazw domen na zrozumiałe dla komputerów dane liczbowe. Serwer DNS wyszukuje adres IP danej strony na podstawie wpisu użytkownika zamieszczonego w polu adresu wyszukiwarki. Mechanizm działania systemu DNS przypomina więc książkę telefoniczną, w której do określonych osób przypisane są numery telefonów. Jest to ogromna baza danych umieszczonych w rekordach, z której korzystają użytkownicy z całego świata.</blockquote>
+          <h2 class="section-heading" id="zaporasieciowa" style="padding-top:70px;text-align:center">Zapora sieciowa</h2>
+          <blockquote>Zapora sieciowa (firewall – ściana ogniowa) – jeden ze sposobów zabezpieczania sieci i systemów przed intruzami.</blockquote>
+          <blockquote style="margin-bottom:30px">Termin ten może odnosić się zarówno do sprzętu komputerowego wraz ze specjalnym oprogramowaniem, jak i do samego oprogramowania blokującego niepowołany dostęp do komputera, na którego straży stoi. Pełni rolę połączenia ochrony sprzętowej i programowej sieci wewnętrznej LAN przed dostępem z zewnątrz, tzn. sieci publicznych, Internetu, chroni też przed nieuprawnionym wypływem danych z sieci lokalnej na zewnątrz. Często jest to komputer wyposażony w system operacyjny (np. Linux, BSD) z odpowiednim oprogramowaniem. Do jego podstawowych zadań należy filtrowanie połączeń wchodzących i wychodzących oraz tym samym odmawianie żądań dostępu uznanych za niebezpieczne.</blockquote>
           <hr>
-          <h3 class="section-heading" id="instalacjadhcp" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Instalacja serwera DHCP</h3>
+          <h3 class="section-heading" id="filtrowaniepakietow" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Filtrowanie pakietów</h3>
           <hr>
-          <p>Na początek na serwerze zainstaluję usługę serwera DHCP</p>
+          <p>Najpowszechniejszym oraz najstarszym typem architektury zapory sieciowej jest zapora filtrująca pakiety. Zapora wykonuje proste sprawdzanie pakietów danych przechodzących przez router - sprawdza informacje, takie jak docelowy i początkowy adres IP, typ pakietu, numer portu i inne informacje z poziomu powierzchni, bez otwierania pakietu w celu sprawdzenia jego zawartości.<br>Jeśli pakiet nie przejdzie kontroli, jest odrzucany.<br>Zaletą tych zapór jest to, że nie wymagają one dużych zasobów sprzętowych. Oznacza to, że nie mają one dużego wpływu na wydajność systemu i są one stosunkowe proste. Jednak są one również stosunkowo łatwe do ominięcia w porównaniu do zapór sieciowych z bardziej zaawansowanymi możliwościami inspekcji.</p>
           <div class="banner">
             <img src="files/serwer/1-install.png" width="256" height="192" alt=""/>
           </div>
           <hr>
-          <h3 class="section-heading" id="konfiguracjadhcp" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Konfiguracja serwera DHCP</h3>
+          <h3 class="section-heading" id="proxy" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Bramy pośredniczące (proxy)</h3>
           <hr>
-          <p>Konfigurację rozpocznę od przydzielenia karty sieciowej IPv4 dla usługi DHCP, edytując plik <kbd>/etc/default/isc-dhcp-server</kbd></p>
+          <blockquote>Z tego typu architektury zapory sieciowej korzysta domena <b>2tihub.xyz</b>, zapora jest dostarczana przez firmę <b>Cloudflare</b></blockquote>
+          <p>Jako kolejny uproszczony typ zapory, który ma na celu szybkie i łatwe zatwierdzanie lub odrzucanie ruchu bez zużywania znacznych zasobów obliczeniowych, bramy pośredniczące działają poprzez weryfikację protokołu sterowania transmisją (TCP). To sprawdzenie uzgadniania TCP ma na celu upewnienie się, że sesja, z której pochodzi pakiet, jest autentyczna.<br>Chociaż te zapory są niezwykle wydajne pod względem zasobów, nie sprawdzają samego pakietu. Tak więc, jeśli pakiet zawierał złośliwe oprogramowanie, ale miał odpowiedni "uścisk dłoni TCP", poszedłby prosto. Dlatego bramy pośredniczące nie wystarczą, aby same chronić firmę.</p>
           <div class="banner">
             <img src="files/serwer/2-1-sudonano.png" width="256" height="192" alt=""/>
           </div>
