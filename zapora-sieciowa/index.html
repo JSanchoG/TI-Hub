@@ -24,68 +24,7 @@
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 
-  <style>
-	html {
-		scroll-behavior: smooth;
-	}
-	.dropdown {
-		position: relative;
-		display: inline-block;
-	}
-	.dropdown-content {
-		display: none;
-		position: absolute;
-		background-color: #f9f9f9;
-		min-width: 160px;
-		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		z-index: 1;
-	}
-	.dropdown:hover .dropdown-content {
-		display: block;
-	}
-	.desc {
-		padding: 15px;
-		text-align: center;
-	}
-	.zdjecie {
-		display: inline-block;
-		margin: 0 0.5rem;
-		/*  animation: backInLeft; */
-		animation-duration: 1.3s; /* don't forget to set a duration! */
-	}
-	.animacja {
-		display: inline-block;
-		margin: 0 0.5rem;
-		animation-duration: 1.3s; /* don't forget to set a duration! */
-		--animate-delay: 2s;
-	}
-	.banner {
-		height: 192px;
-		width: 256px;
-		text-align: center;
-	}
-	.banner img {
-		text-align: center;
-		height: 192px;
-		width: 256px;
-		-webkit-transition: .30s;
-		   -moz-transition: .30s;
-		    -ms-transition: .30s;
-		     -o-transition: .30s;
-		        transition: .30s;
-	}
-	.banner:hover {
-		height: 768px;
-	}
-	.banner:hover img {
-		height: 192px;
-		width: 256px;
-	}
-	.banner img:hover {
-		height: 768px;
-		width: 1024px;
-	}
-</style>
+  <link href="https://2tihub.xyz/css/style-extra.css" rel="stylesheet">
 </head>
 
 <body>
@@ -95,7 +34,7 @@
     <div class="container">
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#filtrowaniepakietow">Filtry</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#proxy">Proxy</a>
-      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#instalacjadns">Instalacja DNS</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#stanowa">Stanowa</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#konfiguracjadns">Konfiguracja DNS</a>
     </div>
   </nav>
@@ -122,11 +61,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-          <h2 class="section-heading" id="zaporasieciowa" style="padding-top:70px;text-align:center">Zapora sieciowa</h2>
+          <h2 class="section-heading" id="zaporasieciowa" style="padding-top:70px;text-align:center">Zapora Sieciowa</h2>
           <blockquote>Zapora sieciowa (firewall – ściana ogniowa) – jeden ze sposobów zabezpieczania sieci i systemów przed intruzami.</blockquote>
           <blockquote style="margin-bottom:30px">Termin ten może odnosić się zarówno do sprzętu komputerowego wraz ze specjalnym oprogramowaniem, jak i do samego oprogramowania blokującego niepowołany dostęp do komputera, na którego straży stoi. Pełni rolę połączenia ochrony sprzętowej i programowej sieci wewnętrznej LAN przed dostępem z zewnątrz, tzn. sieci publicznych, Internetu, chroni też przed nieuprawnionym wypływem danych z sieci lokalnej na zewnątrz. Często jest to komputer wyposażony w system operacyjny (np. Linux, BSD) z odpowiednim oprogramowaniem. Do jego podstawowych zadań należy filtrowanie połączeń wchodzących i wychodzących oraz tym samym odmawianie żądań dostępu uznanych za niebezpieczne.</blockquote>
           <hr>
-          <h3 class="section-heading" id="filtrowaniepakietow" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Filtrowanie pakietów</h3>
+          <h3 class="section-heading" id="filtrowaniepakietow" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Filtrowanie Pakietów</h3>
           <hr>
           <p>Najpowszechniejszym oraz najstarszym typem architektury zapory sieciowej jest zapora filtrująca pakiety. Zapora wykonuje proste sprawdzanie pakietów danych przechodzących przez router - sprawdza informacje, takie jak docelowy i początkowy adres IP, typ pakietu, numer portu i inne informacje z poziomu powierzchni, bez otwierania pakietu w celu sprawdzenia jego zawartości.<br>Jeśli pakiet nie przejdzie kontroli, jest odrzucany.<br>Zaletą tych zapór jest to, że nie wymagają one dużych zasobów sprzętowych. Oznacza to, że nie mają one dużego wpływu na wydajność systemu i są one stosunkowe proste. Jednak są one również stosunkowo łatwe do ominięcia w porównaniu do zapór sieciowych z bardziej zaawansowanymi możliwościami inspekcji.</p>
           <hr>
@@ -134,12 +73,15 @@
           <hr>
           <blockquote>Z tego typu architektury zapory sieciowej korzysta domena <b>2tihub.xyz</b>. Zapora dostarczana przez <b>Cloudflare</b>.</blockquote>
           <div class="banner">
-            <img src="files/proxy-1.png" width="256" height="192" alt=""/>
+            <img src="files/proxy-1.png" width="256" alt=""/>
           </div>
           <div class="banner">
-            <img src="files/proxy-2.png" width="256" height="192" alt=""/>
+            <img src="files/proxy-2.png" width="256" alt=""/>
           </div>
           <p>Jako kolejny uproszczony typ zapory, który ma na celu szybkie i łatwe zatwierdzanie lub odrzucanie ruchu bez zużywania znacznych zasobów obliczeniowych, bramy pośredniczące działają poprzez weryfikację protokołu sterowania transmisją (TCP). To sprawdzenie uzgadniania TCP ma na celu upewnienie się, że sesja, z której pochodzi pakiet, jest autentyczna.<br>Chociaż te zapory są niezwykle wydajne pod względem zasobów, nie sprawdzają samego pakietu. Tak więc, jeśli pakiet zawierał złośliwe oprogramowanie, ale miał odpowiedni "uścisk dłoni TCP", poszedłby prosto. Dlatego bramy pośredniczące nie wystarczą, aby same chronić firmę.</p>
+          <hr>
+          <h3 class="section-heading" id="stanowa" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Stanowa Zapora</h3>
+          <hr>
 
         </div>
       </div>
