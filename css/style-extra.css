@@ -39,13 +39,6 @@ html {
 	     -o-transition: .30s;
 	        transition: .30s;
 }
-.banner:hover {
-	height: 768px;
-}
-.banner:hover img {
-	height: 192px;
-	width: 256px;
-}
 .banner img:hover {
 	height: 768px;
 	width: 1024px;
