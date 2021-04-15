@@ -32,10 +32,11 @@ html {
 	animation-duration: 1.3s; /* don't forget to set a duration! */
 	--animate-delay: 2s;
 }
+.banner {
+	text-align: center;
+}
 .banner img {
 	text-align: center;
-	height: 192px;
-	width: 256px;
 	-webkit-transition: .30s;
 	   -moz-transition: .30s;
 	    -ms-transition: .30s;
