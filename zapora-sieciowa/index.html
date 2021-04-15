@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="utf-8">
+  <meta rel="shortcut icon" href="https://2tihub.xyz/poradnik-WS2016/WS-logo.png" sizes="144x144" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="https://2tihub.xyz/icons/firewall.png">
+
+  <title></title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://2tihub.xyz/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://2tihub.xyz/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="https://2tihub.xyz/css/2tihub.min.css" rel="stylesheet">
+  <link href="https://2tihub.xyz/css/darkmode.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <style>
+	html {
+		scroll-behavior: smooth;
+	}
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+	}
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+	.desc {
+		padding: 15px;
+		text-align: center;
+	}
+	.zdjecie {
+		display: inline-block;
+		margin: 0 0.5rem;
+		/*  animation: backInLeft; */
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+	}
+	.animacja {
+		display: inline-block;
+		margin: 0 0.5rem;
+		animation-duration: 1.3s; /* don't forget to set a duration! */
+		--animate-delay: 2s;
+	}
+	.banner {
+		height: 192px;
+		width: 256px;
+		text-align: center;
+	}
+	.banner img {
+		text-align: center;
+		height: 192px;
+		width: 256px;
+		-webkit-transition: .30s;
+		   -moz-transition: .30s;
+		    -ms-transition: .30s;
+		     -o-transition: .30s;
+		        transition: .30s;
+	}
+	.banner:hover {
+		height: 768px;
+	}
+	.banner:hover img {
+		height: 192px;
+		width: 256px;
+	}
+	.banner img:hover {
+		height: 768px;
+		width: 1024px;
+	}
+</style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#instalacjadhcp">Instalacja DHCP</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#konfiguracjadhcp">Konfiguracja DHCP</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#instalacjadns">Instalacja DNS</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#konfiguracjadns">Konfiguracja DNS</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead animate__animated animate__fadeIn" style="background-image: url('https://linux.2tihub.xyz/zapora-sieciowa/zapora.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1 class="animacja animate__animated animate__zoomIn" style="margin-bottom:25px">Instalacja i konfiguracja serwera DHCP oraz DNS</h1>
+
+            <span class="meta animacja animate__animated animate__fadeInUpBig">Jakub Gożuk - 15 Kwiecień, 2021</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container animate__animated animate__bounceInLeft">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+          <h2 class="section-heading" id="ssh" style="padding-top:70px;text-align:center">Zapora sieciowa</h2>
+          <blockquote>DHCP (Dynamic Host Configuration Protocol – protokół dynamicznego konfigurowania hostów) – protokół komunikacyjny umożliwiający hostom uzyskanie od serwera danych konfiguracyjnych, np. adresu IP hosta, adresu IP bramy sieciowej, adresu serwera DNS, maski podsieci.</blockquote>
+          <blockquote style="margin-bottom:30px">DNS (Domain Name System) - protokół, którego główna funkcja polega na tłumaczeniu łatwych do zapamiętania przez człowieka nazw domen na zrozumiałe dla komputerów dane liczbowe. Serwer DNS wyszukuje adres IP danej strony na podstawie wpisu użytkownika zamieszczonego w polu adresu wyszukiwarki. Mechanizm działania systemu DNS przypomina więc książkę telefoniczną, w której do określonych osób przypisane są numery telefonów. Jest to ogromna baza danych umieszczonych w rekordach, z której korzystają użytkownicy z całego świata.</blockquote>
+          <hr>
+          <h3 class="section-heading" id="instalacjadhcp" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Instalacja serwera DHCP</h3>
+          <hr>
+          <p>Na początek na serwerze zainstaluję usługę serwera DHCP</p>
+          <div class="banner">
+            <img src="files/serwer/1-install.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <h3 class="section-heading" id="konfiguracjadhcp" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Konfiguracja serwera DHCP</h3>
+          <hr>
+          <p>Konfigurację rozpocznę od przydzielenia karty sieciowej IPv4 dla usługi DHCP, edytując plik <kbd>/etc/default/isc-dhcp-server</kbd></p>
+          <div class="banner">
+            <img src="files/serwer/2-1-sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/2-2-blank.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/2-3-edited.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Teraz przejdę do konfiguracji samej usługi w pliku <kbd>/etc/dhcp/dhcpd.conf</kbd></p>
+          <div class="banner">
+            <img src="files/serwer/3-1-sudonano-conf.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Można tu zmienić czas dzierżawy domeny, ustawić adresy DNS, tworzyć zakresy adresów IP, czy przydzielać stałe adresy IP</p>
+          <div class="banner">
+            <img src="files/serwer/3-2-nameservers.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/3-3-config.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Usługa DHCP powinna już automatycznie przydzielać adresy IP klientom w sieci</p>
+          <div class="banner">
+            <img src="files/stacja/ip.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/stacja/ifconfig.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Aby wszystko działało poprawnie, należy zrestartować usługę poleceniem <kbd>sudo systemctl restart isc-dhcp-server</kbd> oraz sprawdzić jej status, wywołując polecenie <kbd>sudo systemctl status isc-dhcp-server</kbd></p>
+          <div class="banner">
+            <img src="files/serwer/3-4-status.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Jeżeli chcemy, aby danemu klientowi został przydzielony statyczny adres IP, można to zrobić konfigurując plik <kbd>/etc/dhcp/dhcpd.conf</kbd></p>
+          <div class="banner">
+            <img src="files/serwer/3-6-sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Aby klientowi za każdym razem został przydzielany ten sam adres IP, w pliku konfiguracyjnym należy uwzględnić hosta, a w nim zdefiniować Adres MAC karty sieciowej klienta oraz Adres IP, który będzie przydzielany klientowi. Adres MAC klienta można sprawdzić, wywołując polecenie <kbd>ifconfig</kbd> na stacji roboczej klienta lub <kbd>sudo dhcp-lease-list</kbd>, jeśli klient znajduje się w tej samej sieci</p>
+          <div class="banner">
+            <img src="files/serwer/3-5-leaselist.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/3-7-host-stacja.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Aby zainicjować zmiany, należy ponownie zrestartować usługę i w razie jakiegokolwiek błędu sprawdzić jej status</p>
+          <div class="banner">
+            <img src="files/serwer/3-8-status.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Tym sposobem można dodać więcej hostów, można też utworzyć grupę hostów w pliku konfiguracyjnym usługi DHCP</p>
+          <div class="banner">
+            <img src="files/serwer/4-2-config.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Aby zmiany weszły w życie, trzeba kolejny raz zrestartować usługę oraz sprawdzić jej status w przypadku pojawienia się błędu</p>
+          <div class="banner">
+            <img src="files/serwer/4-3-status.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <h3 class="section-heading" id="instalacjadns" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Instalacja serwera DNS</h3>
+          <hr>
+          <p>Na serwerze zainstaluję usługę serwera DNS</p>
+          <div class="banner">
+            <img src="files/serwer/dns/1-1-install.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <h3 class="section-heading" id="konfiguracjadns" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Konfiguracja serwera DNS</h3>
+          <hr>
+          <p>W pliku <kbd>/etc/bind/named.conf.options</kbd> wprowadzę Adres IP serwera do selektora <b>forwarders</b> oraz zrestartuję usługę</p>
+          <div class="banner">
+            <img src="files/serwer/dns/1-2-sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/1-3-config.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/1-4-restart.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Po wprowadzeniu do pliku konfiguracyjnego adresów serwerów nazw domenowych Cloudflare (<kbd>jule.ns.cloudflare.com</kbd> i <kbd>kaiser.ns.cloudflare.com</kbd> (lub jakiegokolwiek serwera proxy)) strony lub pliki z serwera, do którego klient podłączony do lokalnej sieci wysyła zapytanie za drugim razem powinny ładować się szybciej (jeżeli serwer, do którego wysyłane jest zapytanie położony jest blisko nas oraz szybkość transmisji danych jest przyzwoita, zmiany nie powinny być widoczne). Poleceniem <kbd>dig</kbd> wyślę zapytanie do domeny <b>2tihub.xyz</b>, za drugim razem czas zapytania (Query time) powinien być mniejszy</p>
+          <blockquote>Przez przypadek usunąłem SS'a zawierającego konfigurację pliku</blockquote>
+          <div class="banner">
+            <img src="files/brak-ssa.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/1-5-1-dig.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/1-5-2-dig.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Teraz w pliku <kbd>/etc/hosts</kbd> dodam alias dla stacji roboczej</p>
+          <div class="banner">
+            <img src="files/serwer/dns/3-1-sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/3-2-edited.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Następnie skonfiguruję plik <kbd>/etc/resolv.conf</kbd></p>
+          <div class="banner">
+            <img src="files/serwer/dns/2-1-sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/2-2-conf.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Teraz usunę ten plik konfiguracyjny, dlatego że po restarcie usługi przywróci on ustawienia fabryczne, po czym zastanowię się, czemu skonfigurowałem plik, który właśnie usunąłem</p>
+          <div class="banner">
+            <img src="files/serwer/dns/2-3-rm.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Potem po raz kolejny skonfiguruję ten plik</p>
+          <div class="banner">
+            <img src="files/serwer/dns/2-4-sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/2-5-edit.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/2-6-edited.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/2-7-cat.png" width="256" height="192" alt=""/>
+          </div>
+          <hr>
+          <p>Następnie skonfiguruję plik <kbd>/etc/bind/named.conf.local</kbd></p>
+          <blockquote>W pliku zamiast <b>mechanik.local</b> powinno być <b>domena.local</b>, ale przepisywałem z nagranej lekcji i tego nie zmieniłem.</blockquote>
+          <div class="banner">
+            <img src="files/serwer/dns/4-1-sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/4-2-edited.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Teraz skopiuję plik <kbd>/etc/bind/db.local</kbd> do innej lokalizacji oraz go edytuję</p>
+          <div class="banner">
+            <img src="files/serwer/dns/5-1-namedconf.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/5-2-sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/5-3-edited.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Teraz wejdę do pliku poleceniem <kbd>sudo nano</kbd>, lecz zapiszę go pod inną nazwą</p>
+          <div class="banner">
+            <img src="files/serwer/dns/6-1-sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/6-2-namechange.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/6-3-confirm.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Oba pliki powinny znajdować się w katalogu</p>
+          <div class="banner">
+            <img src="files/serwer/dns/6-4-ls.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Wówczas do pliku z przedrostkiem <b>rev.</b> dodaję rekordy DNS</p>
+          <div class="banner">
+            <img src="files/serwer/dns/6-5-sudonano.png" width="256" height="192" alt=""/>
+          </div>
+          <div class="banner">
+            <img src="files/serwer/dns/6-6-edit.png" width="256" height="192" alt=""/>
+          </div>
+          <p>Od tego momentu można używać wyrażenia <b>stacja</b> zamiast <b>192.168.3.15</b> lub <b>serwer</b> zamiast <b>192.168.3.19</b></p>
+          <div class="banner">
+            <img src="files/serwer/dns/7-ping.png" width="256" height="192" alt=""/>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </article>
+  <!-- Footer -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
+  <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="https://2tihub.xyz/js/2tihub.min.js"></script>
+  <script src="https://2tihub.xyz/js/darkmode.js"></script>
+
+</body></html>
