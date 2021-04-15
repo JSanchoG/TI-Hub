@@ -42,10 +42,12 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#filtrowaniepakietow">Filtry</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#filtrowaniepakietow">Filtrowanie</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#proxy">Proxy</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#stanowa">Stanowa</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#sieciowa">Sieciowa</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#nowejgeneracji">Nowej Generacji</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#programowa">Programowa</a>
     </div>
   </nav>
 
@@ -80,7 +82,7 @@
           <p>Najpowszechniejszym oraz najstarszym typem architektury zapory sieciowej jest zapora filtrująca pakiety. Zapora wykonuje proste sprawdzanie pakietów danych przechodzących przez router - sprawdza informacje, takie jak docelowy i początkowy adres IP, typ pakietu, numer portu i inne informacje z poziomu powierzchni, bez otwierania pakietu w celu sprawdzenia jego zawartości.</p>
           <p>Jeśli pakiet nie przejdzie kontroli, jest odrzucany.<br>Zaletą tych zapór jest to, że nie wymagają one dużych zasobów sprzętowych. Oznacza to, że nie mają one dużego wpływu na wydajność systemu i są one stosunkowe proste. Jednak są one również stosunkowo łatwe do ominięcia w porównaniu do zapór sieciowych z bardziej zaawansowanymi możliwościami inspekcji.</p>
           <hr>
-          <h3 class="section-heading" id="proxy" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Bramy Pośredniczące (Proxy)</h3>
+          <h3 class="section-heading" id="proxy" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Brama Pośrednicząca (Proxy)</h3>
           <hr>
           <blockquote>Z tego typu architektury zapory sieciowej korzysta domena <b>2tihub.xyz</b>. Zapora dostarczana przez <b>Cloudflare</b>.</blockquote>
           <div class="banner b2">
@@ -102,7 +104,18 @@
           <p>Bramy sieciowe, znane również jako Zapory Proxy działają w warstwie aplikacji w celu filtrowania ruchu przychodzącego między siecią a źródłem ruchu. Zapory te są dostarczane za pośrednictwem rozwiązania w chmurze lub innego urządzenia proxy. Zamiast zezwalać na bezpośrednie łączenie się ruchu, zapora proxy najpierw nawiązuje połączenie ze źródłem ruchu i sprawdza przychodzący pakiet danych.</p>
           <p>To sprawdzenie pakietu jest podobne do Zapory Stanowej, ponieważ sprawdza zarówno pakiet, jak i protokół uzgadniania TCP. Jednak zapory proxy mogą również przeprowadzać głębokie inspekcje pakietów, sprawdzając rzeczywistą zawartość pakietu informacyjnego, aby upewnić się, że nie zawiera on złośliwego oprogramowania.</p>
           <p>Po zakończeniu sprawdzania pakietu i jego zatwierdzeniu do połączenia się z miejscem docelowym serwer proxy wysyła go. Tworzy to dodatkową warstwę separacji między klientem a poszczególnymi urządzeniami w Twojej sieci - przesłaniając je w celu zapewnienia dodatkowej anonimowości i ochrony Twojej sieci.</p>
-          <p>Jeśli istnieje wada zapór proxy, to może to spowodować znaczne spowolnienie z powodu dodatkowych kroków w procesie przesyłania pakietów danych</p>
+          <p>Jeśli istnieje wada zapór proxy, to może to spowodować znaczne spowolnienie z powodu dodatkowych kroków w procesie przesyłania pakietów danych.</p>
+          <hr>
+          <h3 class="section-heading" id="nowejgeneracji" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Zapora Nowej Generacji</h3>
+          <hr>
+          <p>Wiele z ostatnio wydanych zapór sieciowych jest reklamowanych jako architektury "nowej generacji". Nie ma jednak zgody co do tego, co sprawia, że zapora sieciowa jest prawdziwie nowej generacji.</p>
+          <p>Niektóre typowe cechy architektur zapór sieciowych nowej generacji obejmują głęboką inspekcję pakietów (sprawdzanie faktycznej zawartości pakietu danych), sprawdzanie uzgadniania TCP i inspekcję pakietów na poziomie powierzchni. Zapory nowej generacji mogą również obejmować inne technologie, takie jak systemy zapobiegania włamaniom (IPS), które działają w celu automatycznego powstrzymania ataków na sieć.</p>
+          <p>Problem polega na tym, że nie ma jednej definicji zapory nowej generacji, dlatego ważne jest, aby sprawdzić, jakie konkretne możliwości mają takie zapory, zanim w nią zainwestujesz.</p>
+          <hr>
+          <h3 class="section-heading" id="nowejgeneracji" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Zapora Programowa</h3>
+          <hr>
+          <p>Zapory programowe obejmują zapory dowolnego typu, które są instalowane na urządzeniu lokalnym, a nie na oddzielnym sprzęcie (lub serwerze w chmurze). Dużą zaletą zapory programowej jest to, że jest bardzo przydatna do tworzenia kompleksowej obrony poprzez izolowanie poszczególnych punktów końcowych sieci od siebie.</p>
+          <p>Jednak utrzymanie indywidualnych zapór programowych na różnych urządzeniach może być trudne i czasochłonne. Ponadto nie każde urządzenie w sieci może być kompatybilne z pojedynczą zaporą programową, co może oznaczać konieczność używania różnych zapór programowych w celu pokrycia każdego zasobu.</p>
 
         </div>
       </div>
