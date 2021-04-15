@@ -32,9 +32,6 @@ html {
 	animation-duration: 1.3s; /* don't forget to set a duration! */
 	--animate-delay: 2s;
 }
-.banner {
-	text-align: center;
-}
 .banner img {
 	text-align: center;
 	-webkit-transition: .30s;
@@ -43,9 +40,14 @@ html {
 	     -o-transition: .30s;
 	        transition: .30s;
 }
+.banner:hover {
+	height: 768px;
+}
 .banner:hover img {
+	height: 192px;
 	width: 256px;
 }
 .banner img:hover {
+	height: 768px;
 	width: 1024px;
 }
