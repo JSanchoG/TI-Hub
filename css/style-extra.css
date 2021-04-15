@@ -33,7 +33,6 @@ html {
 	--animate-delay: 2s;
 }
 .banner img {
-	text-align: center;
 	-webkit-transition: .30s;
 	   -moz-transition: .30s;
 	    -ms-transition: .30s;
