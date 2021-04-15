@@ -77,9 +77,10 @@
           <hr>
           <h3 class="section-heading" id="filtrowaniepakietow" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Filtrowanie Pakietów</h3>
           <hr>
-          <p>Najpowszechniejszym oraz najstarszym typem architektury zapory sieciowej jest zapora filtrująca pakiety. Zapora wykonuje proste sprawdzanie pakietów danych przechodzących przez router - sprawdza informacje, takie jak docelowy i początkowy adres IP, typ pakietu, numer portu i inne informacje z poziomu powierzchni, bez otwierania pakietu w celu sprawdzenia jego zawartości.<br>Jeśli pakiet nie przejdzie kontroli, jest odrzucany.<br>Zaletą tych zapór jest to, że nie wymagają one dużych zasobów sprzętowych. Oznacza to, że nie mają one dużego wpływu na wydajność systemu i są one stosunkowe proste. Jednak są one również stosunkowo łatwe do ominięcia w porównaniu do zapór sieciowych z bardziej zaawansowanymi możliwościami inspekcji.</p>
+          <p>Najpowszechniejszym oraz najstarszym typem architektury zapory sieciowej jest zapora filtrująca pakiety. Zapora wykonuje proste sprawdzanie pakietów danych przechodzących przez router - sprawdza informacje, takie jak docelowy i początkowy adres IP, typ pakietu, numer portu i inne informacje z poziomu powierzchni, bez otwierania pakietu w celu sprawdzenia jego zawartości.</p>
+          <p>Jeśli pakiet nie przejdzie kontroli, jest odrzucany.<br>Zaletą tych zapór jest to, że nie wymagają one dużych zasobów sprzętowych. Oznacza to, że nie mają one dużego wpływu na wydajność systemu i są one stosunkowe proste. Jednak są one również stosunkowo łatwe do ominięcia w porównaniu do zapór sieciowych z bardziej zaawansowanymi możliwościami inspekcji.</p>
           <hr>
-          <h3 class="section-heading" id="proxy" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Bramy pośredniczące (Proxy)</h3>
+          <h3 class="section-heading" id="proxy" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Bramy Pośredniczące (Proxy)</h3>
           <hr>
           <blockquote>Z tego typu architektury zapory sieciowej korzysta domena <b>2tihub.xyz</b>. Zapora dostarczana przez <b>Cloudflare</b>.</blockquote>
           <div class="banner b2">
@@ -88,15 +89,20 @@
           <div class="banner b3">
             <img src="files/proxy-2.png" width="450" alt=""/>
           </div>
-          <p>Jako kolejny uproszczony typ zapory, który ma na celu szybkie i łatwe zatwierdzanie lub odrzucanie ruchu bez zużywania znacznych zasobów obliczeniowych, bramy pośredniczące działają poprzez weryfikację protokołu sterowania transmisją (TCP). To sprawdzenie uzgadniania TCP ma na celu upewnienie się, że sesja, z której pochodzi pakiet, jest autentyczna.<br>Chociaż te zapory są niezwykle wydajne pod względem zasobów, nie sprawdzają samego pakietu. Tak więc, jeśli pakiet zawierał złośliwe oprogramowanie, ale miał odpowiedni "uścisk dłoni TCP", poszedłby prosto. Dlatego bramy pośredniczące nie wystarczą, aby same chronić firmę.</p>
+          <p>Jako kolejny uproszczony typ zapory, który ma na celu szybkie i łatwe zatwierdzanie lub odrzucanie ruchu bez zużywania znacznych zasobów obliczeniowych, bramy pośredniczące działają poprzez weryfikację protokołu sterowania transmisją (TCP). To sprawdzenie uzgadniania TCP ma na celu upewnienie się, że sesja, z której pochodzi pakiet, jest autentyczna.</p>
+          <p>Chociaż te zapory są niezwykle wydajne pod względem zasobów, nie sprawdzają samego pakietu. Tak więc, jeśli pakiet zawierał złośliwe oprogramowanie, ale miał odpowiedni "uścisk dłoni TCP", poszedłby prosto. Dlatego bramy pośredniczące nie wystarczą, aby same chronić firmę.</p>
           <hr>
           <h3 class="section-heading" id="stanowa" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Zapora Stanowa</h3>
           <hr>
-          <p>Te zapory łączą w sobie zarówno technologię inspekcji pakietów, jak i weryfikację uzgadniania TCP, aby zapewnić wyższy poziom ochrony, niż mogłaby zapewnić żadna z poprzednich dwóch architektur.<br>Jednak te zapory powodują również większe obciążenie zasobów obliczeniowych. Może to spowolnić przesyłanie legalnych pakietów w porównaniu z innymi rozwiązaniami.</p>
+          <p>Te zapory łączą w sobie zarówno technologię inspekcji pakietów, jak i weryfikację uzgadniania TCP, aby zapewnić wyższy poziom ochrony, niż mogłaby zapewnić żadna z poprzednich dwóch architektur.</p>
+          <p>Jednak te zapory powodują również większe obciążenie zasobów obliczeniowych. Może to spowolnić przesyłanie legalnych pakietów w porównaniu z innymi rozwiązaniami.</p>
           <hr>
-          <h3 class="section-heading" id="sieciowa" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Brama sieciowa</h3>
+          <h3 class="section-heading" id="sieciowa" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Brama Sieciowa</h3>
           <hr>
-          <p>Bramy sieciowe, znane również jako Zapory Proxy działają w warstwie aplikacji w celu filtrowania ruchu przychodzącego między siecią a źródłem ruchu. Zapory te są dostarczane za pośrednictwem rozwiązania w chmurze lub innego urządzenia proxy. Zamiast zezwalać na bezpośrednie łączenie się ruchu, zapora proxy najpierw nawiązuje połączenie ze źródłem ruchu i sprawdza przychodzący pakiet danych.<br>To sprawdzenie pakietu jest podobne do Zapory Stanowej, ponieważ sprawdza zarówno pakiet, jak i protokół uzgadniania TCP. Jednak zapory proxy mogą również przeprowadzać głębokie inspekcje pakietów, sprawdzając rzeczywistą zawartość pakietu informacyjnego, aby upewnić się, że nie zawiera on złośliwego oprogramowania.<br>Po zakończeniu sprawdzania pakietu i jego zatwierdzeniu do połączenia się z miejscem docelowym serwer proxy wysyła go. Tworzy to dodatkową warstwę separacji między klientem a poszczególnymi urządzeniami w Twojej sieci - przesłaniając je w celu zapewnienia dodatkowej anonimowości i ochrony Twojej sieci.<br>Jeśli istnieje wada zapór proxy, to może to spowodować znaczne spowolnienie z powodu dodatkowych kroków w procesie przesyłania pakietów danych</p>
+          <p>Bramy sieciowe, znane również jako Zapory Proxy działają w warstwie aplikacji w celu filtrowania ruchu przychodzącego między siecią a źródłem ruchu. Zapory te są dostarczane za pośrednictwem rozwiązania w chmurze lub innego urządzenia proxy. Zamiast zezwalać na bezpośrednie łączenie się ruchu, zapora proxy najpierw nawiązuje połączenie ze źródłem ruchu i sprawdza przychodzący pakiet danych.</p>
+          <p>To sprawdzenie pakietu jest podobne do Zapory Stanowej, ponieważ sprawdza zarówno pakiet, jak i protokół uzgadniania TCP. Jednak zapory proxy mogą również przeprowadzać głębokie inspekcje pakietów, sprawdzając rzeczywistą zawartość pakietu informacyjnego, aby upewnić się, że nie zawiera on złośliwego oprogramowania.</p>
+          <p>Po zakończeniu sprawdzania pakietu i jego zatwierdzeniu do połączenia się z miejscem docelowym serwer proxy wysyła go. Tworzy to dodatkową warstwę separacji między klientem a poszczególnymi urządzeniami w Twojej sieci - przesłaniając je w celu zapewnienia dodatkowej anonimowości i ochrony Twojej sieci.</p>
+          <p>Jeśli istnieje wada zapór proxy, to może to spowodować znaczne spowolnienie z powodu dodatkowych kroków w procesie przesyłania pakietów danych</p>
 
         </div>
       </div>
