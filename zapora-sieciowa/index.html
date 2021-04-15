@@ -42,12 +42,14 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#filtrowaniepakietow">Filtrowanie</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#filtrowanie">Filtrowanie</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#proxy">Proxy</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#stanowa">Stanowa</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#sieciowa">Sieciowa</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#nowejgeneracji">Nowej Generacji</a>
       <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#programowa">Programowa</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#sprzetowa">Sprzętowa</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#wchmurze">w Chmurze</a>
     </div>
   </nav>
 
@@ -77,7 +79,7 @@
           <blockquote>Zapora sieciowa (firewall – ściana ogniowa) – jeden ze sposobów zabezpieczania sieci i systemów przed intruzami.</blockquote>
           <blockquote style="margin-bottom:30px">Termin ten może odnosić się zarówno do sprzętu komputerowego wraz ze specjalnym oprogramowaniem, jak i do samego oprogramowania blokującego niepowołany dostęp do komputera, na którego straży stoi. Pełni rolę połączenia ochrony sprzętowej i programowej sieci wewnętrznej LAN przed dostępem z zewnątrz, tzn. sieci publicznych, Internetu, chroni też przed nieuprawnionym wypływem danych z sieci lokalnej na zewnątrz. Często jest to komputer wyposażony w system operacyjny (np. Linux, BSD) z odpowiednim oprogramowaniem. Do jego podstawowych zadań należy filtrowanie połączeń wchodzących i wychodzących oraz tym samym odmawianie żądań dostępu uznanych za niebezpieczne.</blockquote>
           <hr>
-          <h3 class="section-heading" id="filtrowaniepakietow" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Filtrowanie Pakietów</h3>
+          <h3 class="section-heading" id="filtrowanie" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Filtrowanie Pakietów</h3>
           <hr>
           <p>Najpowszechniejszym oraz najstarszym typem architektury zapory sieciowej jest zapora filtrująca pakiety. Zapora wykonuje proste sprawdzanie pakietów danych przechodzących przez router - sprawdza informacje, takie jak docelowy i początkowy adres IP, typ pakietu, numer portu i inne informacje z poziomu powierzchni, bez otwierania pakietu w celu sprawdzenia jego zawartości.</p>
           <p>Jeśli pakiet nie przejdzie kontroli, jest odrzucany.<br>Zaletą tych zapór jest to, że nie wymagają one dużych zasobów sprzętowych. Oznacza to, że nie mają one dużego wpływu na wydajność systemu i są one stosunkowe proste. Jednak są one również stosunkowo łatwe do ominięcia w porównaniu do zapór sieciowych z bardziej zaawansowanymi możliwościami inspekcji.</p>
@@ -112,10 +114,20 @@
           <p>Niektóre typowe cechy architektur zapór sieciowych nowej generacji obejmują głęboką inspekcję pakietów (sprawdzanie faktycznej zawartości pakietu danych), sprawdzanie uzgadniania TCP i inspekcję pakietów na poziomie powierzchni. Zapory nowej generacji mogą również obejmować inne technologie, takie jak systemy zapobiegania włamaniom (IPS), które działają w celu automatycznego powstrzymania ataków na sieć.</p>
           <p>Problem polega na tym, że nie ma jednej definicji zapory nowej generacji, dlatego ważne jest, aby sprawdzić, jakie konkretne możliwości mają takie zapory, zanim w nią zainwestujesz.</p>
           <hr>
-          <h3 class="section-heading" id="nowejgeneracji" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Zapora Programowa</h3>
+          <h3 class="section-heading" id="programowa" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Zapora Programowa</h3>
           <hr>
           <p>Zapory programowe obejmują zapory dowolnego typu, które są instalowane na urządzeniu lokalnym, a nie na oddzielnym sprzęcie (lub serwerze w chmurze). Dużą zaletą zapory programowej jest to, że jest bardzo przydatna do tworzenia kompleksowej obrony poprzez izolowanie poszczególnych punktów końcowych sieci od siebie.</p>
           <p>Jednak utrzymanie indywidualnych zapór programowych na różnych urządzeniach może być trudne i czasochłonne. Ponadto nie każde urządzenie w sieci może być kompatybilne z pojedynczą zaporą programową, co może oznaczać konieczność używania różnych zapór programowych w celu pokrycia każdego zasobu.</p>
+          <hr>
+          <h3 class="section-heading" id="sprzetowa" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Zapora Programowa</h3>
+          <hr>
+          <p>Zapory sprzętowe wykorzystują fizyczne urządzenie, które działa w sposób podobny do routera ruchu w celu przechwytywania pakietów danych i żądań ruchu, zanim zostaną one połączone z serwerami sieci. Zapory sieciowe oparte na urządzeniach fizycznych, takie jak ta, wyróżniają się pod względem bezpieczeństwa obwodowego, zapewniając przechwycenie złośliwego ruchu zpoza sieci, zanim punkty końcowe sieci firmy zostaną narażone na ryzyko.</p>
+          <p>Główną słabością zapory sprzętowej jest jednak to, że często atakom wewnętrzym łatwo jest je ominąć. Ponadto rzeczywiste możliwości sprzętowej zapory mogą się różnić w zależności od producenta - na przykład niektóre z nich mogą mieć bardziej ograniczoną zdolność do obsługi jednoczesnych połączeń niż inne.</p>
+          <hr>
+          <h3 class="section-heading" id="wchmurze" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Zapora Sieciowa w Chmurze</h3>
+          <hr>
+          <p>Ilekroć rozwiązania chmurowe jest używane do dostarczania zapory, można je nazwać zaporą sieciową w chmurze lub zaporą jako usługa (FaaS). Zapory sieciowe w chmurze są przez wielu uważane za synonim zapór proxy, ponieważ serwer w chmurze jest często używany w konfiguracji zapory proxy (chociaż proxy niekoniecznie musi znajdować się w chmurze, często tak jest).</p>
+          <p>Dużą zaletą posiadania zapór sieciowych w chmurze jest to, że można je bardzo łatwo skalować w organizacji. W miarę wzrostu potrzeb można zwiększać pojemność serwera w chmurze, aby filtrować większy ruch. Zapory sieciowe w chmurze, podobnie jak zapory sprzętowe wyróżniają się bezpieczeństwem obwodowym.</p>
 
         </div>
       </div>
