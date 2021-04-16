@@ -127,12 +127,62 @@
           <p>Zapory programowe obejmują zapory dowolnego typu, które są instalowane na urządzeniu lokalnym, a nie na oddzielnym sprzęcie (lub serwerze w chmurze). Dużą zaletą zapory programowej jest to, że jest bardzo przydatna do tworzenia kompleksowej obrony poprzez izolowanie poszczególnych punktów końcowych sieci od siebie.</p>
           <p>Jednak utrzymanie indywidualnych zapór programowych na różnych urządzeniach może być trudne i czasochłonne. Ponadto nie każde urządzenie w sieci może być kompatybilne z pojedynczą zaporą programową, co może oznaczać konieczność używania różnych zapór programowych w celu pokrycia każdego zasobu.</p>
           <hr>
-          <p>Istnieje wiele popularnych zapór programowych, takich jak <b>Avast Endpoint Protection</b>, czy <b>FortiGate NGFW</b>. Instalacje oraz konfiguracje zaprezentuję używając <b>Norton AntiVirus</b>.</p>
+          <p>Istnieje wiele popularnych zapór programowych, takich jak <b>Avast Endpoint Protection</b>, czy <b>FortiGate NGFW</b>. Instalacje oraz konfiguracje w systemie Windows zaprezentuję używając <b>Norton AntiVirus</b>, a w systemie Linux, użyję <b>GUFW</b>.</p>
 
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button shadow-lg collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="font-size:24px">Instalacja i Konfiguracja Norton AntiVirus</button>
+                <button class="accordion-button shadow-lg collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="font-size:24px">[Windows] Instalacja i Konfiguracja Norton AntiVirus</button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse shadow-lg" aria-labelledby="flush-headingOne" data-mdb-parent="#accordionFlushExample" style="">
+                <div class="accordion-body">
+                  <hr>
+                  <h3 class="section-heading" id="norton-pobieranie" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Pobieranie</h3>
+                  <hr>
+                  <p>Plik instalacyjny pobiorę ze strony <a href="https://pl.norton.com/" target="_blank" style="text-decoration:none"><b>https://pl.norton.com/</b></a>.</p>
+                  <p>Jeżeli nie posiadamy aktywnej subskrypcji, można ją aktywować na stronie lub zakupić klucz u innych sprzedawców.</p>
+                  <p>Aby zainstalować program należy najpierw założyć konto na stronie producenta. Jeżeli posiadamy aktywną subskrycję, program można pobrać w zakładce <b>Moje konto</b>, jeżeli nie posiadamy subskrypcji, należy przejść do tego linku: <a href="https://my.norton.com/extspa/onboard/retail/" target="_blank" style="text-decoration:none"><b>https://my.norton.com/extspa/onboard/retail/</b></a>.</p>
+                  <img src="files/kod-produktu.png" width="600" alt=""/>
+                  <p>Po wprowadzeniu 25-znakowego klucza produktu zostaniemy przekierowani do strony, na której należy połączyć konto z kartą bankową, aby aktywować subskrypcję, można ją później usunąć. Plik instalacyjny powinien pobrać się automatycznie.</p>
+                  <img src="files/plik-instalacyjny.png" alt=""/>
+                  <p>Pobieranie wymaganej zawartości powinno nastąpić automatycznie.</p>
+                  <img src="files/pobieranie.png" width="600" alt=""/>
+                  <img src="files/installing.png" width="600" alt=""/>
+                  <p>Po pobraniu wymaganej zawartości wystarczy kliknąć <b>Zainstaluj</b>.</p>
+                  <img src="files/zainstaluj.png" width="600" alt=""/>
+                  <img src="files/instalacja.png" width="600" alt=""/>
+                  <img src="files/installed.png" width="600" alt=""/>
+                  <hr>
+                  <h3 class="section-heading" id="norton-konfiguracja" style="padding-top:40px;padding-bottom:40px;text-align:center;margin-top:8px">Konfiguracja</h3>
+                  <hr>
+                  <p>Aby przejść do ustawień zapory sieciowej, w aplikacji <b>Norton AntiVirus</b> przy <b>Bezpieczeństwo urządzenia</b> kliknij <b>Otwórz</b> i <b>Ustawienia</b>.</p>
+                  <img src="files/otworz.png" width="600" alt=""/>
+                  <img src="files/ustawienia.png" width="600" alt=""/>
+                  <img src="files/ustawienia-zapora.png" width="600" alt=""/>
+                  <img src="files/zapora.png" width="600" alt=""/>
+                  <p>Można dodawać nowe lub edytować i usuwać istniejące reguły.</p>
+                  <img src="files/kontrola-programow.png" width="600" alt=""/>
+                  <img src="files/reguly.png" width="600" alt=""/>
+                  <img src="files/reguly-2.png" width="600" alt=""/>
+                  <img src="files/reguly-3.png" width="600" alt=""/>
+                  <p>Teraz dodam regułę o nazwię <b>Nazwa reguły</b>, która będzie zezwalać na ruch w obie strony z adresów: <b>192.168.69.80</b> i zakresu od <b>192.168.69.15</b> do <b>192.168.69.40</b>.</p>
+                  <img src="files/reguly-2-1.png" width="600" alt=""/>
+                  <img src="files/reguly-2-2.png" width="600" alt=""/>
+                  <img src="files/reguly-2-3.png" width="600" alt=""/>
+                  <img src="files/reguly-2-4.png" width="600" alt=""/>
+                  <img src="files/reguly-2-5.png" width="600" alt=""/>
+                  <img src="files/reguly-2-6.png" width="600" alt=""/>
+                  <img src="files/reguly-2-7.png" width="600" alt=""/>
+                  <img src="files/reguly-2-8.png" width="600" alt=""/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button shadow-lg collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="font-size:24px">[Linux] Instalacja i Konfiguracja GUFW</button>
               </h2>
               <div id="flush-collapseOne" class="accordion-collapse collapse shadow-lg" aria-labelledby="flush-headingOne" data-mdb-parent="#accordionFlushExample" style="">
                 <div class="accordion-body">
