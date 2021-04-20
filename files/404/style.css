@@ -44,7 +44,7 @@ body {
 
 .notfound .notfound-404 h1 {
   font-family: 'Maven Pro', sans-serif;
-  color: #ececec;
+  color: rgba(0, 0, 0, 0.5);
   font-weight: 900;
   font-size: 276px;
   margin: 0px;
@@ -59,7 +59,7 @@ body {
 .notfound h2 {
   font-family: 'Maven Pro', sans-serif;
   font-size: 46px;
-  color: #000;
+  color: #f5f4f5;
   font-weight: 900;
   text-transform: uppercase;
   margin: 0px;
@@ -68,7 +68,7 @@ body {
 .notfound p {
   font-family: 'Maven Pro', sans-serif;
   font-size: 16px;
-  color: #000;
+  color: #f5f4f5;
   font-weight: 400;
   text-transform: uppercase;
   margin-top: 15px;
@@ -79,7 +79,7 @@ body {
   font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
-  background: #189cf0;
+  background: rgb(245, 244, 245, 0.5);
   display: inline-block;
   padding: 16px 38px;
   border: 2px solid transparent;
@@ -91,9 +91,9 @@ body {
 }
 
 .notfound a:hover {
-  background-color: #fff;
-  border-color: #189cf0;
-  color: #189cf0;
+  background-color: rgb(245, 244, 245, 0.8);
+  border-color: #f5f4f5;
+  color: #000;
 }
 
 @media only screen and (max-width: 480px) {
