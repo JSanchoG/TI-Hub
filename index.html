@@ -125,13 +125,13 @@ function searchBar() {
       
     for (i = 0; i < x.length; i++) { 
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].closest('.post').show();
+            x[i].closest('.post').hide();
             //x[i].style.display="none";
             // Or this below (note each parentElement targets parent tag)
             // x[i].parentElement.parentElement.parentElement.parentElement.parentElement.style.display="none";
         }
         else {
-            x[i].closest('.post').hide(); 
+            x[i].closest('.post').show(); 
             //x[i].style.display="flex";                 
         }
     }
