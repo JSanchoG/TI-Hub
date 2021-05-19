@@ -60,7 +60,7 @@
   <!-- Main Content -->
   <div id="kontener" class="container">
     <div style="text-align:center" id="search-bar">
-      <input type="text" id="myInput" onkeyup="searchBar()" class="shadow-lg">
+      <input type="text" id="searchbar" onkeyup="searchBar()" class="shadow-lg">
     </div>
 
     <script>
@@ -82,7 +82,7 @@
               fetchJSON += '<a href="https://2tihub.xyz/' + value.referral + '">';
                 
               fetchJSON += '<h2 class="post-title"><i class="' + value.icon + '"></i> ' + value.subject + '</h2>';
-              fetchJSON += '<h3 class="post-subtitle"><a id="a">' + value.description + '</a></h3>';
+              fetchJSON += '<h3 class="post-subtitle">' + value.description + '</h3>';
                 
               fetchJSON += '</a>';
               fetchJSON += '<p class="post-meta">' + value.date + '</p>';
@@ -117,18 +117,16 @@
   </script>
 <script>
 function searchBar() {
-    var input, filter, kontener, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    kontener = document.getElementById("kontener");
-    li = kontener.getElementsByTagName("h3");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('post-subtitle');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="flex";                 
         }
     }
 }
