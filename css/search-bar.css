@@ -1,0 +1,27 @@
+input{
+  margin-top:280px;
+  border-radius:50%;
+  width:40px;
+  cursor:pointer;
+  height:40px;
+  background-color:white;
+  outline:none;
+  background-image:url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-256.png");
+  background-size:30px;
+  background-position:50%;
+  font-size:18px;
+  color:grey;
+  background-repeat:no-repeat;
+  border:1px solid grey;
+  transition-property:width, border-radius, background-position, padding-left/*, transform*/;
+  transition-duration:0.5s;
+}
+input:focus{
+  /*transform:rotate(-360deg);*/
+  width:330px;
+  border-radius:5px;
+  cursor:text;
+  padding-left:40px;
+  padding-right:20px;
+  background-position:5px;
+}
