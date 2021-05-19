@@ -76,6 +76,7 @@
                 
               // CONSTRUCTION OF ROWS HAVING
               // DATA FROM JSON OBJECT
+              fetchJSON += '<div class="post">';
               fetchJSON += '<div class="row">';
               fetchJSON += '<div class="col-lg-8 col-md-10 mx-auto">';
               fetchJSON += '<div class="post-preview">';
@@ -90,6 +91,7 @@
               fetchJSON += '</div>';
               fetchJSON += '</div>';
               fetchJSON += '<hr>';
+              fetchJSON += '</div>';
             });
                                           
             // INSERTING ROWS INTO CONTAINER 
@@ -123,10 +125,12 @@ function searchBar() {
       
     for (i = 0; i < x.length; i++) { 
         if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].style.display="none";
+            $(x[i]).parent().hide();
+            x[i].parent().hide();
+            x[i].parent().style.display="none";
         }
         else {
-            x[i].style.display="flex";                 
+            $x[i].style.display="flex";                 
         }
     }
 }
