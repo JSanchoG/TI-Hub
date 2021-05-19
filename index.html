@@ -121,7 +121,7 @@ function searchBar() {
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
     kontener = document.getElementById("kontener");
-    li = ul.getElementsByTagName("h3");
+    li = kontener.getElementsByTagName("h3");
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
         txtValue = a.textContent || a.innerText;
