@@ -60,7 +60,7 @@
 
   <!-- Main Content -->
   <div id="kontener" class="container">
-    <div style="text-align:center" id="search-bar">
+    <div style="text-align:center;display:none" id="search-bar">
       <input type="text" id="searchbar" onkeyup="searchBar()" class="shadow-lg">
     </div>
 
@@ -97,6 +97,7 @@
                                           
             // INSERTING ROWS INTO CONTAINER 
             $('#kontener').append(fetchJSON);
+            $('#search-bar').show();
           });
       });
     </script>
