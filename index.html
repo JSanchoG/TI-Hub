@@ -59,6 +59,9 @@
 
   <!-- Main Content -->
   <div id="kontener" class="container">
+    <div style="text-align:center" id="search-bar">
+      <input type="text" id="myInput" onkeyup="searchBar()" class="shadow-lg">
+    </div>
 
     <script>
       $(document).ready(function () {
@@ -79,7 +82,7 @@
               fetchJSON += '<a href="https://2tihub.xyz/' + value.referral + '">';
                 
               fetchJSON += '<h2 class="post-title"><i class="' + value.icon + '"></i> ' + value.subject + '</h2>';
-              fetchJSON += '<h3 class="post-subtitle">' + value.description + '</h3>';
+              fetchJSON += '<h3 class="post-subtitle"><a id="a">' + value.description + '</a></h3>';
                 
               fetchJSON += '</a>';
               fetchJSON += '<p class="post-meta">' + value.date + '</p>';
@@ -112,6 +115,24 @@
     .catch(err => { throw err });
     // For debugging/ error-handling purposes.
   </script>
+<script>
+function searchBar() {
+    var input, filter, kontener, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    kontener = document.getElementById("kontener");
+    li = ul.getElementsByTagName("h3");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
   <!-- Bootstrap core JavaScript -->
   <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
   <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
