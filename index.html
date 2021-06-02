@@ -147,47 +147,6 @@ function searchBar() {
     }
 }
 </script>
-<script>
-      function handleKeydown(el, event) {
-        if (event.keyCode == 191) {
-          event.preventDefault()
-          el.querySelector('#searchbar').focus()
-        }
-        if (event.keyCode == 27) {
-          el.querySelector('#searchbar').blur()
-        }
-      }
-      function init(el) {
-        document.addEventListener('keydown', handleKeydown.bind(null, el), false)
-      }
-      function navbar() {
-        return {
-          isOpen: false,
-          toggleNavbar() {
-            this.isOpen = !this.isOpen
-          },
-
-          isSearchBoxOpen: false,
-          isSearching: false,
-          loading: false,
-          isTyping: false,
-          searchQuery: '',
-          openSearchBox() {
-            this.isSearchBoxOpen = true
-            this.loading = true
-            setTimeout(() => {
-              this.loading = false
-            }, 500)
-          },
-          closeSearchBox() {
-            this.isSearchBoxOpen = false
-          },
-          startSearching() {
-            this.isTyping = true
-          },
-        }
-      }
-</script>
   <!-- Bootstrap core JavaScript -->
   <script src="https://2tihub.xyz/vendor/jquery/jquery.min.js"></script>
   <script src="https://2tihub.xyz/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
