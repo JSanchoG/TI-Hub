@@ -5,6 +5,7 @@
       {"subject": "Linux", "date": "21 Kwiecień, 2021", "referral": "ftp/", "icon": "fab fa-ubuntu fa-xs", "description": "FTP"},
       {"subject": "Linux", "date": "12 Kwiecień, 2021", "referral": "dhcp-dns/", "icon": "fab fa-ubuntu fa-xs", "description": "Instalacja i konfiguracja serwera DHCP oraz DNS"},
       {"subject": "Linux", "date": "24 Marzec, 2021", "referral": "ssh/", "icon": "fab fa-ubuntu fa-xs", "description": "SSH"},
+      {"subject": "Linux", "date": "8 Marzec, 2021", "referral": "telnet/", "icon": "fab fa-ubuntu fa-xs", "description": "Telnet"},
       {"subject": "Linux", "date": "2 Marzec, 2021", "referral": "ufw-gufw/", "icon": "fab fa-ubuntu fa-xs", "description": "Konfiguracja UFW i GUFW"},
       {"subject": "Linux", "date": "8 Luty, 2021", "referral": "drukowanie/", "icon": "fab fa-ubuntu fa-xs", "description": "Drukowanie"},
       {"subject": "Linux", "date": "26 Styczeń, 2021", "referral": "operacjenauzytkownikachigrupach/", "icon": "fab fa-ubuntu fa-xs", "description": "Operacje na użytkownikach i grupach"},
