@@ -1,4 +1,5 @@
 [
+      {"subject": "Linux", "date": "14 Grudzień, 2021", "referral": "dhcp/", "icon": "fab fa-ubuntu fa-xs", "description": "DHCP"},
       {"subject": "Linux", "date": "7 Grudzień, 2021", "referral": "ufw/", "icon": "fab fa-ubuntu fa-xs", "description": "Zapora UFW"},
       {"subject": "Linux", "date": "30 Listopad, 2021", "referral": "interfejsysieciowe-aliasy/", "icon": "fab fa-ubuntu fa-xs", "description": "Konfiguracja interfejsów sieciowych i Aliasy sieciowe"},
       {"subject": "Linux", "date": "19 Maj, 2021", "referral": "www/", "icon": "fab fa-ubuntu fa-xs", "description": "WWW"},
