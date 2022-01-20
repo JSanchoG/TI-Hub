@@ -1,4 +1,5 @@
 [
+      {"subject": "Linux", "date": "20 Styczeń, 2022", "referral": "dhcp-nat/", "icon": "fab fa-ubuntu fa-xs", "description": "Serwer DHCP z rezerwacją adresu i usługą NAT"},
       {"subject": "Linux", "date": "15 Grudzień, 2021", "referral": "srodowiskagraficzne/", "icon": "fab fa-ubuntu fa-xs", "description": "Najpopularniejsze środowiska graficzne"},
       {"subject": "Linux", "date": "14 Grudzień, 2021", "referral": "dhcp/", "icon": "fab fa-ubuntu fa-xs", "description": "DHCP"},
       {"subject": "Linux", "date": "7 Grudzień, 2021", "referral": "ufw/", "icon": "fab fa-ubuntu fa-xs", "description": "Zapora UFW"},
