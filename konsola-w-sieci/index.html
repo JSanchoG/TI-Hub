@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="https://tihub.pl/icons/tihub.ico">
+
+  <title>Konsola w sieci</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://tihub.pl/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+    type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+    rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="https://tihub.pl/css/tihub.min.css" rel="stylesheet">
+  <link href="https://tihub.pl/css/darkmode.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- MDB -->
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet"/> -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    img {
+      display: block;
+    }
+
+    #ipconfig {
+      margin-top: 0px;
+      padding-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#ipconfig">ipconfig</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#ping">ping</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#tracert">tracert</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#pathping">pathping</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#arp">arp</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#netstat">netstat</a>
+      <a class="navbar-brand animate__animated animate__fadeInDownBig" href="#netsh">netsh</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead animate__animated animate__fadeIn"
+    style="background-image: url('https://tihub.pl/uslugi-sieci-internet/internet.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1 class="animacja animate__animated animate__zoomIn" style="margin-bottom:25px">Konsola w sieci</h1>
+
+            <span class="meta animacja animate__animated animate__fadeInUpBig">Jakub Gożuk - 20 Luty, 2022</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container animate__animated animate__bounceInLeft">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 class="section-heading" id="poczatki-poczty-elektronicznej" style="padding-top:70px;text-align:center">
+            Polecenia w konsoli</h2>
+          <p id="ipconfig"><b>ipconfig</b> – polecenie służące do wyświetlania konfiguracji interfejsów sieciowych.
+            Zwalnia i
+            aktualizuje dzierżawy DHCP oraz wyświetla, rejestruje i usuwa nazwy DNS. Narzędzie pomocne przy wykrywaniu
+            błędnego adresu IP, maski podsieci lub bramy domyślnej.<br><br>Polecenie to wywołane z parametrem:<br>-
+            <kbd>/all</kbd> - wyświetla pełną informację o interfejsach sieciowych<br>- <kbd>/renew</kbd> - odnawia
+            wszystkie dzierżawy adresu z DHCP<br> - <kbd>/release</kbd> - odnawia wszystkie dzierżawy adresu z DHCP<br>-
+            <kbd>/?</kbd> lub <kbd>/</kbd> - wyświetla komunikat pomocy<br>- <kbd>/flushdns</kbd> - czyści bufor
+            programu rozpoznającego nazwy DNS<br> - <kbd>/displaydns</kbd> - wyświetla zapamiętane tłumaczenia DNS na
+            adresy IP
+          </p>
+
+          <center style="margin-top:30px;margin-bottom:10px">
+            <div class="row">
+              <div class="col-md-12">
+                <hr>
+                <div class="clients_box">
+                  <kbd>ipconfig</kbd>
+                  <img style="margin-top:5px" src="files/1.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <br>
+                  <kbd>ipconfig /all</kbd>
+                  <img style="margin-top:5px" src="files/2.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <br>
+                  <kbd>ipconfig /release</kbd>
+                  <img style="margin-top:5px" src="files/3.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <br>
+                  <kbd>ipconfig /renew</kbd>
+                  <img style="margin-top:5px" src="files/4.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <br>
+                  <kbd>ipconfig /?</kbd>
+                  <img style="margin-top:5px" src="files/5.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </center>
+
+          <p id="ping" style="padding-top:30px"><b>ping</b> – polecenie używane w sieciach komputerowych TCP/IP i
+            służące do diagnozowania połączeń sieciowych. Pozwala na sprawdzenie, czy istnieje połączenie pomiędzy
+            hostami testującym i testowanym. Umożliwia on zmierzenie liczby zgubionych pakietów oraz opóźnień w ich
+            transmisji, zwanych lagami. Polecenie to wywołane z parametrem <kbd>-t</kbd> wysyła żądania do momentu
+            ręcznego przerwania tego procesu za pomocą <kbd>CTRL+C</kbd></p>
+
+          <center style="margin-top:30px;margin-bottom:10px">
+            <div class="row">
+              <div class="col-md-12">
+                <hr>
+                <div class="clients_box">
+                  <kbd>ping tihub.pl</kbd> | <kbd>ping 8.8.8.8</kbd> | <kbd>ping api.mojang.com -t</kbd>
+                  <img style="margin-top:5px" src="files/6.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </center>
+
+          <p id="tracert" style="padding-top:30px"><b>tracert</b> – program służący do badania trasy pakietów w sieci
+            IP. Polecenie to znajduje również zastosowanie w sprawdzeniu, czy na trasie przesyłania pakietów wszystkie
+            routery i łącza działają prawidłowo</p>
+
+          <center style="margin-top:30px;margin-bottom:10px">
+            <div class="row">
+              <div class="col-md-12">
+                <hr>
+                <div class="clients_box">
+                  <kbd>tracert tihub.pl</kbd><br>Lokalizacja: USA - San Francisco, California
+                  <img style="margin-top:5px" src="files/7.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <br>
+                  <kbd>tracert wp.pl</kbd><br>Lokalizacja: Polska - Warszawa, Mazowieckie
+                  <img style="margin-top:5px" src="files/8.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <br>
+                  <kbd>tracert cloudflare.com</kbd><br>Lokalizacja: Kanada - Toronto, Ontario
+                  <img style="margin-top:5px" src="files/9.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </center>
+
+          <p id="pathping" style="padding-top:30px"><b>pathping</b> - polecenie łączące funkcjonalność polecenia ping
+            oraz tracert. Na początku ustalana jest trasa między dwoma hostami a następnie pingowany jest każdy z węzłów
+            na tej trasie</p>
+
+          <center style="margin-top:30px;margin-bottom:10px">
+            <div class="row">
+              <div class="col-md-12">
+                <hr>
+                <div class="clients_box">
+                  <kbd>pathping tihub.pl</kbd><br>Lokalizacja: USA - San Francisco, California
+                  <img style="margin-top:5px" src="files/10.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <br>
+                  <kbd>pathping wp.pl</kbd><br>Lokalizacja: Polska - Warszawa, Mazowieckie
+                  <img style="margin-top:5px" src="files/11.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <br>
+                  <kbd>pathping cloudflare.com</kbd><br>Lokalizacja: Kanada - Toronto, Ontario
+                  <img style="margin-top:5px" src="files/12.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </center>
+
+          <p id="arp" style="padding-top:30px"><b>arp</b> - wyświetla i modyfikuje wpisy w pamięci podręcznej ARP
+            (Address Resolution Protocol), która zawiera jedną lub kilka tabel używanych do przechowywania adresów IP i
+            odpowiednich rozpoznanych adresów fizycznych Ethernet lub Token Ring. Dla każdej karty sieciowej Ethernet
+            lub Token Ring zainstalowanej na komputerze dostępna jest oddzielna tablica. Polecenie arp bez parametrów
+            wyświetla pomoc.</p>
+
+          <center style="margin-top:30px;margin-bottom:10px">
+            <div class="row">
+              <div class="col-md-12">
+                <hr>
+                <div class="clients_box">
+                  <kbd>arp -a</kbd><br>wyświetla urządzenia w sieci lokalnej, z którymi komunikował się komputer,
+                  rekordy do tablicy ARP dopisywane są też automatycznie przez system operacyjny, istnieje również opcja
+                  ręcznego ich dopisywania
+                  <img style="margin-top:5px" src="files/13.png" class="rounded shadow-lg" alt="#" width="500px">
+                  <hr>
+                  <p>Jeżeli chcielibyśmy dodać do tablicy wpis informujący o tym, że urządzenie o adresie
+                    <b>10.0.2.200</b> ma adres MAC <b>AA-BB-CC-DD-EE-FF</b>, wykonujemy polecenie <kbd>arp -s 10.0.2.200
+                      aa-bb-cc-dd-ee-ff</kbd>
+                  </p>
+                  <img style="margin-top:5px" src="files/14.png" class="rounded shadow-lg" alt="#" width="450px">
+                  <hr>
+                  <p>Po wykonaniu polecenia <kbd>arp -d</kbd> zostaną usunięte wszystkie wpisy ARP
+                  </p>
+                  <img style="margin-top:5px" src="files/15.png" class="rounded shadow-lg" alt="#" width="440px">
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </center>
+
+          <p id="netstat" style="padding-top:30px"><b>netstat</b> - służy do wyświetlania aktywnych połączeń sieciowych
+            TCP a
+            także: portów, na których komputer nasłuchuje, tabeli trasowania protokołu IP, statystyki sieci Ethernet,
+            statystyki protokołu IPv4 (dla protokołów IP, ICMP, TCP i UDP), statystyki protokołu IPv6 (dla protokołów
+            IPv6, ICMPv6, TCP przez IPv6 i UDP przez IPv6) oraz połączeń NAT i komunikatów netlinkowych. Polecenie
+            netstat użyte bez parametrów powoduje wyświetlenie aktywnych połączeń protokołu TCP. Polecenie to wykonane z
+            parametrem <kbd>-e</kbd> wyświetla statystyki wysyłanych i odebranych pakietów, bardziej szczegółowe dane
+            można pozyskać z parametrem <kbd>-s</kbd>. Można tym poleceniem również pozyskać tablicę routingu wykonując
+            polecenie z parametrem <kbd>-r</kbd></p>
+
+          <center style="margin-top:30px;margin-bottom:10px">
+            <div class="row">
+              <div class="col-md-12">
+                <hr>
+                <div class="clients_box">
+                  <kbd>netstat</kbd>
+                  <img style="margin-top:5px" src="files/16.png" class="rounded shadow-lg" alt="#" width="640px">
+                  <img style="margin-top:5px" src="files/17.png" class="rounded shadow-lg" alt="#" width="640px">
+                  <br>
+                  <kbd>netstat -e</kbd>
+                  <img style="margin-top:5px" src="files/18.png" class="rounded shadow-lg" alt="#" width="470px">
+                  <br>
+                  <kbd>netstat -s</kbd>
+                  <img style="margin-top:5px" src="files/19.png" class="rounded shadow-lg" alt="#" width="460px">
+                  <br>
+                  <kbd>netstat -r</kbd>
+                  <img style="margin-top:5px" src="files/20.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </center>
+
+          <p id="netsh" style="padding-top:30px"><b>netsh</b> - umożliwia lokalną lub zdalną konfigurację urządzeń
+            sieciowych, takich jak interfejs. Program ten jest uruchamiany poleceniem <kbd>netsh</kbd>. Interfejsy
+            sieciowe można wyświetlić poleceniem <kbd>interface show interface</kbd></p>
+
+          <center style="margin-top:30px;margin-bottom:10px">
+            <div class="row">
+              <div class="col-md-12">
+                <hr>
+                <div class="clients_box">
+                  Zmiana nazwy interfejsu
+                  <img style="margin-top:5px" src="files/21.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <br>
+                  Zmiana adresu IP, maski, bramy i DNS na statyczne
+                  <img style="margin-top:5px" src="files/22.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <br>
+                  Zmiana adresu IP, maski, bramy i DNS na dynamiczne
+                  <img style="margin-top:5px" src="files/23.png" class="rounded shadow-lg" alt="#" width="625px">
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </center>
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://tihub.pl/vendor/jquery/jquery.min.js"></script>
+  <script src="https://tihub.pl/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="https://tihub.pl/js/tihub.min.js"></script>
+  <script src="https://tihub.pl/js/darkmode.js"></script>
+
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"></script>
+
+</body>
+
+</html>
