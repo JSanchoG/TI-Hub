@@ -1,5 +1,6 @@
 
-{"subject": "Linux", "date": "27 Marzec, 2022", "referral": "ftp3/", "icon": "fab fa-ubuntu fa-xs", "description": "FTP - użytkownik istniejący w systemie i wielu użytkowników"},[
+[
+      {"subject": "Linux", "date": "27 Marzec, 2022", "referral": "ftp3/", "icon": "fab fa-ubuntu fa-xs", "description": "FTP - użytkownik istniejący w systemie i wielu użytkowników"},
       {"subject": "Linux", "date": "23 Luty - 2 Marzec, 2022", "referral": "ssh-windows/", "icon": "fab fa-ubuntu fa-xs", "description": "SSH"},
       {"subject": "Linux", "date": "20 Styczeń, 2022", "referral": "dhcp-nat/", "icon": "fab fa-ubuntu fa-xs", "description": "Serwer DHCP z rezerwacją adresu i usługą NAT"},
       {"subject": "Linux", "date": "15 Grudzień, 2021", "referral": "srodowiskagraficzne/", "icon": "fab fa-ubuntu fa-xs", "description": "Najpopularniejsze środowiska graficzne"},
