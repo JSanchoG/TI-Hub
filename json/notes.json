@@ -1,6 +1,6 @@
 
 [
-      {"subject": "VLAN", "date": "30 Marzec, 2022", "referral": "vlan/", "icon": "fas fa-network-wired fa-xs", "description": "VLAN<br>Połączenie z internetem przez port Ethernet"},
+      {"subject": "VLAN", "date": "30 Marzec, 2022", "referral": "vlan/", "icon": "fas fa-network-wired fa-xs premium", "description": "VLAN<br>Połączenie z internetem przez port Ethernet"},
       {"subject": "ELSK", "date": "17 Maj, 2021", "referral": "lekcje-online/elsk-lsk/17.05.2021.html", "icon": "far fa-sticky-note fa-xs", "description": "Telefonia internetowa VoIP<br>Protokoły do monitorowania sieci LAN"},
       {"subject": "ASO", "date": "11 Maj, 2021", "referral": "lekcje-online/aso/11.05.2021.html", "icon": "far fa-sticky-note fa-xs", "description": "Protokoły tunelowania VPN"},
       {"subject": "ELSK", "date": "26 Kwiecień, 2021", "referral": "lekcje-online/elsk-lsk/26.04.2021.html", "icon": "far fa-sticky-note fa-xs", "description": "Certyfikat cyfrowy"},
