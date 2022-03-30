@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="https://tihub.pl/icons/server.ico" />
+
+    <title>Windows Server 2016 - VPN</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://tihub.pl/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom fonts for this template -->
+    <link
+      href="https://tihub.pl/vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="https://tihub.pl/css/tihub.min.css" rel="stylesheet" />
+    <link href="https://tihub.pl/css/darkmode.css" rel="stylesheet" />
+
+    <link
+      href="https://tihub.pl/poradnik-WS2016/files/style.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="https://tihub.pl/css/style-extra.css" rel="stylesheet" />
+    <style>
+      .banner img:hover {
+        height: 768px !important;
+        width: 1228px !important;
+      }
+      .banner_fhd img {
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+      }
+      .banner_fhd img:hover {
+        height: 768px !important;
+        width: 1364px !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Page Header -->
+    <header
+      class="masthead animate__animated animate__fadeIn"
+      style="
+        background-image: url('https://windowsserver.tihub.pl/serwerownia.jpg');
+      "
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1
+                class="animacja animate__animated animate__zoomIn"
+                style="margin-bottom: 25px"
+              >
+                VLAN, połączenie z internetem
+              </h1>
+
+              <span class="meta animacja animate__animated animate__fadeInUpBig"
+                >Jakub Gożuk, Tomasz Grapatyn - 30 Marzec, 2022</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container animate__animated animate__bounceInLeft">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <h2
+              class="section-heading"
+              id="konfiguracja"
+              style="padding-top: 70px; text-align: center"
+            >
+              VLAN, połączenie z internetem przez port Ethernet
+            </h2>
+            <p>
+              Użyta konfiguracja sprzętowa:<br />- Router: Mikrotik RB941-2nD-TC
+              hAP lite<br />- Przełącznik: D-Link DES-1100-16
+            </p>
+            <p>
+              Na początek przystąpie do połączenia stacji z routerem oraz
+              rozpoczęcie jego konfiguracji programem WinBox, dla pewności
+              zresetuję obecną konfigurację
+            </p>
+            <div class="banner">
+              <img
+                src="files/stacja-1/1-reset.png"
+                width="307"
+                height="192"
+                alt=""
+              />
+            </div>
+            <p>
+              Teraz utworzę dwa VLANy w <b>Interfaces</b> w zakładce
+              <b>VLAN</b>, które będą pracowały na porcie 2
+            </p>
+            <div class="banner">
+              <img src="files/stacja-1/2.png" width="307" height="192" alt="" />
+            </div>
+            <div class="banner">
+              <img src="files/stacja-1/3.png" width="307" height="192" alt="" />
+            </div>
+            <p>
+              Następnie przydziele utworzonym VLANom następujące adresy:
+              <b>192.168.69.1/24</b> i <b>192.168.70.1/24</b> korzystając z
+              <b>IP > Addresses</b>
+            </p>
+            <div class="banner">
+              <img src="files/stacja-1/4.png" width="307" height="192" alt="" />
+            </div>
+            <div class="banner">
+              <img src="files/stacja-1/5.png" width="307" height="192" alt="" />
+            </div>
+            <p>
+              Przejdę teraz do <b>IP > DHCP Server</b> w celu utworzenia
+              domyślnych zakresów z serwerem DNS ustawionym na
+              <b>8.8.8.8</b> dla danych VLANów używając opcji <b>DHCP Setup</b>
+            </p>
+            <div class="banner">
+              <img src="files/stacja-1/6.png" width="307" height="192" alt="" />
+            </div>
+            <div class="banner">
+              <img src="files/stacja-1/7.png" width="307" height="192" alt="" />
+            </div>
+            <p>
+              Dodam również Klientów DHCP w <b>IP > DHCP Client</b>, aby
+              klientom w tych sieciach zostawały automatycznie przydzielane
+              adresy IP
+            </p>
+            <div class="banner">
+              <img src="files/stacja-1/8.png" width="307" height="192" alt="" />
+            </div>
+            <div class="banner">
+              <img src="files/stacja-1/9.png" width="307" height="192" alt="" />
+            </div>
+            <div class="banner">
+              <img
+                src="files/stacja-1/10.png"
+                width="307"
+                height="192"
+                alt=""
+              />
+            </div>
+            <hr />
+            <p>
+              Teraz przełączę kabel Ethernet od Routera do Przełącznika na
+              porcie 1, którego będę używał do jego dalszej konfiguracji
+            </p>
+            <p>
+              Przejdę do ustawień VLAN i utworzę dwa VLANy o takich samych
+              nazwach i ID, jako port trunkingowy użyję portu 8 i ustawię go
+              jako tagowany
+            </p>
+            <div class="banner">
+              <img
+                src="files/stacja-1/11.png"
+                width="307"
+                height="192"
+                alt=""
+              />
+            </div>
+            <div class="banner">
+              <img
+                src="files/stacja-1/12.png"
+                width="307"
+                height="192"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <!-- Footer -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://tihub.pl/vendor/jquery/jquery.min.js"></script>
+    <script src="https://tihub.pl/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="https://tihub.pl/js/tihub.min.js"></script>
+    <script src="https://tihub.pl/js/darkmode.js"></script>
+  </body>
+</html>
