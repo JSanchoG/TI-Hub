@@ -1,5 +1,0 @@
-[
-      {"subject": "Windows Server 2016", "date": "21 Wrzesień, 2021", "referral": "vpn/", "icon": "fab fa-windows fa-xs", "description": "VPN"},
-      {"subject": "Windows Server 2016", "date": "16 Marzec, 2021", "referral": "zapora-sieciowa/", "icon": "fab fa-windows fa-xs", "description": "Zapora Sieciowa"},
-      {"subject": "Windows Server 2016", "date": "24/25 Listopad, 2020", "referral": "poradnik/", "icon": "fab fa-windows fa-xs", "description": "Poradnik - Usługi Windows Server 2016"}
-]
