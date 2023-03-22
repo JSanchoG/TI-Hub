@@ -31,6 +31,14 @@
         border-radius: 2rem;
         border: 1px solid rgba(255, 255, 255, 0.125);
       }
+      .button-icon {
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
       /* .overlay__description::after {
         content: "Ilość słów: ";
         display: block;
@@ -46,6 +54,42 @@
         -ms-user-select: none;
         user-select: none;
       } */
+      .button-74 {
+        /* background-color: #fbeee0; */
+        background-color: lightblue;
+        border: 2px solid #422800;
+        border-radius: 30px;
+        box-shadow: #422800 4px 4px 0 0;
+        color: #422800;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 0 18px;
+        line-height: 50px;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .button-74:hover {
+        /* background-color: #fff; */
+        background-color: #fbeee0;
+      }
+
+      .button-74:active {
+        box-shadow: #422800 2px 2px 0 0;
+        transform: translate(2px, 2px);
+      }
+
+      @media (min-width: 768px) {
+        .button-74 {
+          /* min-width: 120px; */
+          padding: 0 25px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -64,8 +108,55 @@
     <div class="overlay">
       <!-- Overlay inner wrapper -->
       <div class="overlay__inner" style="position: relative">
-        <audio controls style="position: absolute; right: 0px">
+        <button
+          id="gender-button"
+          class="button-74"
+          role="button"
+          style="
+            width: 56px;
+            height: 56px;
+            text-align: center;
+            position: absolute;
+            right: 0;
+            transform: translate(85px);
+          "
+        >
+          <svg
+            id="button-svg-adam"
+            class="button-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M289.8 46.8c3.7-9 12.5-14.8 22.2-14.8H424c13.3 0 24 10.7 24 24V168c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-33.4-33.4L321 204.2c19.5 28.4 31 62.7 31 99.8c0 97.2-78.8 176-176 176S0 401.2 0 304s78.8-176 176-176c37 0 71.4 11.4 99.8 31l52.6-52.6L295 73c-6.9-6.9-8.9-17.2-5.2-26.2zM400 80l0 0h0v0zM176 416a112 112 0 1 0 0-224 112 112 0 1 0 0 224z"
+            />
+          </svg>
+          <svg
+            id="button-svg-rachel"
+            style="transform: translate(-45%, -50%); visibility: hidden"
+            class="button-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"
+          >
+            <path
+              d="M64 176a112 112 0 1 1 224 0A112 112 0 1 1 64 176zM208 349.1c81.9-15 144-86.8 144-173.1C352 78.8 273.2 0 176 0S0 78.8 0 176c0 86.3 62.1 158.1 144 173.1V384H112c-17.7 0-32 14.3-32 32s14.3 32 32 32h32v32c0 17.7 14.3 32 32 32s32-14.3 32-32V448h32c17.7 0 32-14.3 32-32s-14.3-32-32-32H208V349.1z"
+            />
+          </svg>
+        </button>
+        <audio
+          id="r_e-adam"
+          controls
+          style="position: absolute; right: 0px; z-index: 2"
+        >
           <source src="rozprawka_elevenlabs-adam.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <audio
+          id="r_e-rachel"
+          controls
+          style="position: absolute; right: 0; z-index: 1; visibility: hidden"
+        >
+          <source src="rozprawka_elevenlabs-rachel.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
         <!-- Title -->
@@ -101,21 +192,47 @@
           Ultimately, the choice to move to a big city should be based on
           individual priorities, goals, and values.
         </p>
-        <audio
-          controls
-          style="
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -60px;
-            margin-left: auto;
-            margin-right: auto;
-          "
-        >
-          <source src="rozprawka_elevenlabs-rachel.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
       </div>
     </div>
+    <script>
+      const adam = document.getElementById("r_e-adam");
+      const rachel = document.getElementById("r_e-rachel");
+      var playing = "";
+      adam.onplay = function () {
+        if (playing == "rachel") rachel.pause();
+        playing = "adam";
+      };
+      rachel.onplay = function () {
+        if (playing == "adam") adam.pause();
+        playing = "rachel";
+      };
+
+      function pauseAll() {
+        adam.pause();
+        rachel.pause();
+      }
+
+      const gBtn = document.getElementById("gender-button");
+      const gBtnAdam = document.getElementById("button-svg-adam");
+      const gBtnRachel = document.getElementById("button-svg-rachel");
+
+      gBtn.addEventListener("click", () => {
+        if (gBtnRachel.style.visibility == "hidden") {
+          gBtnAdam.style.visibility = "hidden";
+          adam.style.visibility = "hidden";
+          gBtnRachel.style.visibility = "visible";
+          pauseAll();
+          gBtn.style.backgroundColor = "pink";
+          rachel.style.visibility = "visible";
+        } else if (gBtnAdam.style.visibility == "hidden") {
+          gBtnRachel.style.visibility = "hidden";
+          rachel.style.visibility = "hidden";
+          gBtnAdam.style.visibility = "visible";
+          adam.style.visibility = "visible";
+          pauseAll();
+          gBtn.style.backgroundColor = "lightblue";
+        }
+      });
+    </script>
   </body>
 </html>
