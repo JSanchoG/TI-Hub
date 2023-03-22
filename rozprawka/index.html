@@ -16,10 +16,13 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <style>
+      /* body {
+        overflow: hidden;
+      } */
       .overlay {
         width: 100%;
         max-width: 800px;
-        max-height: 90vh;
+        max-height: 93.15vh;
         padding: 8rem 6rem;
         display: flex;
         align-items: center;
@@ -62,16 +65,17 @@
       <!-- Overlay inner wrapper -->
       <div class="overlay__inner" style="position: relative">
         <audio controls style="position: absolute; right: 0px">
-          <source src="rozprawka.mp3" type="audio/mpeg" />
+          <source src="rozprawka_elevenlabs-adam.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
         <!-- Title -->
         <h1 class="overlay__title">Rozprawka</h1>
         <!-- Description -->
-        <p class="overlay__description">
+        <p class="overlay__description" style="margin-bottom: 0">
           Moving to big cities has become a popular trend among young people,
           seeking better opportunities and a different lifestyle. However, this
-          decision comes with it's own set of advantages and disadvantages.&nbsp;
+          decision comes with it's own set of advantages and
+          disadvantages.&nbsp;
           <br /><br />
           On the one hand, living in big cities offers plenty of opportunities
           for personal and professional growth. With access to world-class
@@ -97,6 +101,20 @@
           Ultimately, the choice to move to a big city should be based on
           individual priorities, goals, and values.
         </p>
+        <audio
+          controls
+          style="
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -60px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          <source src="rozprawka_elevenlabs-rachel.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
       </div>
     </div>
   </body>
